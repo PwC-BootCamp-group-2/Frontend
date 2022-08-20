@@ -1,0 +1,60 @@
+/*Footer*/
+#footer-logo {
+    height: 2.3em;
+}
+
+.footer-dark p {
+    font-size: 14px;
+    color: #777 !important;
+}
+
+.spacehub-footer h6 {
+
+    color: #222 !important;
+}
+
+.spacehub-footer {
+    background-color: #fff !important;
+}
+
+.spacehub-footer h3,
+.spacehub-footer .copyright a {
+    color: #444 !important;
+}
+
+.spacehub-footer ul li a {
+    color: #444;
+    line-height: 2;
+}
+
+.spacehub-footer .divider-fade.divider-dark:before {
+    background: radial-gradient(ellipse at center, rgb(131, 9, 0) 0, rgba(31, 45, 61, 0) 75%)
+}
+
+
+.spacehub-footer .list-unstyled li a {
+    color: #777 !important;
+}
+
+.spacehub-footer .nav-item a {
+    color: #444 !important;
+}
+
+.divider-hr {
+    width: 1px;
+    height: 70px;
+    background: radial-gradient(ellipse at center, rgb(131, 9, 0) 0, rgba(31, 45, 61, 0) 75%);
+    text-align: center;
+}
+
+@media (max-width: 991px) {
+    .divider-hr {
+        display: none !important;
+    }
+
+    .fw-on-mobile {
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+    }
+}
