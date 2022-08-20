@@ -5,7 +5,7 @@ import Footer from './components/footer/Footer';
 import Home from './pages/Home'
 import About from './pages/about/About'
 import BecomeAHost from './pages/becomeahost/BecomeAHost'
-import Pricing from './pages/pricing/Pricing'
+import Pricing from './pages'
 import HowItWorks from './pages/howitworks/HowItWorks'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
