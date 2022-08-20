@@ -13,7 +13,7 @@ const Header = () => {
     <header>
       <nav className="container flex">
         <div className="logo">
-          <img src={spacehub} />
+          <Link to='/'><img src={spacehub} /></Link>
         </div>
 
         <div className="nav">

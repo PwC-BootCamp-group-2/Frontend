@@ -23,7 +23,8 @@
   --font-semi-bold: 600;
 
   /* Color Variables */
-  --primary-color: #C87E4F;
+  --primary-color: #E6DAD9;
+  --btn-color-hover: #006ecc;
   --primary-color-hover: #C2703D;
   --text-color: #333;
   --text-color-light: #888682;
@@ -80,7 +81,7 @@ input {
 
 body {
   overflow-x: hidden;
-  background-color: var(--white-color);
+  background-color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -139,7 +140,7 @@ button {
   cursor: pointer;
 }
 
-button:focus{
+button:focus {
   outline: none;
 }
 
@@ -151,7 +152,7 @@ button i {
   padding: 5px 10px;
   height: 30px;
   font-size: 12px;
-} 
+}
 
 /* .btn-outline {
   float: right;
