@@ -1,7 +1,6 @@
 import spacehub from "../../assets/img/spacehub.png";
 import { Link } from "react-router-dom";
-import { FaUser, FaBars, FaUserAlt, FaTimes } from "react-icons/fa";
-import { Badge } from "react-bootstrap";
+import { FaBars, FaUserAlt, FaTimes } from "react-icons/fa";
 import "./Header.css";
 import { useState } from "react";
 
