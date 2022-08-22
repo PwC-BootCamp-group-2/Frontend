@@ -63,7 +63,13 @@ const Footer = () => {
           <div className="row">
             <div className="col-lg-4 mb-5 mb-lg-0">
               <Link to="/">
-                <img alt="Image placeholder" src={spacehub} id="footer-logo" />
+                <span id="logo">
+                  <img
+                    alt="Image placeholder"
+                    src={spacehub}
+                    id="footer-logo"
+                  />
+                </span>
               </Link>
               <p className="mt-4 text-sm opacity-8 pr-lg-4">
                 For over 5 years, we pride ourselves on our commitment to

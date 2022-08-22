@@ -72,10 +72,11 @@ header .acct-div-mobile {
 @media screen and (max-width: 992px) {
     header {
         padding: 0;
+        height: 10vh;
     }
 
     header img {
-        margin-top: 30px;
+        margin: 10px 0px;
     }
 
     header .acct-div {
@@ -88,12 +89,12 @@ header .acct-div-mobile {
 
     header .toggle {
         display: block;
-        margin-top: 30px;
+        margin: 10px 0px;
     }
 
     header .small {
         position: absolute;
-        top: 12vh;
+        top: 10vh;
         left: 0;
         width: 100%;
         background-color: #fff;
