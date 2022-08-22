@@ -1,62 +1,91 @@
-.hero-section {
+.hero {
+    background-image: url('../../../assets/img/sayan-majhi-E2QO1yRiXUQ-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+    width: 100%;
     position: relative;
-    height: 80vh;
-    background-color: var(--primary-color) !important;
+    z-index: -2;
 }
 
-.hero-section .img-home {
+.hero::before {
+    content: '';
     position: absolute;
-    top: 0;
+    left: 0;
     right: 0;
-    width: 700px;
-}
-
-.hero-section .img-home img {
     width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
 }
 
-.hero-section .home-details {
-    display: flex;
-    flex-direction: column;
-    margin-top: 70px;
+.hero .container {
+    padding-top: 15%;
 }
 
-#hero-signup .left {
-    color: #a0aec0 !important;
+.hero h1 {
+    color: #fff !important;
+    font-size: 60px !important;
+}
+
+.hero p {
+    color: #fff !important;
+    opacity: 0.8;
+}
+
+.hero form {
     background-color: #fff;
+    border-radius: 5px;
+    margin-top: 50px;
+    padding: 0 20px;
 }
 
-#hero-signup .form-control {
-    padding: 5px !important;
-}
-
-#hero-signup button {
-    padding: 8px 20px !important;
-    margin: 8px auto;
-    font-weight: 700;
-}
-
-.home-section .home-card {
-    justify-content: space-around;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-.card-img {
-    width: 300px;
-    height: auto;
-    margin: 40px;
-    margin-bottom: 70px;
-}
-.home-card img {
+.hero form input {
+    padding: 10px;
     width: 100%;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    margin-top: 5px;
+    border-radius: 5px;
 }
 
-@media screen and (max-width: 768px) {
-    .hero-section {
-            position: relative;
-            height: 100vh;
-        }
-    .hero-section .img-home {
-            position: relative;
-        }
+.hero form span {
+    font-size: 14px;
+    color: #4A5568 !important;
 }
+
+.hero input::placeholder {
+    font-size: 17px;
+    color: #4e4e4e;
+}
+
+.hero form .box {
+    padding: 15px;
+    border-left: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.hero form .box::nth-child(1) {
+    border-left: none;
+}
+
+.hero form h4 {
+    font-weight: 500;
+}
+
+.heading {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+
+.heading h1 {
+    color: #2F3954;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 35px;
+}
+
+.heading p {
+    color: #72809d;
+}
+
