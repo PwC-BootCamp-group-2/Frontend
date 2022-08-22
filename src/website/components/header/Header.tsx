@@ -12,11 +12,7 @@ const Header = () => {
     <header>
       <nav className="container flex">
         <div className="logo">
-<<<<<<< HEAD
-          <Link to='/'><img src={spacehub} /></Link>
-=======
           <img src={spacehub} />
->>>>>>> origin/gabriel
         </div>
 
         <div className="nav">
@@ -33,29 +29,6 @@ const Header = () => {
             <li>
               <Link to="/pricing">Pricing</Link>
             </li>
-<<<<<<< HEAD
-
-            <li className="acct-div-mobile">
-              <Link to='/login'>
-              <button className="btn btn-account">
-                <FaUserAlt className="btn-icon" />
-                <span>Account</span>
-              </button>
-              </Link>
-            </li>
-          </ul>
-
-         
-        </div>
-
-        <div className="acct-div">
-          <Link to='/login'>
-            <button className="btn btn-account">
-              <FaUserAlt className="btn-icon" />
-              <span>Account</span>
-            </button>
-          </Link>
-=======
           </ul>
         </div>
 
@@ -64,7 +37,6 @@ const Header = () => {
             <FaUserAlt className="btn-icon" />
             <span>Account</span>
           </button>
->>>>>>> origin/gabriel
         </div>
 
         <div className="toggle">

@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-
-const HowItWorks = () => {
-  return (
-    <main className='container'>
-      <h1>How it works</h1>
-    </main>
-  );
-}
-
-export default HowItWorks
-=======
 import React from "react";
 import EasyToUse from "./easytouse/EasyToUse";
 import Features from "./features/Features";
@@ -30,4 +18,3 @@ const HowItWorks = () => {
 };
 
 export default HowItWorks;
->>>>>>> origin/gabriel

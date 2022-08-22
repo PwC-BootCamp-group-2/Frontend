@@ -1,5 +1,4 @@
 /*Footer*/
-<<<<<<< HEAD
 footer #logo {
     display: inline-block;
     width: 250px;
@@ -9,10 +8,7 @@ footer #logo {
     margin: 5px;
     width: 100%;
     object-fit: cover !important;
-=======
-#footer-logo {
     height: 2.3em;
->>>>>>> origin/gabriel
 }
 
 .footer-dark p {
