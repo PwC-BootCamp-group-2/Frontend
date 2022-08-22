@@ -1,41 +1,40 @@
 import spacehub from "../../assets/img/spacehub.png";
 import { Link } from "react-router-dom";
-import { FaBars, FaUserAlt, FaTimes } from "react-icons/fa";
+import { FaBars, FaUserAlt, FaTimes, FaSignInAlt } from "react-icons/fa";
 import "./Header.css";
+import { Menu } from "../menu/Menu";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ }) => {
   // Get the state of the navbar
   const [navList, setNavList] = useState(false);
 
   return (
     <header>
-      <nav className="container flex">
+      <div className="container flex justify-content-between">
         <div className="logo">
-          <img src={spacehub} />
+          <img src={spacehub} alt='logo' />
         </div>
 
         <div className="nav">
-          <ul className={navList ? "small" : "flex"}>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/howitworks">How it Works</Link>
-            </li>
-            <li>
-              <Link to="/becomeahost">Become a Host</Link>
-            </li>
-            <li>
-              <Link to="/pricing">Pricing</Link>
-            </li>
+          <ul className={navList ?  "small" : "flex"}>
+            {Menu.map((list, index) => (
+              <li key={index}>
+                <Link to={list.path}>{list.text}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         <div className="acct-div">
-          <button className="btn btn-account">
+          <button className="btn btn-outline">
+            <FaSignInAlt />
+            <span> Signup</span>
+          </button>
+
+          <button className="btn btn-fill">
             <FaUserAlt className="btn-icon" />
-            <span>Account</span>
+            <span>Login</span>
           </button>
         </div>
 
@@ -44,7 +43,7 @@ const Header = () => {
             {navList ? <FaTimes color="orangered" /> : <FaBars />}
           </button>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

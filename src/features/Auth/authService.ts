@@ -3,11 +3,11 @@ import { LoginType, UserRegisterType } from '../../types/form';
 import { SPACE_HUB_USER } from '../../utilities/constants';
 import { cacheData, deleteCachedData } from '../../utilities/storage';
 
-const API_URL = '/api/users/';
+const API_URL = '/Auth/';
 
 // Register a new user
 const register = async (userData: UserRegisterType) => {
-  const response = await axios.post(API_URL, userData);
+  const response = await axios.post(API_URL+ 'register/', userData);
   if (response.data) {
     cacheData(SPACE_HUB_USER, response.data);
   }
