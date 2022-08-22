@@ -36,6 +36,9 @@
   --damier-dark: #444;
   --damier-grey: #f1f1f1;
   --nav-link: rgba(13, 45, 61, .7);
+  --heading-color: #152c5b;
+  /* --text-color: #333; */
+  /* --text-color: #850900; */
 
   /* z-index */
   --z-overlay: 10;
@@ -60,7 +63,6 @@
     --smaller-font: 1.2rem;
   }
 }
-
 
 /* Pre-CSS */
 * {
@@ -99,33 +101,17 @@ img {
   height: 100%;
   object-fit: cover !important;
 }
-
 /* ----- Variables --------*/
-
-
 /* ------------------ CSS Reset ------------------ */
-
-
 /* --------- Global Styles  --------- */
-
 .flex {
   display: flex;
   align-items: center;
 }
 
-
 a {
   text-decoration: none !important;
   color: var(--damier-dark) !important;
-}
-
-ul {
-  padding-left: 0px;
-  list-style-type: none;
-}
-
-img {
-  width: 100%;
 }
 
 button {
@@ -137,6 +123,17 @@ button {
   background-color: var(--damier-bg);
   color: #fff;
   cursor: pointer;
+}
+
+.container {
+  margin: 0 auto !important;
+  max-width: 1030px !important;
+  width: 100% !important;
+}
+
+ul {
+  padding-left: 0px;
+  list-style-type: none;
 }
 
 button:focus {
@@ -153,7 +150,7 @@ button i {
   font-size: 12px;
 }
 
-.btn-outline {
+/* .btn-outline {
   float: right;
   font-size: 12px;
   padding-left: 5px;
@@ -163,6 +160,9 @@ button i {
   border-color: var(--damier-bg);
   color: var(--text-color);
 }
+  border-color: var(--spacehub-bg);
+  color: var(--text-color);
+} */
 
 .btn-fill {
   float: left;
@@ -194,4 +194,17 @@ button i {
   background-color: #850901 !important;
 }
 
-/* ------ End Global Styles --------- */
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+h1,
+h2,
+h3,
+h4,
+h6 {
+  color: var(--heading-color);
+}
+
+/* ------ End Global Styles ----*/

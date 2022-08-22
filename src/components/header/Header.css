@@ -1,6 +1,11 @@
 header {
+<<<<<<< HEAD
     background-color: var(--primary-color);
     height: 13vh;
+=======
+    background-color: #fff;
+    height: 15vh;
+>>>>>>> origin/gabriel
     /* box-shadow: 0 5px 30px rgb(0 22 84 / 10%); */
     padding: 15px 0;
     position: sticky;
@@ -22,12 +27,18 @@ header ul li {
     align-items: center;
 }
 
+<<<<<<< HEAD
 header ul a {
     margin-top: 20px;
 }
 
 header a {
     display: inline-block;
+=======
+header a {
+    display: inline-block;
+    margin-top: 20px;
+>>>>>>> origin/gabriel
     margin-left: 30px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -64,19 +75,29 @@ header .toggle {
     display: none;
 }
 
+<<<<<<< HEAD
 header .acct-div-mobile {
     display: none;
 }
 
+=======
+>>>>>>> origin/gabriel
 /* Responsive Design */
 @media screen and (max-width: 992px) {
     header {
         padding: 0;
+<<<<<<< HEAD
         height: 10vh;
     }
 
     header img {
         margin: 10px 0px;
+=======
+    }
+
+    header img {
+        margin-top: 30px;
+>>>>>>> origin/gabriel
     }
 
     header .acct-div {
@@ -89,7 +110,11 @@ header .acct-div-mobile {
 
     header .toggle {
         display: block;
+<<<<<<< HEAD
         margin: 10px 0px;
+=======
+        margin-top: 30px;
+>>>>>>> origin/gabriel
     }
 
     header .small {
@@ -97,6 +122,7 @@ header .acct-div-mobile {
         top: 10vh;
         left: 0;
         width: 100%;
+<<<<<<< HEAD
         background-color: #fff;
         padding: 20px;
     }
@@ -122,5 +148,15 @@ header .acct-div-mobile {
 
     .acct-div-mobile button {
         width: 100%;
+=======
+        background-color: var(--spacehub-bg);
+        padding: 20px;
+    }
+    header li a {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #fff !important;
+        border-bottom: 1px solid #ddd;
+>>>>>>> origin/gabriel
     }
 }

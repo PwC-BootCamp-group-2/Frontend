@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import AboutUs from './pages/about/AboutUs';
@@ -33,6 +34,36 @@ function App() {
         </Routes>
       <Footer />
     </main>
+=======
+import './App.css';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import Home from './pages/Home'
+import About from './pages/about/About'
+import BecomeAHost from './pages/becomeahost/BecomeAHost'
+import Pricing from './pages/pricing/Pricing'
+import HowItWorks from './pages/howitworks/HowItWorks'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import './assets/css/damier.css'
+import './assets/css/leke.css'
+import './assets/css/sarah.css'
+
+function App() {
+  return (
+    <div className="App">
+      <Header />
+        
+      <Routes>
+        <Route path='/' element = {<Home />} />
+        <Route path='/about' element = {<About />} />
+        <Route path='/becomeahost' element = {<BecomeAHost />} />
+        <Route path='/pricing' element = {<Pricing />} />
+        <Route path='/howitworks' element = {<HowItWorks />} />
+      </Routes>
+      
+      <Footer />
+    </div>
+>>>>>>> origin/gabriel
   );
 }
 
