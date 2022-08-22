@@ -5,7 +5,14 @@ WORKDIR /usr/src/app
 # A wildcard to ensure both package.json AND package-lock.json are copied where available
 COPY package*.json ./
 # For a clean install
-RUN npm ci 
+RUN npm ci
+# Install react icons
+RUN npm install react-icons
+# Install bootstrap
+RUN npm install react-bootstrap bootstrap
 # Bundle app source
 COPY . .
-CMD [ "npm", "run", "start" ]
+# Expose the port
+EXPOSE 3000
+# Start the app
+CMD [ "npm", "start" ]

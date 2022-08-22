@@ -1,0 +1,162 @@
+header {
+<<<<<<< HEAD
+    background-color: var(--primary-color);
+    height: 13vh;
+=======
+    background-color: #fff;
+    height: 15vh;
+>>>>>>> origin/gabriel
+    /* box-shadow: 0 5px 30px rgb(0 22 84 / 10%); */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+nav.flex {
+    justify-content: space-between;
+}
+
+header img {
+    width: 170px;
+}
+
+header ul li {
+    align-items: center;
+}
+
+<<<<<<< HEAD
+header ul a {
+    margin-top: 20px;
+}
+
+header a {
+    display: inline-block;
+=======
+header a {
+    display: inline-block;
+    margin-top: 20px;
+>>>>>>> origin/gabriel
+    margin-left: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--nav-link) !important;
+    transition: 0.5s;
+}
+
+header a:hover {
+    color: var(--spacehub-bg) !important;
+}
+
+header .btn-account {
+    padding: 8px 20px;
+    font-weight: 600;
+}
+
+header .btn-account:hover {
+    background-color: #006ecc;
+}
+
+header .btn-account .btn-icon {
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+header .btn-menu {
+    background-color: transparent !important;
+    color: var(--nav-link);
+    font-size: 1.2rem;
+    transition: 0.25s ease-in-out;
+}
+
+header .toggle {
+    display: none;
+}
+
+<<<<<<< HEAD
+header .acct-div-mobile {
+    display: none;
+}
+
+=======
+>>>>>>> origin/gabriel
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+    header {
+        padding: 0;
+<<<<<<< HEAD
+        height: 10vh;
+    }
+
+    header img {
+        margin: 10px 0px;
+=======
+    }
+
+    header img {
+        margin-top: 30px;
+>>>>>>> origin/gabriel
+    }
+
+    header .acct-div {
+        display: none;
+    }
+
+    header .nav .flex {
+        display: none;
+    }
+
+    header .toggle {
+        display: block;
+<<<<<<< HEAD
+        margin: 10px 0px;
+=======
+        margin-top: 30px;
+>>>>>>> origin/gabriel
+    }
+
+    header .small {
+        position: absolute;
+        top: 10vh;
+        left: 0;
+        width: 100%;
+<<<<<<< HEAD
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    header li {
+        border-bottom: 1px solid #ddd;
+    }
+    
+    header li a {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #152C5B !important;
+    }
+
+    header .acct-div-mobile {
+        display: block;
+    }
+
+    .acct-div-mobile a {
+        margin: auto;
+        width: 100%;
+    }
+
+    .acct-div-mobile button {
+        width: 100%;
+=======
+        background-color: var(--spacehub-bg);
+        padding: 20px;
+    }
+    header li a {
+        display: inline-block;
+        margin-bottom: 20px;
+        color: #fff !important;
+        border-bottom: 1px solid #ddd;
+>>>>>>> origin/gabriel
+    }
+}
