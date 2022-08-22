@@ -1,5 +1,5 @@
 import { IoLogOutOutline } from "react-icons/io5";
-import { BiCog, BiChart, BiMenu } from "react-icons/bi";
+import { BiCog, BiChart } from "react-icons/bi";
 import { TbArmchair2 } from "react-icons/tb";
 import {
   BsGrid,

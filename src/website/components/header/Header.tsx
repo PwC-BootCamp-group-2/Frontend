@@ -12,7 +12,7 @@ const Header = () => {
     <header>
       <nav className="container flex">
         <div className="logo">
-          <img src={spacehub} />
+          <img src={spacehub} alt="logo" />
         </div>
 
         <div className="nav">
