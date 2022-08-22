@@ -14,6 +14,9 @@ import Vector62 from "../../assets/img/Vector 62.svg";
 import Rectangle32 from "../../assets/img/Rectangle 320.png";
 
 const AboutUs = () => {
+  let styles = {
+    
+  }
   return (
     <main className="container">
       <h1>About</h1>
