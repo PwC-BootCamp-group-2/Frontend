@@ -1,7 +1,6 @@
 import spacehub from "../../assets/img/spacehub.png";
 import { Link } from "react-router-dom";
-import { FaUser, FaBars, FaUserAlt, FaTimes } from "react-icons/fa";
-import { Badge } from "react-bootstrap";
+import { FaBars, FaUserAlt, FaTimes } from "react-icons/fa";
 import "./Header.css";
 import { useState } from "react";
 
@@ -30,14 +29,27 @@ const Header = () => {
             <li>
               <Link to="/pricing">Pricing</Link>
             </li>
+
+            <li className="acct-div-mobile">
+              <Link to='/login'>
+              <button className="btn btn-account">
+                <FaUserAlt className="btn-icon" />
+                <span>Account</span>
+              </button>
+              </Link>
+            </li>
           </ul>
+
+         
         </div>
 
         <div className="acct-div">
-          <button className="btn btn-account">
-            <FaUserAlt className="btn-icon" />
-            <span>Account</span>
-          </button>
+          <Link to='/login'>
+            <button className="btn btn-account">
+              <FaUserAlt className="btn-icon" />
+              <span>Account</span>
+            </button>
+          </Link>
         </div>
 
         <div className="toggle">

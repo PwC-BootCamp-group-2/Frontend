@@ -1,3 +1,62 @@
 .hero-section {
+    position: relative;
+    height: 80vh;
     background-color: var(--primary-color) !important;
+}
+
+.hero-section .img-home {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 700px;
+}
+
+.hero-section .img-home img {
+    width: 100%;
+}
+
+.hero-section .home-details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+#hero-signup .left {
+    color: #a0aec0 !important;
+    background-color: #fff;
+}
+
+#hero-signup .form-control {
+    padding: 5px !important;
+}
+
+#hero-signup button {
+    padding: 8px 20px !important;
+    margin: 8px auto;
+    font-weight: 700;
+}
+
+.home-section .home-card {
+    justify-content: space-around;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+.card-img {
+    width: 300px;
+    height: auto;
+    margin: 40px;
+    margin-bottom: 70px;
+}
+.home-card img {
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section {
+            position: relative;
+            height: 100vh;
+        }
+    .hero-section .img-home {
+            position: relative;
+        }
 }
