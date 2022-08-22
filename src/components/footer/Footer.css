@@ -1,6 +1,13 @@
 /*Footer*/
-#footer-logo {
-    height: 2.3em;
+footer #logo {
+    display: inline-block;
+    width: 250px;
+}
+
+ #footer-logo {
+    margin: 5px;
+    width: 100%;
+    object-fit: cover !important;
 }
 
 .footer-dark p {

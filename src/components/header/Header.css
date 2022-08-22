@@ -1,6 +1,6 @@
 header {
-    background-color: #fff;
-    height: 15vh;
+    background-color: var(--primary-color);
+    height: 13vh;
     /* box-shadow: 0 5px 30px rgb(0 22 84 / 10%); */
     padding: 15px 0;
     position: sticky;
@@ -22,9 +22,12 @@ header ul li {
     align-items: center;
 }
 
+header ul a {
+    margin-top: 20px;
+}
+
 header a {
     display: inline-block;
-    margin-top: 20px;
     margin-left: 30px;
     font-size: 1.1rem;
     font-weight: 600;
@@ -61,14 +64,19 @@ header .toggle {
     display: none;
 }
 
+header .acct-div-mobile {
+    display: none;
+}
+
 /* Responsive Design */
 @media screen and (max-width: 992px) {
     header {
         padding: 0;
+        height: 10vh;
     }
 
     header img {
-        margin-top: 30px;
+        margin: 10px 0px;
     }
 
     header .acct-div {
@@ -81,7 +89,7 @@ header .toggle {
 
     header .toggle {
         display: block;
-        margin-top: 30px;
+        margin: 10px 0px;
     }
 
     header .small {
@@ -89,13 +97,30 @@ header .toggle {
         top: 10vh;
         left: 0;
         width: 100%;
-        background-color: var(--spacehub-bg);
+        background-color: #fff;
         padding: 20px;
     }
+
+    header li {
+        border-bottom: 1px solid #ddd;
+    }
+    
     header li a {
         display: inline-block;
         margin-bottom: 20px;
-        color: #fff !important;
-        border-bottom: 1px solid #ddd;
+        color: #152C5B !important;
+    }
+
+    header .acct-div-mobile {
+        display: block;
+    }
+
+    .acct-div-mobile a {
+        margin: auto;
+        width: 100%;
+    }
+
+    .acct-div-mobile button {
+        width: 100%;
     }
 }
