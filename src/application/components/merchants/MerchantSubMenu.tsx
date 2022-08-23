@@ -1,6 +1,8 @@
 import { useState, FC } from "react";
 import { NavLink } from "react-router-dom";
 import { SidebarItem } from "../../models/SidebarItem";
+import "./MerchantSidebar.css";
+
 
 type SidebarLinkProps = {
   item: SidebarItem;
@@ -23,7 +25,7 @@ const MerchantSubMenu: FC<SidebarLinkProps> = ({ item }) => {
         <div className="icon">{item.icon}</div>
         <div
           className="link_text"
-          // style={{ display: item.isOpen ? "block" : "none" }}
+          style={{ display: item.isOpen ? "block" : "none" }}
         >
           {item.name}
         </div>
@@ -49,7 +51,7 @@ const MerchantSubMenu: FC<SidebarLinkProps> = ({ item }) => {
               <div className="dropdown-icon">{item.icon}</div>
               <div
                 className="dropdown-link_text"
-                // style={{ display: item.isOpen ? "block" : "none" }}
+                style={{ display: item.isOpen ? "block" : "none" }}
               >
                 {item.name}
               </div>

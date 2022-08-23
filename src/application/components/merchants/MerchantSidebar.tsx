@@ -50,7 +50,7 @@ const MerchantSidebar: FC = () => {
             </NavLink>
           ))} */}
           {SidebarData.map((item, index) => (
-            <MerchantSubMenu item={item} key={index} />
+            <MerchantSubMenu item={{...item, isOpen}} key={index} />
           ))}
         </div>
       </div>
