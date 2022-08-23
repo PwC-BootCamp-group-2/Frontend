@@ -1,5 +1,5 @@
 // import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import AboutUs from './pages/about/AboutUs';
@@ -16,7 +16,7 @@ import './assets/css/leke.css';
 import './assets/css/sarah.css';
 import UserSignup from './pages/account/usersignup/UserSignup';
 import TeamSignup from './pages/account/teamsignup/TeamSignup';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 const WebsiteRoutes: FC = () => {
   return (
     <>
