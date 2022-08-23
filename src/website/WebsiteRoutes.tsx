@@ -30,7 +30,7 @@ const WebsiteRoutes: FC = () => {
           <Route path="/usersignup" element={<UserSignup />} />
           <Route path="/teamsignup" element={<TeamSignup />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer /> 
       {/* </BrowserRouter> */}
     </>
   );
