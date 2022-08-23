@@ -82,8 +82,9 @@ export const Login = () => {
         <button type="submit" id="signin">
           Sign In
         </button>
+        <h6>Forget password?</h6>
       <h5>Not Registered? <span>Sign Up</span></h5>
-      <h6>Forget password?</h6>
+      
       </form>
     </section>
   )
