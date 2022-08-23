@@ -1,3 +1,6 @@
+main {
+  padding: 0px;
+}
 .hero {
     background-image: url('../../../assets/img/sayan-majhi-E2QO1yRiXUQ-unsplash.jpg');
     background-repeat: no-repeat;
@@ -5,23 +8,24 @@
     background-size: cover;
     height: 90vh;
     width: 100%;
-    position: relative;
-    z-index: -2;
 }
 
 .hero::before {
-    content: '';
     position: absolute;
     left: 0;
     right: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: -1;
+    /* background-color: rgba(0, 0, 0, 0.1); */
+    /* z-index: -1; */
 }
 
-.hero .container {
+.hero .containerhero {
+    padding: 5vmin;
     padding-top: 15%;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 90vh;
+    width: 100%;
 }
 
 .hero h1 {

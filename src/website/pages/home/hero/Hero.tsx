@@ -9,7 +9,7 @@ const Hero = () => {
     return (
         <>
             <section className='hero'>
-                <div className='container'>
+                <div className='containerhero'>
                     <Heading
                         title='Find Your Office Space' subtitle='The ultimate workspace experience, with ultimate flexibility. Access more than 50 coworking spaces across 20 cities, with a single membership.'
                     />
@@ -19,7 +19,7 @@ const Hero = () => {
                             <input type='text'
                                 name='location'
                                 // value='location'
-                                // id='location'
+                                id='location'
                                 placeholder='Location' />
                         </div>
                         <div className='box'>
@@ -46,7 +46,7 @@ const Hero = () => {
                         </button>
                     </form>
                 </div>
-            </section>
+             </section>
         </>
     )
 }
