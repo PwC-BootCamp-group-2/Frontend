@@ -5,6 +5,8 @@ import AboutUs from "./pages/about/AboutUs";
 import Home from "./pages/home/Home";
 import { FC } from "react";
 import Product from "./pages/product/Product";
+import Faq from "./pages/faq/Faq";
+import Signup from "./pages/signup/Signup";
 const WebsiteRoutes: FC = () => {
   return (
     <>
@@ -13,8 +15,10 @@ const WebsiteRoutes: FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
