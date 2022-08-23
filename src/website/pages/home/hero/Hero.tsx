@@ -16,7 +16,8 @@ const Hero = () => {
                     <form className='flex'>
                         <div className='box'>
                             <span>City/Street</span>
-                            <input type='text'
+                            <input
+                                type='text'
                                 name='location'
                                 // value='location'
                                 id='location'
@@ -24,22 +25,25 @@ const Hero = () => {
                         </div>
                         <div className='box'>
                             <span>Space Type</span>
-                            <input type='text'
+                            <input
+                                type='text'
                                 name='spacetype'
                                 // value='spacetype'
                                 // id='spacetype'
-                                placeholder='Space Type' />
+                                placeholder='Space Type'
+                            />
                         </div>
                         <div className='box'>
                             <span>Price Range</span>
-                            <input type='text'
+                            <input
+                                type='text'
                                 name='price'
                                 // value='price'
                                 // id='price'
                                 placeholder='Price Range' />
                         </div>
                         <div className='box'>
-                            <h4 className='text-secondary'>Search</h4>
+                            <button className='btn btn-lg btn-block'>Search</button>
                         </div>
                         <button className='btn btn-success'>
                             <FaSearch />

@@ -17,26 +17,34 @@ const Header = ({ }) => {
         </div>
 
         <div className="nav">
-          <ul className={navList ?  "small" : "flex"}>
+          <ul className={navList ? "small" : "flex"}>
             {Menu.map((list, index) => (
               <li key={index}>
                 <Link to={list.path}>{list.text}</Link>
               </li>
             ))}
+            <div className="mobile-div">
+              <button className="btn btn-outline text-muted">
+                <FaUserAlt />
+                <span> Login</span>
+              </button>
+              <button className="btn btn-secondary">
+                <FaSignInAlt />
+                <span> Signup</span>
+              </button>
+
+            </div>
           </ul>
         </div>
 
         <div className="acct-div">
-          <button className="btn btn-outline">
+          <button className="btn btn-outline text-muted">
+            <FaUserAlt />
+            <span> Login</span>
+          </button>
+          <button className="btn btn-secondary">
             <FaSignInAlt />
             <span> Signup</span>
-          </button>
-
-          <button className="btn btn-fill">
-            <FaUserAlt className="btn-icon" />
-            <span>
-              <Link to="/login">Login</Link>
-            </span>
           </button>
         </div>
 

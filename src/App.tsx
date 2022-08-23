@@ -16,7 +16,7 @@ const App: FC = () => {
   return (
     <>
       <Router>
-      <WebsiteRoutes />
+        <WebsiteRoutes />
 
         <ApplicationRoutes />
       </Router>

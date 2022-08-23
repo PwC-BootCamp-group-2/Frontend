@@ -54,12 +54,17 @@ header .toggle {
   display: none;
 }
 
+header .mobile-div {
+    display: none;
+}
+
 header .acct-div-mobile {
   display: none;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 992px) {
+
   header {
     padding: 0;
     /* height: 10vh; */
@@ -80,6 +85,7 @@ header .acct-div-mobile {
   header .nav .flex {
     display: none;
   }
+
 
   header .toggle {
     display: block;
@@ -120,6 +126,14 @@ header .acct-div-mobile {
     background-color: var(--spacehub-bg);
     padding: 20px;
   }
+
+
+    header .mobile-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 1em;
+    }
 
   header li a {
     display: inline-block;

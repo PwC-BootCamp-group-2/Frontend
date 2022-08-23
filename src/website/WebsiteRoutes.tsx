@@ -19,6 +19,7 @@ import Signup from "./pages/signup/Signup";
 const WebsiteRoutes: FC = () => {
   return (
     <>
+
       <Routes>
         <Route path="/faq" element={<Faq />} />
         <Route path="/signup" element={<Signup />} />
