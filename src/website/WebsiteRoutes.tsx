@@ -1,12 +1,4 @@
-// import './App.css';
-import { Route, Routes } from 'react-router-dom';
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import AboutUs from './pages/about/AboutUs';
-import Home from './pages/home/Home';
 
-import Account from './pages/account/createAccount/Account';
-import Login from './pages/account/login/Login';
 import './assets/css/style1.css';
 import './assets/css/style2.css';
 import './assets/css/style3.css';
@@ -14,26 +6,23 @@ import './assets/css/style3.css';
 import './assets/css/damier.css';
 import './assets/css/leke.css';
 import './assets/css/sarah.css';
-import UserSignup from './pages/account/usersignup/UserSignup';
-import TeamSignup from './pages/account/teamsignup/TeamSignup';
-import { FC } from 'react';
+import { Route, Routes } from "react-router-dom";
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
+import AboutUs from "./pages/about/AboutUs";
+import Home from "./pages/home/Home";
+import { FC } from "react";
+import Product from "./pages/product/Product";
 const WebsiteRoutes: FC = () => {
   return (
     <>
-      {/* <BrowserRouter> */}
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/usersignup" element={<UserSignup />} />
-          <Route path="/teamsignup" element={<TeamSignup />} />
-        </Routes>
-        {/* <Footer /> */}
-      {/* </BrowserRouter> */}
+      
+      <Routes>
+        <Route path="/" element={[<Header />,<Home />,<Footer />]} />
+        <Route path="/about" element={[<Header />,<AboutUs />,<Footer />]} />
+        <Route path="/product" element={[<Header/>, <Product />, <Footer/>]} />
+      </Routes>
     </>
   );
 };
-
 export default WebsiteRoutes;

@@ -1,22 +1,8 @@
-import Image from "react-bootstrap";
 import "./MerchantSidebar.css";
 import { useState, FC } from "react";
-import { IoLogOutOutline } from "react-icons/io5";
-import { BiCog, BiChart, BiMenu } from "react-icons/bi";
-import { TbArmchair2 } from "react-icons/tb";
-import {
-  BsGrid,
-  BsEnvelope,
-  BsCart,
-  BsXSquare,
-  BsCheckSquare,
-  BsFileEarmarkText,
-  BsChevronDown,
-  BsChevronUp,
-} from "react-icons/bs";
+import { BiMenu } from "react-icons/bi";
 import logo from "../../utils/images/logo.svg";
-import { NavLink } from "react-router-dom";
-import MerchantSidebarItem from "./MerchantSubMenu";
+// import MerchantSidebarItem from "./MerchantSubMenu";
 import { SidebarData } from "./SidebarData";
 import MerchantSubMenu from "./MerchantSubMenu";
 
@@ -36,7 +22,7 @@ const MerchantSidebar: FC = () => {
         >
           <div className="top_section">
             <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-              <img src={logo} />
+              <img src={logo} alt="img" />
             </h1>
             <div
               style={{ marginLeft: isOpen ? "50px" : "0px" }}
@@ -64,7 +50,7 @@ const MerchantSidebar: FC = () => {
             </NavLink>
           ))} */}
           {SidebarData.map((item, index) => (
-            <MerchantSubMenu item={item} key={index} />
+            <MerchantSubMenu item={{...item, isOpen}} key={index} />
           ))}
         </div>
       </div>

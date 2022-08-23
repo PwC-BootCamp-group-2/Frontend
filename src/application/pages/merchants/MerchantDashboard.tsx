@@ -1,18 +1,20 @@
 import "../../utils/css/merchants/MerchantDashboard.css";
 import {
-  Form,
-  Button,
-  InputGroup,
+  // Form,
+  // Button,
+  // InputGroup,
   Container,
   Col,
-  Card,
+  // Card,
   Table,
-  Dropdown,
-  DropdownButton,
+  // Dropdown,
+  // DropdownButton,
   Image,
+  Row,
 } from "react-bootstrap";
 import { FaRegBell } from "react-icons/fa";
-import { BiSearch } from "react-icons/bi";
+import { BiWallet } from "react-icons/bi";
+import { GiTakeMyMoney } from "react-icons/gi";
 import {
   BsArrowUpSquare,
   BsArrowDownSquare,
@@ -21,15 +23,22 @@ import {
   BsCheck2,
   BsThreeDotsVertical,
   BsX,
-  BsStarFill,
+  // BsStarFill,
 } from "react-icons/bs";
 import admin from "../../utils/images/admin.png";
 import analytics from "../../utils/images/recent-activities.png";
-import firstUser from "../../utils/images/first-user.png";
-import secondUser from "../../utils/images/second-user.png";
-import thirdUser from "../../utils/images/third-user.png";
+import { useState } from "react";
+import WithdrawModal from "../../components/merchants/withdrawModal/WithdrawModal";
+// import firstUser from "../../utils/images/first-user.png";
+// import secondUser from "../../utils/images/second-user.png";
+// import thirdUser from "../../utils/images/third-user.png";
 
 const MerchantDashboard = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleWmodal = () => {
+    setShowModal(true);
+  }
   return (
     <>
       <Container className="main">
@@ -39,8 +48,8 @@ const MerchantDashboard = () => {
               <b>Dashboard</b>
             </h3>
           </div>
-          <div className="search-container">
-            <Form className="d-flex search-form">
+          <div className="search-container d-flex justify-content-end">
+            {/* <Form className="d-flex search-form">
               <InputGroup>
                 <InputGroup.Text>
                   <BiSearch size={20} />
@@ -52,12 +61,24 @@ const MerchantDashboard = () => {
                   aria-label="Search"
                 />
               </InputGroup>
-            </Form>
-            <FaRegBell size={32} />
+            </Form> */}
+            <div className="wallet-container d-flex align-items-center gap-2">
+              <BiWallet size={25} />
+              <div className="wallet-container-balance">
+                <p className="m-0">NGN 1,500</p>
+                <h6 className="m-0">
+                  Wallet
+                </h6>
+                
+              </div>
+              <GiTakeMyMoney onClick={handleWmodal} size={25}/>
+            </div>
+            
           </div>
-          <div className="d-flex align-center">
+          <div className="d-flex align-items-center gap-2">
+            <FaRegBell size={32} />
             <span>
-              <b>Welcome Rachel Maduka! (Admin)</b>
+              <b>Welcome <br/> Rachel Maduka! (Admin)</b>
             </span>
             <div className="mx-2">
               <Image src={admin} />
@@ -66,13 +87,15 @@ const MerchantDashboard = () => {
         </section>
         <section>
           <section className="d-flex mt-5 align-items-center">
+          
             <Col className="w-75">
+              <WithdrawModal/>
               <Image src={analytics} />
             </Col>
             <Col className="w-25 all-transactions">
               <div className="d-flex justify-content-between">
                 <span>All transactions</span>
-                <div>
+                {/* <div>
                   <DropdownButton
                     id="dropdown-basic-button"
                     variant="outline-secondary"
@@ -87,7 +110,7 @@ const MerchantDashboard = () => {
                       Something else
                     </Dropdown.Item>
                   </DropdownButton>
-                </div>
+                </div> */}
               </div>
               <div>
                 <div className="d-flex   justify-content-around  total-income">
@@ -123,7 +146,7 @@ const MerchantDashboard = () => {
             </Col>
           </section>
           <section className="w-100 d-flex mt-5 align-items-center">
-            <Col className="merchant-table-container w-75">
+            <Row className="merchant-table-container w-100">
               <Col className="d-flex justify-content-between">
                 <h4>
                   <b>Latest Bookings</b>
@@ -135,17 +158,17 @@ const MerchantDashboard = () => {
                   <BsArrowRight size={20} color="#07163E" className="mx-2" />
                 </div>
               </Col>
-              <Col>
+              <Row>
                 <Table borderless hover>
                   <thead className="text-blue">
-                    {/* <tr>
+                    <tr>
                     <th>Order</th>
                     <th>Office Type</th>
                     <th>Date Created</th>
                     <th>Amount Paid</th>
                     <th>No of Resources</th>
                     <th>Order Status</th>
-                  </tr> */}
+                  </tr>
                   </thead>
                   <tbody>
                     <tr>
@@ -244,9 +267,9 @@ const MerchantDashboard = () => {
                     </tr>
                   </tbody>
                 </Table>
-              </Col>
-            </Col>
-            <Col className=" w-25 bg-white recent-reviews">
+              </Row>
+            </Row>
+            {/* <Col className=" w-25 bg-white recent-reviews">
               <div className="mx-3">
                 <h5>
                   <b>Recent Reviews</b>
@@ -318,7 +341,7 @@ const MerchantDashboard = () => {
                   </p>
                 </div>
               </Col>
-            </Col>
+            </Col> */}
           </section>
         </section>
       </Container>
