@@ -1,0 +1,55 @@
+section.slice.slice-lg.damier-light-bugundy{
+  background-color: #E6DAD9;
+  color: #718096;
+  padding: 96px 0px;
+}
+
+strong {
+  color: #718096;
+  font: 18px Poppins, sans-serif;
+}
+
+h1.mb-4.text-center.damier-color{
+  color: #830900;
+  font-size: 35.395px;
+  font-family: Poppins, sans-serif;
+  margin: 0px 0px 24px;
+}
+
+h3.text-center.text-wrap.mb-2, h3.text-black.mb-2{
+  color: #152C5B;
+  font: 26.158px Poppins, sans-serif;
+  margin: 0px 0px 8px;
+}
+
+p {
+  color: #718096;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  margin: 0px 0px 8px;
+}
+
+a.btn.btn-primary {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  padding: 12px 28px;
+  background: #830900;
+}
+
+div.col-lg-3.text-lg-left.pr-lg-4, div.col-lg-7.text-center.text-lg-left{
+  color: #718096;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  padding: 0px 15px;
+}
+
+div.row-pt-7.mb-3{
+  color: #718096;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  margin: 0px -15px 16px;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  padding: 96px 0px 0x;
+}

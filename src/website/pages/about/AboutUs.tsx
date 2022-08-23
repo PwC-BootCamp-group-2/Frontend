@@ -12,14 +12,11 @@ import Rectangle4 from "../../assets/img/Rectangle 321.png";
 import Rectangle5 from "../../assets/img/Rectangle 322.png";
 import Vector62 from "../../assets/img/Vector 62.svg";
 import Rectangle32 from "../../assets/img/Rectangle 320.png";
+import "./About.css";
 
 const AboutUs = () => {
-  let styles = {
-    
-  }
   return (
-    <main className="container">
-      <h1>About</h1>
+    <>
       <section className="slice py-8 bg-white bg-cover bg-size--cover about-inro">
         <span className="mask bg-gradient-white opacity-9"></span>
         <div>
@@ -224,7 +221,7 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-    </main>
+    </>
   );
 };
 
