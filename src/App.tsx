@@ -7,7 +7,7 @@ const App: FC = () => {
   return (
     <>
       <Router>
-        <ApplicationRoutes />
+        {/* <ApplicationRoutes /> */}
         <WebsiteRoutes />
       </Router>
     </>

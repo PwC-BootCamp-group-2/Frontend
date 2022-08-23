@@ -4,6 +4,7 @@ import Header from "./components/header/Header";
 import AboutUs from "./pages/about/AboutUs";
 import Home from "./pages/home/Home";
 import { FC } from "react";
+import Product from "./pages/product/Product";
 const WebsiteRoutes: FC = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const WebsiteRoutes: FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
       <Footer />
     </>
