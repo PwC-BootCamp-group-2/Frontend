@@ -22,10 +22,7 @@
   },
   "include": [
     "src",
-<<<<<<< HEAD
-    "src/declaration.d.ts"
-=======
+
     "src/declaration.d.tsd.ts"
->>>>>>> master
   ]
 }
