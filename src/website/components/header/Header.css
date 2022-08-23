@@ -1,140 +1,128 @@
 header {
-    background-color: #fff;
-    height: 15vh;
-    /* box-shadow: 0 5px 30px rgb(0 22 84 / 10%); */
-    padding: 15px 0;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-}
-
-nav.flex {
-    justify-content: space-between;
+  background-color: #fff;
+  /* height: 12vh; */
+  box-shadow: 0 5px 30px rgb(0 22 84 / 5%);
+  padding: 15px 0;
+  /* position: sticky; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
 }
 
 header img {
-    width: 170px;
+  width: 170px;
 }
 
 header ul li {
-    align-items: center;
+  align-items: center;
 }
 
 header ul a {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 header a {
-    display: inline-block;
-    margin-top: 20px;
-    margin-left: 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--nav-link) !important;
-    transition: 0.5s;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--nav-link) !important;
+  text-transform: capitalize;
+  transition: 0.5s;
 }
 
 header a:hover {
-    color: var(--spacehub-bg) !important;
+  color: var(--spacehub-bg) !important;
 }
 
-header .btn-account {
-    padding: 8px 20px;
-    font-weight: 600;
-}
-
-header .btn-account:hover {
-    background-color: #006ecc;
-}
-
-header .btn-account .btn-icon {
-    margin-right: 10px;
-    font-size: 12px;
+header button {
+  font-weight: 500 !important;
+  margin-right: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 header .btn-menu {
-    background-color: transparent !important;
-    color: var(--nav-link);
-    font-size: 1.2rem;
-    transition: 0.25s ease-in-out;
+  border: none;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 header .toggle {
-    display: none;
+  display: none;
 }
 
 header .acct-div-mobile {
-    display: none;
+  display: none;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 992px) {
-    header {
-        padding: 0;
-        height: 10vh;
-    }
+  header {
+    padding: 0;
+    /* height: 10vh; */
+  }
 
-    header img {
-        margin: 10px 0px;
-    }
+  header img {
+    margin: 10px 0px;
+  }
 
-    header img {
-        margin-top: 30px;
-    }
+  header img {
+    margin-top: 30px;
+  }
 
-    header .acct-div {
-        display: none;
-    }
+  header .acct-div {
+    display: none;
+  }
 
-    header .nav .flex {
-        display: none;
-    }
+  header .nav .flex {
+    display: none;
+  }
 
-    header .toggle {
-        display: block;
-        margin: 10px 0px;
-        margin-top: 30px;
-    }
+  header .toggle {
+    display: block;
+    margin: 10px 0px;
+    margin-top: 30px;
+  }
 
-    header .small {
-        position: absolute;
-        top: 10vh;
-        left: 0;
-        width: 100%;
-        background-color: #fff;
-        padding: 20px;
-    }
+  header .small {
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+  }
 
-    header li {
-        border-bottom: 1px solid #ddd;
-    }
-    
-    header li a {
-        display: inline-block;
-        margin-bottom: 20px;
-        color: #152C5B !important;
-    }
+  header li {
+    border-bottom: 1px solid #ddd;
+  }
 
-    header .acct-div-mobile {
-        display: block;
-    }
+  header li a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #152c5b !important;
+  }
 
-    .acct-div-mobile a {
-        margin: auto;
-        width: 100%;
-    }
+  header .acct-div-mobile {
+    display: block;
+  }
 
-    .acct-div-mobile button {
-        width: 100%;
-        background-color: var(--spacehub-bg);
-        padding: 20px;
-    }
-    header li a {
-        display: inline-block;
-        margin-bottom: 20px;
-        color: #fff !important;
-        border-bottom: 1px solid #ddd;
-    }
+  .acct-div-mobile a {
+    margin: auto;
+    width: 100%;
+  }
+
+  .acct-div-mobile button {
+    width: 100%;
+    background-color: var(--spacehub-bg);
+    padding: 20px;
+  }
+
+  header li a {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
 }
