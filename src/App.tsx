@@ -1,11 +1,11 @@
-import './App.css';
-import './website/assets/css/style1.css';
-import './website/assets/css/style2.css';
-import './website/assets/css/style3.css';
+import "./App.css";
+import "./website/assets/css/style1.css";
+import "./website/assets/css/style2.css";
+import "./website/assets/css/style3.css";
 // old
-import './website/assets/css/damier.css';
-import './website/assets/css/leke.css';
-import './website/assets/css/sarah.css';
+import "./website/assets/css/damier.css";
+import "./website/assets/css/leke.css";
+import "./website/assets/css/sarah.css";
 
 import "./App.css";
 import { FC } from "react";
@@ -17,7 +17,6 @@ const App: FC = () => {
     <>
       <Router>
         <WebsiteRoutes />
-
         <ApplicationRoutes />
       </Router>
     </>
