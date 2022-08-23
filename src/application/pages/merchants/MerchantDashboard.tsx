@@ -11,10 +11,32 @@ import {
 } from "react-icons/bs";
 import admin from "../../utils/images/admin.png";
 import analytics from "../../utils/images/recent-activities.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import WithdrawModal from "../../components/merchants/withdrawModal/WithdrawModal";
+import { isError } from "util";
+import { reset } from "../../../features/Auth/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../app/store";
+import { StoreType } from "../../../types/redux";
+import { useNavigate } from "react-router-dom";
 
 const MerchantDashboard = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const { user, isError, isLoading, isSuccess, message } = useSelector(
+    (state: StoreType) => state.auth
+  );
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (!user) {
+      // navigate('/login');
+    }
+    return () => {
+      dispatch(reset());
+    };
+  }, [user, navigate, isError, message, dispatch]);
   const [showModal, setShowModal] = useState(false);
 
   const handleWmodal = () => {

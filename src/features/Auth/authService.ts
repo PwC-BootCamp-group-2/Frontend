@@ -3,7 +3,7 @@ import { LoginType, UserRegisterType } from '../../types/form';
 import { SPACE_HUB_USER } from '../../utilities/constants';
 import { cacheData, deleteCachedData } from '../../utilities/storage';
 
-const API_URL = '/Auth/';
+const API_URL = 'https://localhost:7229/Auth/login';
 
 // Register a new user
 const register = async (userData: UserRegisterType) => {
@@ -16,7 +16,7 @@ const register = async (userData: UserRegisterType) => {
 
 // Login a user
 const login = async (userData: LoginType) => {
-  const response = await axios.post(API_URL + 'login/', userData);
+  const response = await axios.post(API_URL, userData);
   if (response.data) {
     cacheData(SPACE_HUB_USER, response.data);
   }
