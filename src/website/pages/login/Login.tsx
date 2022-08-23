@@ -5,7 +5,7 @@ export const Login = () => {
   return (
     <section className="logins"> 
         <div id="image">
-          <img src={login} alt="" width={750} height={500} />    
+          <img id="imgg" src={login} alt="" width={750} height={500} />    
         </div>       
         <form id="mylogin">
         <h2>Welcome Back</h2>
