@@ -7,13 +7,6 @@ import Home from './pages/home/Home';
 
 import Account from './pages/account/createAccount/Account';
 import Login from './pages/account/login/Login';
-import './assets/css/style1.css';
-import './assets/css/style2.css';
-import './assets/css/style3.css';
-// old
-import './assets/css/damier.css';
-import './assets/css/leke.css';
-import './assets/css/sarah.css';
 import UserSignup from './pages/account/usersignup/UserSignup';
 import TeamSignup from './pages/account/teamsignup/TeamSignup';
 import { FC, useState } from 'react';
