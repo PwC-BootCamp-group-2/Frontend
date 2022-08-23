@@ -10,10 +10,10 @@ function IndvidualDashboard() {
   return (
     <Routes>
       <Route path="/dashboard" element={<Dashboard />}>
-        <Route path="/analytics" element={<Analytics />} />
-        <Route path="/booking" element={<Booking />} />
-        <Route path="/spaces" element={<Spaces />} />
-        <Route path="/settings" element={<Settings />} />
+        <Route path="analytics" element={<Analytics />} />
+        <Route path="booking" element={<Booking />} />
+        <Route path="spaces" element={<Spaces />} />
+        <Route path="settings" element={<Settings />} />
       </Route>
     </Routes>
   );
