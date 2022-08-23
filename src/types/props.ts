@@ -18,3 +18,15 @@ export interface RecentSpaceListing {
     capacity: number;
     assets: any;
 }
+
+
+export interface ProductDetailsType {
+  spaceType: string;
+  location: string;
+  icon: any;
+  reviews: string;
+  description: string;
+  assets: {
+    name: string;
+  };
+}

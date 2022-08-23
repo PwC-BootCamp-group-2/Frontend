@@ -1,4 +1,3 @@
-import Image from "react-bootstrap";
 import "./Sidebar.css";
 import { useState } from "react";
 import { IoLogOutOutline } from "react-icons/io5";
@@ -7,11 +6,6 @@ import { TbArmchair2 } from "react-icons/tb";
 import { BsGrid, BsEnvelope, BsCart, BsStar } from "react-icons/bs";
 import logo from "../../utils/images/logo.svg";
 import { NavLink } from "react-router-dom";
-
-interface Props {
-  menuCollapse: boolean;
-  setMenuCollapse: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 const Sidebar = ({ children }: any) => {
   const menuItem = [
@@ -70,7 +64,7 @@ const Sidebar = ({ children }: any) => {
         >
           <div className="top_section">
             <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">
-              <img src={logo} />
+              <img src={logo} alt="icon" />
             </h1>
             <div
               style={{ marginLeft: isOpen ? "50px" : "0px" }}

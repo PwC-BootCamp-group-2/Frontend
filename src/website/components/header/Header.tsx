@@ -13,7 +13,7 @@ const Header = ({ }) => {
     <header>
       <div className="container flex justify-content-between">
         <div className="logo">
-          <img src={spacehub} alt='logo' />
+          <img src={spacehub} alt="logo" />
         </div>
 
         <div className="nav">
@@ -46,7 +46,6 @@ const Header = ({ }) => {
             <FaSignInAlt />
             <span> Signup</span>
           </button>
-
         </div>
 
         <div className="toggle">
