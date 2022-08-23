@@ -34,7 +34,9 @@ const Header = ({ }) => {
 
           <button className="btn btn-fill">
             <FaUserAlt className="btn-icon" />
-            <span>Login</span>
+            <span>
+              <Link to="/login">Login</Link>
+            </span>
           </button>
         </div>
 
