@@ -8,13 +8,12 @@ import Product from "./pages/product/Product";
 const WebsiteRoutes: FC = () => {
   return (
     <>
-      <Header />
+      
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/product" element={<Product />} />
+        <Route path="/" element={[<Header />,<Home />,<Footer />]} />
+        <Route path="/about" element={[<Header />,<AboutUs />,<Footer />]} />
+        <Route path="/product" element={[<Header/>, <Product />, <Footer/>]} />
       </Routes>
-      <Footer />
     </>
   );
 };
