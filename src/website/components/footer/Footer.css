@@ -1,51 +1,31 @@
 /*Footer*/
-footer #logo {
-    display: inline-block;
-    width: 250px;
+footer {
+    background-color: #fff !important;
 }
 
- #footer-logo {
-    margin: 5px;
+footer #logo {
+    display: inline-block;
     width: 100%;
     object-fit: cover !important;
     height: 2.3em;
 }
 
-.footer-dark p {
-    font-size: 14px;
-    color: #777 !important;
+footer .item {
+    display: flex;
+    flex-direction: column;
 }
 
-.spacehub-footer h6 {
-
-    color: #222 !important;
+footer .item:nth-of-type(2) {
+    align-items: center;
 }
 
-.spacehub-footer {
-    background-color: #fff !important;
-}
-
-.spacehub-footer h3,
-.spacehub-footer .copyright a {
-    color: #444 !important;
-}
-
-.spacehub-footer ul li a {
-    color: #444;
-    line-height: 2;
-}
-
-.spacehub-footer .divider-fade.divider-dark:before {
-    background: radial-gradient(ellipse at center, rgb(131, 9, 0) 0, rgba(31, 45, 61, 0) 75%)
+footer ul {
+    padding: 0;
 }
 
 
-.spacehub-footer .list-unstyled li a {
-    color: #777 !important;
-}
-
-.spacehub-footer .nav-item a {
-    color: #444 !important;
+footer a {
+    color: #333;
 }
 
 .divider-hr {
@@ -56,13 +36,11 @@ footer #logo {
 }
 
 @media (max-width: 991px) {
-    .divider-hr {
-        display: none !important;
+    footer {
+        width: 100%;
+    }
+    footer .d-flex{
+        display: block !important;
     }
 
-    .fw-on-mobile {
-        float: left;
-        width: 100%;
-        margin-top: 10px;
-    }
 }

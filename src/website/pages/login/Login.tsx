@@ -23,6 +23,7 @@ export const Login = () => {
   useEffect(() => {
     if (isError) {
       toast.error(message);
+      navigate('/dashboard');
     }
     if (isSuccess || user) {
       toast.error("Successful");

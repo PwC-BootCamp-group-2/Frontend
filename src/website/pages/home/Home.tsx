@@ -1,15 +1,13 @@
-import Desk from "./desk/Desk";
+import Featured from "./featured/Featured";
 import Hero from "./hero/Hero";
-import SpaceBoard from "./spaceboard/SpaceBoard";
-import SpaceCal from "./spacecalc/SpaceCal";
+import Recent from "./recent/Recent";
 
 const Home = () => {
   return (
     <main>
       <Hero />
-      {/* <Desk />
-      <SpaceCal />
-      <SpaceBoard /> */}
+      <Featured />
+      <Recent />
     </main>
   );
 };
