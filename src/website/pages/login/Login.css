@@ -1,9 +1,9 @@
 #mylogin {
     margin: 0 auto;
     width: 40%;
-    height: 500px;
+    height: 0px;
     padding: 2rem;
-    background: #F4F4F4;
+
 }
 
 #mylogin label {
@@ -15,14 +15,14 @@
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid;
+    border: 1px solid #ccc;
 }
 #mylogin input[type='password'] {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: 1px solid;
+    border: 1px solid #ccc;
 }
 
 #signin{
