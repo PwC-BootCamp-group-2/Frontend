@@ -3,7 +3,7 @@ import { Container, Col, Button, Image, Card } from "react-bootstrap";
 import { BsQuestionCircleFill, BsFillEnvelopeFill } from "react-icons/bs";
 import { BiChevronRight } from "react-icons/bi";
 import { MdLocationOn } from "react-icons/md";
-import "./contact.css";
+import "./Contact.css";
 import contactForm from "../../assets/img/contact-form.webp";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
