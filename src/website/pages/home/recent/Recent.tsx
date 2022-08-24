@@ -5,13 +5,11 @@ import './Recent.css';
 const Recent = () => {
   return (
     <>
-        <section className='recent padding'>
-            <div className='container'>
-                  <Heading title='Recent Office Spaces' subtitle='Explore some of our top featured workspaces.' />
+      <section className='recent padding'>
+        <Heading title='Recent Office Spaces' subtitle='Explore some of our top featured workspaces.' />
 
-                  <RecentCard />
-            </div>
-        </section>
+        <RecentCard />
+      </section>
     </>
   )
 }
