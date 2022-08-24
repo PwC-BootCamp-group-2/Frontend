@@ -15,7 +15,7 @@ const Header = () => {
     <header>
       <div className="container flex justify-content-between">
         <div className="logo">
-          <img src={spacehub} alt="logo" />
+          <Link to='/'><img src={spacehub} alt="logo" /></Link>
         </div>
 
         <div className="nav">
@@ -26,11 +26,17 @@ const Header = () => {
               </li>
             ))}
             <div className="mobile-div">
-              <button className="btn btn-outline text-muted">
+              <button
+                className="btn mybtn" id="loginbtn"
+                onClick={() => navigate("/login")}
+              >
                 <FaUserAlt />
                 <span> Login</span>
               </button>
-              <button className="btn btn-secondary">
+              <button
+                className="btn mybtn" id="signupbtn"
+                onClick={() => navigate("/signup")}
+              >
                 <FaSignInAlt />
                 <span> Signup</span>
               </button>
@@ -39,20 +45,22 @@ const Header = () => {
         </div>
 
         <div className="acct-div">
+
           <button
-            className="btn btn-outline text-muted"
-            onClick={() => navigate("/login")}
-          >
-            <FaUserAlt />
-            <span> Login</span>
-          </button>
-          <button
-            className="btn btn-secondary"
+            className="btn mybtn" id="signupbtn"
             onClick={() => navigate("/signup")}
           >
             <FaSignInAlt />
             <span> Signup</span>
           </button>
+          <button
+            className="btn mybtn" id="loginbtn"
+            onClick={() => navigate("/login")}
+          >
+            <FaUserAlt />
+            <span> Login</span>
+          </button>
+
         </div>
 
         <div className="toggle">

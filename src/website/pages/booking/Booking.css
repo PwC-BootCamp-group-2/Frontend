@@ -1,0 +1,15 @@
+.booking-container {
+    background-color: #ad1b020d;
+}
+.booking {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    gap: 2rem;
+}
+
+.btn-dash:hover {
+    color: #fff;
+}
