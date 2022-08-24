@@ -84,6 +84,7 @@ export const Login = () => {
           Sign In
         </button>
         <h6 className="login-copy">Forget password?</h6>
+        <h6>Forget password?</h6>
         <h5>
           Not Registered? <span>Sign Up</span>
         </h5>

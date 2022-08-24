@@ -34,7 +34,7 @@ const WebsiteRoutes: FC = () => {
           path="/contact"
           element={[<Header />, <Contact />, <Footer />]}
         />
-        <Route path="/login" element={[<Header />, <Login />]} />
+        <Route path="/login" element={[<Header />, <Login />, <Footer />]} />
       </Routes>
     </>
   );
