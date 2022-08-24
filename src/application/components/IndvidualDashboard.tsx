@@ -10,8 +10,9 @@ import Index from "../pages/individuals/index";
 function IndvidualDashboard() {
   return (
     <Routes>
-      <Route path="dashboard" element={<Index />} >
-      <Route path="" element={<Dashboard />}/>
+
+      <Route path="dashboard" element={<Index />}>
+      <Route path="" element={<Dashboard />} />
         <Route path="analytics" element={<Analytics />} />
         <Route path="booking" element={<Booking />} />
         <Route path="spaces" element={<Spaces />} />
