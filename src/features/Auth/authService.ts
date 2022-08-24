@@ -3,11 +3,14 @@ import { LoginType, UserRegisterType } from '../../types/form';
 import { SPACE_HUB_USER } from '../../utilities/constants';
 import { cacheData, deleteCachedData } from '../../utilities/storage';
 
-const API_URL = 'https://localhost:7229/Auth/login';
+const API_URL_LOGIN = 'https://localhost:7229/Auth/login';
+const API_URL_REGISTER = 'https://localhost:7229/Auth/register';
+const API_URL_VERIFY = 'https://localhost:7229/Auth/verify';
+
 
 // Register a new user
 const register = async (userData: UserRegisterType) => {
-  const response = await axios.post(API_URL, userData);
+  const response = await axios.post(API_URL_REGISTER, userData);
   if (response.data) {
     cacheData(SPACE_HUB_USER, response.data);
   }
@@ -16,10 +19,19 @@ const register = async (userData: UserRegisterType) => {
 
 // Login a user
 const login = async (userData: LoginType) => {
-  const response = await axios.post(API_URL, userData);
+  const response = await axios.post(API_URL_LOGIN, userData);
   if (response.data) {
     cacheData(SPACE_HUB_USER, response.data);
   }
+  return response.data;
+};
+
+//Verify User 
+const verify = async (token: string) => {
+  const response = await axios.post(API_URL_LOGIN, token);
+  // if (response.data) {
+    
+  // }
   return response.data;
 };
 
@@ -31,6 +43,7 @@ const logout = () => {
 const authService = {
   register,
   login,
+  verify,
   logout,
 };
 

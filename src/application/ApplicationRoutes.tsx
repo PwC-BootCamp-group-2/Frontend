@@ -1,7 +1,5 @@
-import { FC, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { AppDispatch } from "../app/store";
+import { FC } from "react";
+import { useSelector } from "react-redux";
 
 import { StoreType } from "../types/redux";
 import { ROLES } from "../utilities/constants";
@@ -9,9 +7,7 @@ import IndvidualDashboard from "./components/IndvidualDashboard";
 import MerchantsDashboard from "./components/MerchantsDashboard";
 
 const ApplicationRoutes: FC = () => {
-  const { user } = useSelector(
-    (state: StoreType) => state.auth
-  );
+  const { user } = useSelector((state: StoreType) => state.auth);
   return <>{user && user.data.role === ROLES.INDIVIDUAL ? <IndvidualDashboard /> : <MerchantsDashboard />}</>;
 };
 

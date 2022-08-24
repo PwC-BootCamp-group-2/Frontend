@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./Login.css";
-import { toast } from 'react-toastify';
+import { toast } from "react-toastify";
 import loginIcon from "../../assets/img/login.png";
-import { login, reset } from '../../../features/Auth/authSlice';
-import { StoreType } from '../../../types/redux';
-import { useNavigate } from 'react-router-dom';
-import { LoginType } from '../../../types/form';
-import { AppDispatch } from '../../../app/store';
-import Spinner from '../../../application/components/Spinner';
+import { login, reset } from "../../../features/Auth/authSlice";
+import { StoreType } from "../../../types/redux";
+import { useNavigate } from "react-router-dom";
+import { LoginType } from "../../../types/form";
+import { AppDispatch } from "../../../app/store";
+import Spinner from "../../../application/components/Spinner";
 export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
@@ -16,8 +16,8 @@ export const Login = () => {
     (state: StoreType) => state.auth
   );
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
@@ -26,11 +26,11 @@ export const Login = () => {
       toast.error(message);
     }
     if (isSuccess || user) {
-        navigate('/dashboard');
+      navigate("/dashboard");
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
-  
+
   const onChange = (e: any) => {
     setFormData((prevState) => ({
       ...prevState,
@@ -52,11 +52,11 @@ export const Login = () => {
   }
 
   return (
-    <section className="logins"> 
-        <div id="image">
-          <img id="imgg" src={loginIcon} alt="" width={750} height={500} />    
-        </div>       
-        <form id="mylogin" onSubmit={onSubmit}>
+    <section className="logins">
+      <div id="image">
+        <img id="imgg" src={loginIcon} alt="" width={750} height={500} />
+      </div>
+      <form id="mylogin" onSubmit={onSubmit}>
         <h2>Welcome Back</h2>
         <h4>Sign in to your account to continue</h4>
         <div id="email">
@@ -69,8 +69,8 @@ export const Login = () => {
             onChange={onChange}
           />
         </div>
-        <div >
-          <label >Password:</label>
+        <div>
+          <label>Password:</label>
           <input
             type="password"
             id="password"
@@ -80,14 +80,15 @@ export const Login = () => {
           />
         </div>
 
-       
         <button type="submit" id="signin">
           Sign In
         </button>
+        <h6 className="login-copy">Forget password?</h6>
         <h6>Forget password?</h6>
-      <h5>Not Registered? <span>Sign Up</span></h5>
-      
+        <h5>
+          Not Registered? <span>Sign Up</span>
+        </h5>
       </form>
     </section>
-  )
-}
+  );
+};

@@ -1,0 +1,62 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+.Container {
+  padding: 5vh 5vw;
+}
+.Container_Header {
+  display: flex;
+}
+.Container_Body_Card {
+  display: flex;
+  margin: 5vh 0;
+  flex-wrap: wrap;
+  background: #2f3135;
+  padding: 10vh 0;
+  border-radius: 8px;
+  box-shadow: 10px 10px 5px #fbb9a1;
+}
+.Container_Body_Card_Details {
+  flex: 1;
+  text-align: center;
+}
+.Container_Body_Card_Details > h5 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+}
+.Container_Body_Card_Details > p {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ff7426;
+}
+.Container_Body_Card_Actions {
+  width: 100%;
+  text-align: center;
+  margin: 5vh 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+.Container_Body_Card_Actions > button {
+  border: none;
+  outline: none;
+  background: none;
+  color: #f5a480;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  align-items: center;
+}
+.Container_Body_Card_Actions > button > span {
+  color: white;
+}
+.Container_Body_transactions {
+  margin: 3vh 0;
+  padding: 2vh 2vw;
+}
+.Container_Body_transactions > h5 {
+  text-align: left;
+  font-weight: 600;
+}

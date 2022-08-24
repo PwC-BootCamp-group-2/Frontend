@@ -30,3 +30,9 @@ export interface ProductDetailsType {
     name: string;
   };
 }
+
+export interface SliderType {
+  image: any;
+  title: string;
+  subtitle: string
+}

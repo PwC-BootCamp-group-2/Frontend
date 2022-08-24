@@ -1,4 +1,4 @@
-import spacehub from "../../assets/img/spacehub.png";
+import spacehub from "../../assets/img/light-logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaUserAlt, FaTimes, FaSignInAlt } from "react-icons/fa";
 import "./Header.css";
@@ -15,7 +15,7 @@ const Header = () => {
     <header>
       <div className="container flex justify-content-between">
         <div className="logo">
-          <img src={spacehub} alt="logo" />
+          <Link to='/'><img src={spacehub} alt="logo" /></Link>
         </div>
 
         <div className="nav">
@@ -26,27 +26,36 @@ const Header = () => {
               </li>
             ))}
             <div className="mobile-div">
-              <button className="btn btn-outline text-muted">
+              <button className="mybtn btn" id="loginbtn">
                 <FaUserAlt />
-                <span> Login</span>
+                <span > Login</span>
               </button>
-              <button className="btn btn-secondary">
+              <button className="mybtn btn" id="signupbtn">
                 <FaSignInAlt />
                 <span> Signup</span>
               </button>
-
             </div>
           </ul>
         </div>
 
         <div className="acct-div">
-          <button className="btn btn-outline text-muted" onClick={() => navigate("/login")}>
+          <button
+            className="btn btn-outline text-muted"
+            onClick={() => navigate("/login")}
+          >
             <FaUserAlt />
             <span> Login</span>
           </button>
-          <button className="btn btn-secondary" onClick={() => navigate("/signup")}>
+          <button
+            className="btn btn-secondary"
+            onClick={() => navigate("/signup")}
+          >
             <FaSignInAlt />
             <span> Signup</span>
+          </button>
+          <button className="mybtn btn" id="loginbtn">
+            <FaUserAlt />
+            <span> Login</span>
           </button>
         </div>
 

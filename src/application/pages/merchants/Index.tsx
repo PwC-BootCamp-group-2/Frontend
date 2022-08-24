@@ -8,22 +8,22 @@ import MerchantSidebar from '../../components/merchants/MerchantSidebar';
 import style from "./Merchant.module.css";
 
 function Index(): JSX.Element {
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch<AppDispatch>();
-  // const { user, isError, isLoading, isSuccess, message } = useSelector(
-  //   (state: StoreType) => state.auth
-  // );
-  // useEffect(() => {
-  //   if (isError) {
-  //     console.log(message);
-  //   }
-  //   if (!user) {
-  //     navigate('/login');
-  //   }
-  //   return () => {
-  //     dispatch(reset());
-  //   };
-  // }, [user, navigate, isError, message, dispatch]);
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const { user, isError, isLoading, isSuccess, message } = useSelector(
+    (state: StoreType) => state.auth
+  );
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (!user) {
+      navigate('/login');
+    }
+    return () => {
+      dispatch(reset());
+    };
+  }, [user, navigate, isError, message, dispatch]);
   return (
     <div className={style.Wrapper}>
         <MerchantSidebar/>

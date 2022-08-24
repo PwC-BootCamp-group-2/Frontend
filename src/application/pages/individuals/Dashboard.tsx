@@ -34,17 +34,17 @@ const Dashboard = () => {
   const { user, isError, isLoading, isSuccess, message } = useSelector(
     (state: StoreType) => state.auth
   );
-  useEffect(() => {
-    if (isError) {
-      console.log(message);
-    }
-    if (!user) {
-      navigate('/login');
-    }
-    return () => {
-      dispatch(reset());
-    };
-  }, [user, navigate, isError, message, dispatch]);
+  // useEffect(() => {
+  //   if (isError) {
+  //     console.log(message);
+  //   }
+  //   if (!user) {
+  //     // navigate('/login');
+  //   }
+  //   return () => {
+  //     dispatch(reset());
+  //   };
+  // }, [user, navigate, isError, message, dispatch]);
   return (
     <>
       <section className="header-section">
@@ -70,31 +70,30 @@ const Dashboard = () => {
           <FaRegBell size={32} />
         </div>
         <div className="wallet-container d-flex align-items-center gap-2">
-              <BiWallet size={25} />
-              <div className="wallet-container-balance">
-                <p className="m-0">NGN 1,500</p>
-                <h6 className="m-0">
-                  Wallet
-                </h6>
-                
-              </div>
-              <GiTakeMyMoney size={25} />
+          <BiWallet size={25} />
+          <div className="wallet-container-balance">
+            <p className="m-0">NGN 1,500</p>
+            <h6 className="m-0">Wallet</h6>
+          </div>
+          <GiTakeMyMoney size={25} />
         </div>
         <div className="d-flex align-items-center gap-2">
-            <FaRegBell size={32} />
-            <span>
-              <b>Welcome <br/> John Doe</b>
-            </span>
-            <div className="mx-2">
-              <Image src={admin} />
-            </div>
+          <FaRegBell size={32} />
+          <span>
+            <b>
+              Welcome <br /> John Doe
+            </b>
+          </span>
+          <div className="mx-2">
+            <Image src={admin} />
           </div>
+        </div>
         {/* <div className="user-profile">
           <FaRegUser size={32} color="white" />
         </div> */}
       </section>
       <section className="d-flex dashboard-content">
-        <section>
+        <Col xs={8}>
           <Col className="d-flex">
             <Card className="card-section">
               <Card.Img variant="top" src={lekkiOffice} />
@@ -237,8 +236,8 @@ const Dashboard = () => {
               </Table>
             </Col>
           </Col>
-        </section>
-        <section className="mx-2">
+        </Col>
+        <Col xs={4} className="mx-2">
           <Col>
             <div className="mx-3">
               <h5>
@@ -312,7 +311,7 @@ const Dashboard = () => {
               </div>
             </Col>
           </Col>
-        </section>
+        </Col>
       </section>
     </>
   );

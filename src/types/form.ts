@@ -10,4 +10,5 @@ export interface UserRegisterType {
   companyName: string;
   role: string;
   address: string;
+  fullName: string;
 }

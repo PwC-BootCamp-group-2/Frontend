@@ -16,22 +16,35 @@ import { FC } from "react";
 import Product from "./pages/product/Product";
 import Faq from "./pages/faq/Faq";
 import Signup from "./pages/signup/Signup";
+import BookingSuccessful from "./pages/booking/BookingSuccessful";
+import CheckInSuccessful from "./pages/booking/CheckInSuccessful";
+import CheckInUnsuccessful from "./pages/booking/CheckInUnsuccessful";
+import BookingUnsuccessful from "./pages/booking/BookingUnsuccessful";
+import BookingConfirmed from "./pages/booking/BookingConfirmed";
 const WebsiteRoutes: FC = () => {
   return (
     <>
-
-
       <Routes>
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/" element={[<Header />, <Home />, <Footer />]} />
+
+        <Route path="/faq" element={[<Header />, <Faq />, <Footer />]} />
+        <Route path="/signup" element={[<Header />, <Signup />, <Footer />]} />
+
         <Route path="/about" element={[<Header />, <AboutUs />, <Footer />]} />
         <Route
           path="/product"
           element={[<Header />, <Product />, <Footer />]}
         />
-        <Route path="/" element={[<Header />, <Home />, <Footer />]} />                                                                                                                                                                                                                                                                                                                                                     
-        <Route path="/login" element={[<Header />, <Login />]} />
-        <Route path="/contact" element={[<Header />, <Contact />]} />
+        <Route path='/bookingsuccessful' element={[<Header />, <BookingSuccessful />, <Footer />]} />
+        <Route path='/checkinsuccessful' element={[<Header />, <CheckInSuccessful />, <Footer />]} />
+        <Route path='/checkinunsuccessful' element={[<Header />, <CheckInUnsuccessful />, <Footer />]} />
+        <Route path='/bookingunsuccessful' element={[<Header />, <BookingUnsuccessful />, <Footer />]} />
+        <Route path='/bookingconfirmed' element={[<Header />, <BookingConfirmed />, <Footer />]} />
+        <Route
+          path="/contact"
+          element={[<Header />, <Contact />, <Footer />]}
+        />
+        <Route path="/login" element={[<Header />, <Login />, <Footer />]} />
       </Routes>
     </>
   );

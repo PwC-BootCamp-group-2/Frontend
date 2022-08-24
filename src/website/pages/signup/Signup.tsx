@@ -1,29 +1,42 @@
-import { Container, Col, Button, Image } from "react-bootstrap";
+import { Container, Col, Image } from "react-bootstrap";
 import signup from "../../assets/img/user-signup.png";
 import { useNavigate } from "react-router-dom";
-import { useState, FC, ChangeEventHandler } from "react";
+import { useState, FC, useEffect } from "react";
 import "./Signup.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../app/store";
 import { StoreType } from "../../../types/redux";
 import { toast } from "react-toastify";
-import { register } from "../../../features/Auth/authSlice";
+import { register, reset } from "../../../features/Auth/authSlice";
 import { UserRegisterType } from "../../../types/form";
+import Spinner from "../../../application/components/Spinner";
 const Signup: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { user, isError, isLoading, isSuccess, message } = useSelector(
     (state: StoreType) => state.auth
   );
   const [formData, setFormData] = useState({
-    name: "",
+    fullName: "",
     email: "",
     phoneNumber: "",
     address: "",
     password: "",
     password2: "",
+    companyName: "",
+    role: "",
   });
-  const { name, email, phoneNumber, address, password, password2 } = formData;
+
+  const { fullName, email, phoneNumber, address, password, password2, companyName, role } = formData;
   const navigate = useNavigate();
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (isSuccess) {
+      navigate('/');
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, navigate,  dispatch]);
   const onChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -38,17 +51,21 @@ const Signup: FC = () => {
       toast.error('Passwords do not match');
       return;
     } else {
-      // const userData: UserRegisterType = {
-      //   email,
-      //   phoneNumber,
-      //   password,
-      //   companyName,
-      //   role,
-      //   address
-      // };
-      // dispatch(register(userData));
+      const userData: UserRegisterType = {
+        email,
+        phoneNumber,
+        password,
+        companyName,
+        role,
+        address,
+        fullName
+      };
+      dispatch(register(userData));
     }
   };
+  if (isLoading) {
+    return <Spinner />;
+  }
   
   return (
     <>
@@ -71,9 +88,9 @@ const Signup: FC = () => {
                       <input
                         type="text"
                         className="form-control"
-                        id="name"
-                        name="name"
-                        value={name}
+                        id="fullName"
+                        name="fullName"
+                        value={fullName}
                         placeholder="Sarah Obasi"
                         onChange={onChange}
                       />
@@ -115,6 +132,18 @@ const Signup: FC = () => {
                       />
                     </div>
                     <div className="form-group signup-input">
+                      <label htmlFor="companyName">Company Name:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="companyName"
+                        name="companyName"
+                        value={companyName}
+                        placeholder="Enter Comapny Name"
+                        onChange={onChange}
+                      />
+                    </div>
+                    <div className="form-group signup-input">
                       <label htmlFor="email">Password:</label>
                       <input
                         type="password"
@@ -135,6 +164,18 @@ const Signup: FC = () => {
                         name="password2"
                         value={password2}
                         placeholder="Confirm your Password"
+                        onChange={onChange}
+                      />
+                    </div>
+                    <div className="form-group signup-input">
+                      <label htmlFor="email">Role:</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="role"
+                        name="role"
+                        value={role}
+                        placeholder="Select your Role"
                         onChange={onChange}
                       />
                     </div>
