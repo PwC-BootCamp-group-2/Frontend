@@ -19,8 +19,6 @@ import Signup from "./pages/signup/Signup";
 const WebsiteRoutes: FC = () => {
   return (
     <>
-
-
       <Routes>
         <Route path="/faq" element={<Faq />} />
         <Route path="/signup" element={<Signup />} />
@@ -29,7 +27,7 @@ const WebsiteRoutes: FC = () => {
           path="/product"
           element={[<Header />, <Product />, <Footer />]}
         />
-        <Route path="/" element={[<Header />, <Home />, <Footer />]} />                                                                                                                                                                                                                                                                                                                                                     
+        <Route path="/" element={[<Header />, <Home />, <Footer />]} />
         <Route path="/login" element={[<Header />, <Login />]} />
         <Route path="/contact" element={[<Header />, <Contact />]} />
       </Routes>
