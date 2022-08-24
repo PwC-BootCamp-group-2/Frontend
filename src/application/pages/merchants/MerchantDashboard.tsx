@@ -29,7 +29,6 @@ import admin from "../../utils/images/admin.png";
 import analytics from "../../utils/images/recent-activities.png";
 import { useEffect, useState } from "react";
 import WithdrawModal from "../../components/merchants/withdrawModal/WithdrawModal";
-import { isError } from "util";
 import { reset } from "../../../features/Auth/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../app/store";
@@ -50,7 +49,7 @@ const MerchantDashboard = () => {
       console.log(message);
     }
     if (!user) {
-      // navigate('/login');
+      navigate('/login');
     }
     return () => {
       dispatch(reset());

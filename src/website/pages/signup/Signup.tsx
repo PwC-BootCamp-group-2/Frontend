@@ -3,7 +3,17 @@ import signup from "../../assets/img/user-signup.png";
 import { useNavigate } from "react-router-dom";
 import { useState, FC, ChangeEventHandler } from "react";
 import "./Signup.css";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../app/store";
+import { StoreType } from "../../../types/redux";
+import { toast } from "react-toastify";
+import { register } from "../../../features/Auth/authSlice";
+import { UserRegisterType } from "../../../types/form";
 const Signup: FC = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const { user, isError, isLoading, isSuccess, message } = useSelector(
+    (state: StoreType) => state.auth
+  );
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,8 +34,22 @@ const Signup: FC = () => {
   };
   const onSubmit = (e: any) => {
     e.preventDefault();
-    console.log(formData);
+    if (password !== password2) {
+      toast.error('Passwords do not match');
+      return;
+    } else {
+      // const userData: UserRegisterType = {
+      //   email,
+      //   phoneNumber,
+      //   password,
+      //   companyName,
+      //   role,
+      //   address
+      // };
+      // dispatch(register(userData));
+    }
   };
+  
   return (
     <>
       <Container fluid className="signup-wrapper">
