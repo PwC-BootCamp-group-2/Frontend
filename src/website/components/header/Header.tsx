@@ -1,4 +1,4 @@
-import spacehub from "../../assets/img/spacehub.png";
+import spacehub from "../../assets/img/light-logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaUserAlt, FaTimes, FaSignInAlt } from "react-icons/fa";
 import "./Header.css";
@@ -34,17 +34,22 @@ const Header = () => {
                 <FaSignInAlt />
                 <span> Signup</span>
               </button>
-
             </div>
           </ul>
         </div>
 
         <div className="acct-div">
-          <button className="btn btn-outline text-muted" onClick={() => navigate("/login")}>
+          <button
+            className="btn btn-outline text-muted"
+            onClick={() => navigate("/login")}
+          >
             <FaUserAlt />
             <span> Login</span>
           </button>
-          <button className="btn btn-secondary" onClick={() => navigate("/signup")}>
+          <button
+            className="btn btn-secondary"
+            onClick={() => navigate("/signup")}
+          >
             <FaSignInAlt />
             <span> Signup</span>
           </button>

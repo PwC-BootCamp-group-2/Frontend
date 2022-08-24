@@ -1,7 +1,7 @@
-import { Container, Col, Button, Image } from "react-bootstrap";
+import { Container, Col, Image } from "react-bootstrap";
 import signup from "../../assets/img/user-signup.png";
 import { useNavigate } from "react-router-dom";
-import { useState, FC, ChangeEventHandler } from "react";
+import { useState, FC } from "react";
 import "./Signup.css";
 const Signup: FC = () => {
   const [formData, setFormData] = useState({
