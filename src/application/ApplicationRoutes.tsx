@@ -12,7 +12,7 @@ const ApplicationRoutes: FC = () => {
   const { user } = useSelector(
     (state: StoreType) => state.auth
   );
-  return <>{user && user.role === ROLES.INDIVIDUAL ? <IndvidualDashboard /> : <MerchantsDashboard />}</>;
+  return <>{user && user.data.role === ROLES.INDIVIDUAL ? <IndvidualDashboard /> : <MerchantsDashboard />}</>;
 };
 
 export default ApplicationRoutes;
