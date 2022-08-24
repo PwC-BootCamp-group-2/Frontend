@@ -9,10 +9,17 @@ import IndvidualDashboard from "./components/IndvidualDashboard";
 import MerchantsDashboard from "./components/MerchantsDashboard";
 
 const ApplicationRoutes: FC = () => {
-  const { user } = useSelector(
-    (state: StoreType) => state.auth
+  const { user } = useSelector((state: StoreType) => state.auth);
+  return (
+    <>
+      {/* {!user && user.role !== ROLES.INDIVIDUAL ? (
+        <IndvidualDashboard />
+      ) : (
+        <MerchantsDashboard />
+      )} */}
+      <IndvidualDashboard />
+    </>
   );
-  return <>{user && user.role === ROLES.INDIVIDUAL ? <IndvidualDashboard /> : <MerchantsDashboard />}</>;
 };
 
 export default ApplicationRoutes;

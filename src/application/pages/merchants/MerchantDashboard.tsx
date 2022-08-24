@@ -25,17 +25,17 @@ const MerchantDashboard = () => {
   const { user, isError, isLoading, isSuccess, message } = useSelector(
     (state: StoreType) => state.auth
   );
-  useEffect(() => {
-    if (isError) {
-      console.log(message);
-    }
-    if (!user) {
-      navigate('/login');
-    }
-    return () => {
-      dispatch(reset());
-    };
-  }, [user, navigate, isError, message, dispatch]);
+  // useEffect(() => {
+  //   if (isError) {
+  //     console.log(message);
+  //   }
+  //   if (!user) {
+  //     navigate('/login');
+  //   }
+  //   return () => {
+  //     dispatch(reset());
+  //   };
+  // }, [user, navigate, isError, message, dispatch]);
   const [showModal, setShowModal] = useState(false);
 
   const handleWmodal = () => {
