@@ -3,6 +3,8 @@ import "./website/assets/css/style1.css";
 import "./website/assets/css/style2.css";
 import "./website/assets/css/style3.css";
 // old
+import { ToastContainer } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 import "./website/assets/css/damier.css";
 import "./website/assets/css/leke.css";
 import "./website/assets/css/sarah.css";
@@ -19,6 +21,8 @@ const App: FC = () => {
         <WebsiteRoutes />
         <ApplicationRoutes />
       </Router>
+      <ToastContainer />
+
     </>
   );
 };

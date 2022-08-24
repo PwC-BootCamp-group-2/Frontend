@@ -7,7 +7,7 @@ const API_URL = 'https://localhost:7229/Auth/login';
 
 // Register a new user
 const register = async (userData: UserRegisterType) => {
-  const response = await axios.post(API_URL+ 'register/', userData);
+  const response = await axios.post(API_URL, userData);
   if (response.data) {
     cacheData(SPACE_HUB_USER, response.data);
   }

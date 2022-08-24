@@ -19,7 +19,7 @@
 .header-section {
   display: flex;
   justify-content: space-between;
-  margin: 0 40px;
+  margin: 30px 40px;
   align-items: center;
 }
 .search-container {

@@ -9,4 +9,5 @@ export interface UserRegisterType {
   password: string;
   companyName: string;
   role: string;
+  address: string;
 }
