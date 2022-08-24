@@ -16,6 +16,11 @@ import { FC } from "react";
 import Product from "./pages/product/Product";
 import Faq from "./pages/faq/Faq";
 import Signup from "./pages/signup/Signup";
+import BookingSuccessful from "./pages/booking/BookingSuccessful";
+import CheckInSuccessful from "./pages/booking/CheckInSuccessful";
+import CheckInUnsuccessful from "./pages/booking/CheckInUnsuccessful";
+import BookingUnsuccessful from "./pages/booking/BookingUnsuccessful";
+import BookingConfirmed from "./pages/booking/BookingConfirmed";
 const WebsiteRoutes: FC = () => {
   return (
     <>
@@ -30,6 +35,11 @@ const WebsiteRoutes: FC = () => {
           path="/product"
           element={[<Header />, <Product />, <Footer />]}
         />
+        <Route path='/bookingsuccessful' element={[<Header />, <BookingSuccessful />, <Footer />]} />
+        <Route path='/checkinsuccessful' element={[<Header />, <CheckInSuccessful />, <Footer />]} />
+        <Route path='/checkinunsuccessful' element={[<Header />, <CheckInUnsuccessful />, <Footer />]} />
+        <Route path='/bookingunsuccessful' element={[<Header />, <BookingUnsuccessful />, <Footer />]} />
+        <Route path='/bookingconfirmed' element={[<Header />, <BookingConfirmed />, <Footer />]} />
         <Route
           path="/contact"
           element={[<Header />, <Contact />, <Footer />]}

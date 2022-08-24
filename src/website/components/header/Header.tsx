@@ -15,7 +15,7 @@ const Header = () => {
     <header>
       <div className="container flex justify-content-between">
         <div className="logo">
-          <img src={spacehub} alt="logo" />
+          <Link to='/'><img src={spacehub} alt="logo" /></Link>
         </div>
 
         <div className="nav">
@@ -26,11 +26,11 @@ const Header = () => {
               </li>
             ))}
             <div className="mobile-div">
-              <button className="btn btn-outline text-muted">
+              <button className="mybtn btn" id="loginbtn">
                 <FaUserAlt />
-                <span> Login</span>
+                <span > Login</span>
               </button>
-              <button className="btn btn-secondary">
+              <button className="mybtn btn" id="signupbtn">
                 <FaSignInAlt />
                 <span> Signup</span>
               </button>
@@ -52,6 +52,10 @@ const Header = () => {
           >
             <FaSignInAlt />
             <span> Signup</span>
+          </button>
+          <button className="mybtn btn" id="loginbtn">
+            <FaUserAlt />
+            <span> Login</span>
           </button>
         </div>
 
