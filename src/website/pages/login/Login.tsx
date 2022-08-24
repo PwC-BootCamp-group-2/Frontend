@@ -8,6 +8,7 @@ import { StoreType } from "../../../types/redux";
 import { useNavigate } from "react-router-dom";
 import { LoginType } from "../../../types/form";
 import { AppDispatch } from "../../../app/store";
+import Spinner from "../../../application/components/Spinner";
 export const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
@@ -23,13 +24,9 @@ export const Login = () => {
   useEffect(() => {
     if (isError) {
       toast.error(message);
-      navigate("/dashboard");
     }
     if (isSuccess || user) {
-      toast.error("Successful");
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 5000);
+      navigate("/dashboard");
     }
     dispatch(reset());
   }, [user, isError, isSuccess, message, navigate, dispatch]);
@@ -49,6 +46,10 @@ export const Login = () => {
     };
     dispatch(login(userData));
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <section className="logins">

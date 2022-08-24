@@ -20,20 +20,21 @@ const WebsiteRoutes: FC = () => {
   return (
     <>
       <Routes>
-        <Route path="/faq" element={<Faq />} />
-        <Route path="/signup" element={[<Header />, <Signup />, <Footer />]} />
-        {/* <Footer /> */}
         <Route path="/" element={[<Header />, <Home />, <Footer />]} />
+
+        <Route path="/faq" element={[<Header />, <Faq />, <Footer />]} />
+        <Route path="/signup" element={[<Header />, <Signup />, <Footer />]} />
+
         <Route path="/about" element={[<Header />, <AboutUs />, <Footer />]} />
         <Route
           path="/product"
           element={[<Header />, <Product />, <Footer />]}
         />
-        <Route path="/login" element={[<Header />, <Login />, <Footer />]} />
         <Route
           path="/contact"
           element={[<Header />, <Contact />, <Footer />]}
         />
+        <Route path="/login" element={[<Header />, <Login />]} />
       </Routes>
     </>
   );

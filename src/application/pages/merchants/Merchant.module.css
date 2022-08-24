@@ -1,7 +1,11 @@
-.Wrapper{
-    display: flex;
+.Wrapper {
+  display: flex;
+  flex-direction: row;
 }
-.Wrapper_Maincontent{
-    height: 100vh;
-    overflow-y: auto;
+.Wrapper_Maincontent {
+  height: 100vh;
+  overflow-y: auto;
+  flex: 1;
+  padding: 20px;
+  background-color: #ebebeb;
 }

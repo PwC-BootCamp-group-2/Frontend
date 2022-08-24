@@ -7,8 +7,9 @@ import {
   Table,
   Image,
 } from "react-bootstrap";
+import admin from "../../utils/images/admin.png";
 import { FaRegBell, FaRegUser } from "react-icons/fa";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch, BiWallet } from "react-icons/bi";
 import { FiFilter } from "react-icons/fi";
 import "../../utils/css/individuals/Dashboard.css";
 import lekkiOffice from "../../utils/images/lekki-office.png";
@@ -20,7 +21,30 @@ import secondUser from "../../utils/images/second-user.png";
 import thirdUser from "../../utils/images/third-user.png";
 
 import { BsStarFill } from "react-icons/bs";
+import { GiTakeMyMoney } from "react-icons/gi";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "../../../app/store";
+import { reset } from "../../../features/Auth/authSlice";
+import { StoreType } from "../../../types/redux";
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const { user, isError, isLoading, isSuccess, message } = useSelector(
+    (state: StoreType) => state.auth
+  );
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (!user) {
+      navigate('/login');
+    }
+    return () => {
+      dispatch(reset());
+    };
+  }, [user, navigate, isError, message, dispatch]);
   return (
     <>
       <section className="header-section">
@@ -28,7 +52,6 @@ const Dashboard = () => {
           <h3>
             <b>Dashboard</b>
           </h3>
-          <p>Available Office Spaces</p>
         </div>
         <div className="search-container">
           <Form className="d-flex search-form">
@@ -46,9 +69,29 @@ const Dashboard = () => {
           </Form>
           <FaRegBell size={32} />
         </div>
-        <div className="user-profile">
-          <FaRegUser size={32} color="white" />
+        <div className="wallet-container d-flex align-items-center gap-2">
+              <BiWallet size={25} />
+              <div className="wallet-container-balance">
+                <p className="m-0">NGN 1,500</p>
+                <h6 className="m-0">
+                  Wallet
+                </h6>
+                
+              </div>
+              <GiTakeMyMoney size={25} />
         </div>
+        <div className="d-flex align-items-center gap-2">
+            <FaRegBell size={32} />
+            <span>
+              <b>Welcome <br/> John Doe</b>
+            </span>
+            <div className="mx-2">
+              <Image src={admin} />
+            </div>
+          </div>
+        {/* <div className="user-profile">
+          <FaRegUser size={32} color="white" />
+        </div> */}
       </section>
       <section className="d-flex dashboard-content">
         <section>
