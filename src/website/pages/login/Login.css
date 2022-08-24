@@ -1,4 +1,4 @@
-#mylogin {
+/* #mylogin {
   margin: 0 auto;
   width: 40%;
   height: 0px;
@@ -17,39 +17,56 @@
   border: 1px solid #ccc;
 }
 
-#mylogin input[type='password'] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+#mylogin input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 #signin {
-    margin-top: 25px;
-    width: 100%;
-    height: 35px;
-    background-color: #d85604 !important;
-    text-align: center;
-    border: 1px solid #d85604 !important;
-    border-radius: 8px;
-    color: white;
+  margin-top: 25px;
+  width: 100%;
+  height: 35px;
+  background-color: #d85604 !important;
+  text-align: center;
+  border: 1px solid #d85604 !important;
+  border-radius: 8px;
+  color: white;
 }
 
 #password {
-    height: 40px;
-    margin-bottom: 30px;
+  height: 40px;
+  margin-bottom: 30px;
 }
-
 
 #signin {
-    margin-bottom: 40px;
-}
+  margin-bottom: 40px;
+} */
 
-.logins {
-    display: flex;
+.login-container {
+  display: flex;
 }
-
+.bold-title {
+  color: #d85604;
+  font-weight: 600;
+}
+.form-control:valid {
+  background-color: #fbf3f2 !important;
+}
+.form-container {
+  padding: 60px 100px;
+  background: #fbf3f2;
+}
+.login-button {
+  background: #d85604;
+  width: 100%;
+  border: 1px solid #d85604;
+  padding: 8px 15px;
+  color: #fff;
+  border-radius: 6px;
+}
 /* span{
     color: #d85604;
     cursor: pointer;
