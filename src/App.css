@@ -44,54 +44,6 @@ body {
   overflow-x: hidden;
 }
 
-.text-dark {
-  color: var(--text-dark);
-}
-
-.text-dark2 {
-  color: var(--text-dark2);
-}
-
-.text-white {
-  color: var(--text-white);
-}
-
-.text-light {
-  color: var(--text-light);
-}
-
-.text-gray {
-  color: var(--text-gray);
-}
-
-.text-red {
-  color: var(--text-red);
-}
-
-.bg-gradient {
-  background: var(--bg-gradient) !important;
-}
-
-.bg-gradient-indigo {
-  background: var(--bg-gradient-indigo) !important;
-}
-
-.bg-gradient-peach {
-  background: var(--bg-gradient-peach) !important;
-}
-
-.bg-gradient-red {
-  background: var(--bg-red);
-}
-
-.bg-gradient-blue {
-  background: var(--bg-blue);
-}
-
-.bg-gradient-purple {
-  background: var(--bg-purple);
-}
-
 /* #root {
   display: flex;
 } */
