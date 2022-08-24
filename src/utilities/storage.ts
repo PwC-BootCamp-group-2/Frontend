@@ -1,4 +1,4 @@
-import SecureLS from 'secure-ls';
+import SecureLS from "secure-ls";
 
 const ls = new SecureLS();
 

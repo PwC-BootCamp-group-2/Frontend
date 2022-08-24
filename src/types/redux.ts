@@ -5,3 +5,7 @@ export interface UserType {
   isLoading: boolean,
   message: string,
 }
+
+export interface StoreType {
+  auth: UserType,
+}

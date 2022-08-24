@@ -1,11 +1,13 @@
-import spacehub from "../../assets/img/spacehub.png";
+import spacehub from "../../assets/img/light-logo.png";
 import { Link } from "react-router-dom";
 import { FaBars, FaUserAlt, FaTimes, FaSignInAlt } from "react-icons/fa";
 import "./Header.css";
 import { Menu } from "../menu/Menu";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const Header = ({ }) => {
+const Header = () => {
+  const navigate = useNavigate();
   // Get the state of the navbar
   const [navList, setNavList] = useState(false);
 
@@ -32,13 +34,22 @@ const Header = ({ }) => {
                 <FaSignInAlt />
                 <span> Signup</span>
               </button>
-
             </div>
           </ul>
         </div>
 
         <div className="acct-div">
-          <button className="mybtn btn" id="signupbtn">
+          <button
+            className="btn btn-outline text-muted"
+            onClick={() => navigate("/login")}
+          >
+            <FaUserAlt />
+            <span> Login</span>
+          </button>
+          <button
+            className="btn btn-secondary"
+            onClick={() => navigate("/signup")}
+          >
             <FaSignInAlt />
             <span> Signup</span>
           </button>
