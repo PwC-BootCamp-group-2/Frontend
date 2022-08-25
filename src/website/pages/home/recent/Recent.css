@@ -19,8 +19,8 @@
     padding: 8px 15px;
     border-radius: 8px;
     color: #fff;
-    background: #e1301e;;
-    border: 1px solid #e1301e;;
+    background: #d85604;
+    border: 1px solid #d85604;;
 }
 
 .recent-spaces-icon {
@@ -41,10 +41,10 @@
 
 .recent-spaces-button {
     padding: 10px 15px;
-    background: darkorange;
+    background: #d85604;
     color: #fff;
     /* border-color: maroon; */
-    border: 1px solid darkorange;
+    border: 1px solid #d85604;
     border-radius: 6px;
 }
 

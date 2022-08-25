@@ -1,42 +1,62 @@
-import { Container, Col, Image } from "react-bootstrap";
-import signup from "../../assets/img/user-signup.png";
-import { useNavigate } from "react-router-dom";
-import { useState, FC, useEffect } from "react";
-import "./Signup.css";
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch } from "../../../app/store";
-import { StoreType } from "../../../types/redux";
-import { toast } from "react-toastify";
-import { register, reset } from "../../../features/Auth/authSlice";
-import { UserRegisterType } from "../../../types/form";
-import Spinner from "../../../application/components/Spinner";
+import { Container, Col, Image } from 'react-bootstrap';
+import signup from '../../assets/img/user-signup.png';
+import { useNavigate } from 'react-router-dom';
+import { useState, FC, useEffect } from 'react';
+import './Signup.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch } from '../../../app/store';
+import { StoreType } from '../../../types/redux';
+import { toast } from 'react-toastify';
+import { register, reset } from '../../../features/Auth/authSlice';
+import { UserRegisterType } from '../../../types/form';
+import Spinner from '../../../application/components/Spinner';
 const Signup: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { user, isError, isLoading, isSuccess, message } = useSelector(
     (state: StoreType) => state.auth
   );
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    phoneNumber: "",
-    address: "",
-    password: "",
-    password2: "",
-    companyName: "",
-    role: "",
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    address: '',
+    password: '',
+    password2: '',
+    companyName: '',
+    role: '',
   });
 
-  const { fullName, email, phoneNumber, address, password, password2, companyName, role } = formData;
+  const {
+    fullName,
+    email,
+    phoneNumber,
+    address,
+    password,
+    password2,
+    companyName,
+    role,
+  } = formData;
   const navigate = useNavigate();
   useEffect(() => {
     if (isError) {
       toast.error(message);
     }
     if (isSuccess) {
-      navigate('/');
+      toast.success(message);
+      setFormData({
+        fullName: '',
+        email: '',
+        phoneNumber: '',
+        address: '',
+        password: '',
+        password2: '',
+        companyName: '',
+        role: '',
+      });
+      // navigate('/');
     }
     dispatch(reset());
-  }, [user, isError, isSuccess, message, navigate,  dispatch]);
+  }, [user, isError, isSuccess, message, navigate, dispatch]);
   const onChange = (
     e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
   ) => {
@@ -58,7 +78,7 @@ const Signup: FC = () => {
         companyName,
         role,
         address,
-        fullName
+        fullName,
       };
       dispatch(register(userData));
     }
@@ -66,7 +86,7 @@ const Signup: FC = () => {
   if (isLoading) {
     return <Spinner />;
   }
-  
+
   return (
     <>
       <Container fluid className="signup-wrapper">

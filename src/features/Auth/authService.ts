@@ -27,8 +27,8 @@ const login = async (userData: LoginType) => {
 };
 
 //Verify User 
-const verify = async (token: string) => {
-  const response = await axios.post(API_URL_LOGIN, token);
+const verify = async (token: any) => {
+  const response = await axios.post(API_URL_VERIFY + "?token=" + token);
   // if (response.data) {
     
   // }

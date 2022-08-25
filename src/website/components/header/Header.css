@@ -77,25 +77,25 @@ header .btn:hover {
 }
 
 .mybtn#loginbtn {
-  background: #e1301e !important;
+  background: #d85604 !important;
   color: #fff;
 }
 
 .mybtn#signupbtn {
   background: transparent !important;
-  color: #e1301e !important;
-  border: 1px solid #e1301e !important;
+  color: #d85604 !important;
+  border: 1px solid #d85604 !important;
 }
 
 .mybtn#loginbtn:hover {
   outline: none !important;
   background: transparent !important;
-  color: #e1301e !important;
-  border: 1px solid #e1301e !important;
+  color: #d85604 !important;
+  border: 1px solid #d85604 !important;
 }
 
 .mybtn#signupbtn:hover {
-  background: #e1301e !important;
+  background: #d85604 !important;
   color: #fff !important;
 }
 
@@ -105,15 +105,10 @@ header .btn:hover {
 
   header {
     padding: 0;
-    /* height: 10vh; */
   }
 
   header img {
-    margin: 10px 0px;
-  }
-
-  header img {
-    margin-top: 30px;
+    margin: 10px 0px 20px 0px;
   }
 
   header .acct-div {
@@ -127,17 +122,18 @@ header .btn:hover {
 
   header .toggle {
     display: block;
-    margin: 10px 0px;
+    margin: 15px 0px;
     margin-top: 30px;
   }
 
   header .small {
     position: absolute;
-    top: 10vh;
+    top: 13vh;
     left: 0;
     width: 100%;
     background-color: #fff;
     padding: 20px;
+    z-index: 2;
   }
 
   header li {

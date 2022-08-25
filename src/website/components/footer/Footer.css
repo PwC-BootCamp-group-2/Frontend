@@ -1,5 +1,5 @@
 footer {
-    background: #ad1b02;
+    background: #2d2d2d;
     width: 100%;
     padding-top: 2rem;
 }
@@ -147,7 +147,7 @@ footer .content .link-boxes .box {
     width: calc(100% + 55px);
     outline: none;
     border: 2px solid #afafb6;
-    background: #ad1b02;
+    background: transparent;
     border-radius: 4px;
     padding: 0 15px;
     font-size: 15px;
@@ -162,7 +162,7 @@ footer .content .link-boxes .box {
 
 .link-boxes .input-box input[type="button"] {
     background: #fff;
-    color: #ad1b02;
+    color: #2d2d2d;
     border: none;
     font-size: 18px;
     font-weight: 500;
@@ -178,7 +178,7 @@ footer .content .link-boxes .box {
 
 footer .bottom-details {
     width: 100%;
-    background: #ad1b02;
+    background: #2d2d2d;
 }
 
 footer .bottom-details .bottom_text {

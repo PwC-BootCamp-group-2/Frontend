@@ -26,11 +26,17 @@ const Header = () => {
               </li>
             ))}
             <div className="mobile-div">
-              <button className="mybtn btn" id="loginbtn">
+              <button
+                className="btn mybtn" id="loginbtn"
+                onClick={() => navigate("/login")}
+              >
                 <FaUserAlt />
                 <span > Login</span>
               </button>
-              <button className="mybtn btn" id="signupbtn">
+              <button
+                className="btn mybtn" id="signupbtn"
+                onClick={() => navigate("/signup")}
+              >
                 <FaSignInAlt />
                 <span> Signup</span>
               </button>
@@ -46,8 +52,10 @@ const Header = () => {
             <FaUserAlt />
             <span> Login</span>
           </button>
+
+
           <button
-            className="btn btn-secondary"
+            className="btn mybtn btn-secondary" id="signupbtn"
             onClick={() => navigate("/signup")}
           >
             <FaSignInAlt />
@@ -57,6 +65,14 @@ const Header = () => {
             <FaUserAlt />
             <span> Login</span>
           </button>
+          <button
+            className="btn mybtn" id="loginbtn"
+            onClick={() => navigate("/login")}
+          >
+            <FaUserAlt />
+            <span> Login</span>
+          </button>
+
         </div>
 
         <div className="toggle">

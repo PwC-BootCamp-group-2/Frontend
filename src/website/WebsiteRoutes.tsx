@@ -21,6 +21,7 @@ import CheckInSuccessful from "./pages/booking/CheckInSuccessful";
 import CheckInUnsuccessful from "./pages/booking/CheckInUnsuccessful";
 import BookingUnsuccessful from "./pages/booking/BookingUnsuccessful";
 import BookingConfirmed from "./pages/booking/BookingConfirmed";
+import Verified from "./pages/verify/Verified";
 const WebsiteRoutes: FC = () => {
   return (
     <>
@@ -36,10 +37,11 @@ const WebsiteRoutes: FC = () => {
           element={[<Header />, <Product />, <Footer />]}
         />
         <Route path='/bookingsuccessful' element={[<Header />, <BookingSuccessful />, <Footer />]} />
-        <Route path='/checkinsuccessful' element={[<Header />, <CheckInSuccessful />, <Footer />]} />
+        <Route path='/checkinsuccessful/:bookingId' element={[<Header />, <CheckInSuccessful />, <Footer />]} />
         <Route path='/checkinunsuccessful' element={[<Header />, <CheckInUnsuccessful />, <Footer />]} />
         <Route path='/bookingunsuccessful' element={[<Header />, <BookingUnsuccessful />, <Footer />]} />
         <Route path='/bookingconfirmed' element={[<Header />, <BookingConfirmed />, <Footer />]} />
+        <Route path='/verify/:token' element={[<Header />, <Verified />, <Footer />]} />
         <Route
           path="/contact"
           element={[<Header />, <Contact />, <Footer />]}

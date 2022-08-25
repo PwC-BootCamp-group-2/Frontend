@@ -12,3 +12,28 @@ export interface UserRegisterType {
   address: string;
   fullName: string;
 }
+
+export interface MakeBookingType {
+  spaceId: number;
+  userId: number;
+  merchantId: number;
+  resourceId: number;
+  noR: number;
+  bookedDates: Date[];
+  amount: number;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+  used: boolean;
+}
+
+export interface CreateSpaceType {
+  name: string;
+  merchantId: number;
+  type: string;
+  capacity: number;
+  assets: any;
+  imgs: any;
+  location: string;
+  price: string;
+}
