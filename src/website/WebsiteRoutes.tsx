@@ -23,6 +23,8 @@ import BookingUnsuccessful from "./pages/booking/BookingUnsuccessful";
 import BookingConfirmed from "./pages/booking/BookingConfirmed";
 import Verified from "./pages/booking/Verified";
 import Search from "./pages/search/Search";
+import NotVerified from "./pages/booking/NotVerified";
+import SpaceSuccessful from "./pages/booking/SpaceSuccessful";
 const WebsiteRoutes: FC = () => {
   return (
     <>
@@ -60,6 +62,14 @@ const WebsiteRoutes: FC = () => {
         <Route
           path="/verified"
           element={[<Header />, <Verified />, <Footer />]}
+        />
+        <Route
+          path="/notverified"
+          element={[<Header />, <NotVerified />, <Footer />]}
+        />
+        <Route
+          path="/spacesuccessful"
+          element={[<Header />, <SpaceSuccessful />, <Footer />]}
         />
         <Route
           path="/contact"

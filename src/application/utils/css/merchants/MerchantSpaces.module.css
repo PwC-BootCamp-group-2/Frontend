@@ -1,0 +1,31 @@
+.Container {
+  padding: 3vh 3vw;
+}
+.Container_Header > h3 {
+  font-weight: 600;
+}
+.Container_body {
+  padding: 5vh 0;
+}
+
+.Container_body_addSpace_action {
+  margin: 5vh 0;
+  border: none;
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.Container_body_myspaces_spaces {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.Container_body_myspaces_spaces_null {
+  text-align: center;
+  margin-top: 20vh;
+  flex: 1;
+  font-size: 24px;
+  font-weight: 600;
+  opacity: 0.4;
+}
