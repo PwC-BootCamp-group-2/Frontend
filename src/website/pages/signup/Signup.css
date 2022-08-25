@@ -36,3 +36,33 @@
   color: #fff;
   border-radius: 6px;
 }
+
+/* Verification Modal */
+.verification-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding:  2rem 5rem;
+  border-radius: 20px;
+}
+
+.modal-closeBtn {
+  align-self: flex-end;
+  cursor: pointer;
+  color: #e1301e;
+}
+
+.link-text {
+  text-align: center;
+}
+.resend-link-form {
+  width: 100%;
+}
+
+.link-btn {
+  width: 100%;
+  padding: .7rem;
+  border-radius: 8px;
+}
