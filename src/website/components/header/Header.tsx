@@ -42,7 +42,7 @@ const Header = () => {
                 onClick={() => navigate("/signup")}
               >
                 <FaSignInAlt />
-                <span> Signup</span>
+                <span> Create a free account</span>
               </button>
             </div>
           </ul>

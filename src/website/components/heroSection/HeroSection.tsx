@@ -39,7 +39,7 @@ const HeroSection = () => {
             <div className="heading">
               <h1>
                 <Typical
-                  steps={["Find", 5000, "Sell", 5000, "Book", 5000]}
+                  steps={["Find", 5000, "Lease", 5000, "Book", 5000]}
                   loop={Infinity}
                   className="animated-text"
                   wrapper="b"

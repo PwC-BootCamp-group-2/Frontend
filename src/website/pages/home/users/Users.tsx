@@ -38,7 +38,7 @@ const Users = () => {
             <Col>
               <div className="merchant-user-content-container">
                 <h1 className="individual-user-content-title">
-                  Sell your space with ease.
+                  Lease your space with ease.
                 </h1>
                 <span>
                   We also provide an opportunity for users to host their spaces

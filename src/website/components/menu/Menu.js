@@ -13,7 +13,7 @@ export const Menu = [
     path: "/contact",
   },
   {
-    text: "faq",
+    text: "FAQs",
     path: "/faq",
   },
 ];

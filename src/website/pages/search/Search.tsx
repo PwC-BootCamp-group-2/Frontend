@@ -1,13 +1,241 @@
-import { Container, Col, Image, Button, Form } from "react-bootstrap";
 import searchBg from "../../assets/img/search-bg.png";
 import "./Search.css";
+import {
+  Form,
+  Button,
+  InputGroup,
+  Col,
+  Container,
+  Table,
+  Image,
+} from "react-bootstrap";
+import admin from "../../utils/images/admin.png";
+import { FaSearch } from "react-icons/fa";
+import { BiSearch, BiWallet, BiPlusMedical } from "react-icons/bi";
+import { FiFilter } from "react-icons/fi";
+
+import lekkiOffice from "../../../application/utils/images/lekki-office.png";
+import viOffice from "../../../application/utils/images/vi-office.png";
+import ikejaOffice from "../../../application/utils/images/ikeja-office.png";
+import marylandOffice from "../../../application/utils/images/maryland-office.png";
+import { BsStarFill } from "react-icons/bs";
 
 const Search = () => {
   return (
     <>
-      <Container fluid className="p-0">
-        <section className="d-flex">
-          <Col xs={6}>
+      <Container fluid className="p-0 search-container">
+        <section className="w-100">
+          <section>
+            <Col>
+              <div>
+                <form className="flex web-search-form">
+                  <div className="box">
+                    <span>City/Street</span>
+                    <input
+                      type="text"
+                      name="location"
+                      // value='location'
+                      id="location"
+                      className="search-input"
+                      placeholder="Location"
+                    />
+                  </div>
+                  <div className="box">
+                    <span>Space Type</span>
+                    <input
+                      type="text"
+                      name="spacetype"
+                      // value='spacetype'
+                      // id='spacetype'
+                      className="search-input"
+                      placeholder="Space Type"
+                    />
+                  </div>
+                  <div className="box">
+                    <span>Price Range</span>
+                    <input
+                      type="text"
+                      name="price"
+                      // value='price'
+                      // id='price'
+                      className="search-input"
+                      placeholder="Price Range"
+                    />
+                  </div>
+                  <div className="box">
+                    <button className="btn btn-lg btn-block">Search</button>
+                  </div>
+                  <button className="btn btn-success">
+                    <FaSearch />
+                  </button>
+                </form>
+              </div>
+            </Col>
+          </section>
+
+          <section>
+            <div className="search-heading">
+              <h2>Search Results</h2>
+            </div>
+            <div>
+              <section>
+                <Col>
+                  {/* <h5>Available Office Bookings</h5> */}
+                  <section className="d-flex available-spaces">
+                    <Col>
+                      <div>
+                        <Image src={lekkiOffice} className="card-image" />
+                      </div>
+                      <div className="card-content-container">
+                        <h4 className="size">
+                          <b>Lekki Office</b>
+                        </h4>
+                        <div>
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <span className="price-size">(4.0)</span>
+                        </div>
+                        <div>
+                          <span className="price-size">Start from</span>
+                          <p className="price-size">#50,000</p>
+                        </div>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div>
+                        <Image src={ikejaOffice} className="card-image" />
+                      </div>
+                      <div className="card-content-container">
+                        <h4 className="size">
+                          <b>Lekki Office</b>
+                        </h4>
+                        <div>
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <span className="price-size">(4.0)</span>
+                        </div>
+                        <div>
+                          <span className="price-size">Start from</span>
+                          <p className="price-size">#50,000</p>
+                        </div>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div>
+                        <Image src={marylandOffice} className="card-image" />
+                      </div>
+                      <div className="card-content-container">
+                        <h4 className="size">
+                          <b>Lekki Office</b>
+                        </h4>
+                        <div>
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <span className="price-size">(4.0)</span>
+                        </div>
+                        <div>
+                          <span className="price-size">Start from</span>
+                          <p className="price-size">#50,000</p>
+                        </div>
+                      </div>
+                    </Col>
+                    <Col>
+                      <div>
+                        <Image src={viOffice} className="card-image" />
+                      </div>
+                      <div className="card-content-container">
+                        <h4 className="size">
+                          <b>Lekki Office</b>
+                        </h4>
+                        <div>
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <span className="price-size">(4.0)</span>
+                        </div>
+                        <div>
+                          <span className="price-size">Start from</span>
+                          <p className="price-size">#50,000</p>
+                        </div>
+                      </div>
+                    </Col>
+                  </section>
+                </Col>
+              </section>
+            </div>
+          </section>
+          {/* <Col xs={6}>
             <Image src={searchBg} className="search-bg" />
           </Col>
           <Col xs={6} className="search-section">
@@ -46,7 +274,7 @@ const Search = () => {
                 </div>
               </div>
             </div>
-          </Col>
+          </Col> */}
         </section>
       </Container>
     </>
