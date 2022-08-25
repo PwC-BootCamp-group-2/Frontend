@@ -39,7 +39,7 @@ const AboutUs = () => {
                 <h2 className="fw-bolder">Our Story</h2>
                 <span className="about-story-content">
                   SpaceHub is the first online “Office Hoteling” app in Nigeria.
-                  We first launched as “Space Hub” on the 7th of January 2016 as
+                  We first birthed as “Space Hub” on the 7th of January 2016 as
                   a savings-only platform. spent.
                 </span>{" "}
                 <br></br>
