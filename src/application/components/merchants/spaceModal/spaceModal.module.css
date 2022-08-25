@@ -1,0 +1,30 @@
+.Wrapper {
+  background: #00000076;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+.Wrapper > form {
+  margin: auto;
+  width: 500px;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.Wrapper > form > fieldset > legend {
+  font-size: 20px;
+  text-align: left;
+}
+
+.Wrapper > form > fieldset > div {
+  text-align: left;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
