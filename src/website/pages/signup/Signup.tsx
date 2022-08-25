@@ -9,6 +9,7 @@ import { StoreType } from "../../../types/redux";
 import { toast } from "react-toastify";
 import { register } from "../../../features/Auth/authSlice";
 import { UserRegisterType } from "../../../types/form";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 const Signup: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { user, isError, isLoading, isSuccess, message } = useSelector(
@@ -57,7 +58,7 @@ const Signup: FC = () => {
           <Col xs={6}>
             <Image src={signup} className="signup-image" />
           </Col>
-          <Col xs={6}>
+          {/* <Col xs={5}>
             <div className="signup-form-container">
               <h3 className="signup-form-title">Create an account</h3>
               <p className="signup-form-title">
@@ -146,6 +147,31 @@ const Signup: FC = () => {
                   </form>
                 </section>
               </div>
+            </div>
+          </Col> */}
+          <Col xs={5}>
+            <div className="verification-modal">
+              <div className="modal-closeBtn">
+                <FaTimesCircle size={20} />
+              </div>
+              <div>
+                <FaCheckCircle size={150} color="#009052" />
+              </div>
+              <div>
+                <p className="link-text">
+                  A verification link has been sent to your email address.
+                  Kindly check to complete your registration
+                </p>
+              </div>
+
+              <form className="resend-link-form">
+                <input
+                  type="submit"
+                  className="link-btn"
+                  value="Resend Link"
+                  style={{ backgroundColor: "#009052", color: "#fff" }}
+                />
+              </form>
             </div>
           </Col>
         </section>

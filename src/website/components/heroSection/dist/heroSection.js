@@ -28,7 +28,7 @@ var HeroSection = function () {
         from: { opacity: 0.9 },
         enter: { opacity: 1 },
         leave: { opacity: 0.9 },
-        config: { duration: 3000 },
+        config: { duration: 1000 },
         onRest: function (_a, _b, item) {
             if (index === item) {
                 set(function (state) { return (state + 1) % slides.length; });
