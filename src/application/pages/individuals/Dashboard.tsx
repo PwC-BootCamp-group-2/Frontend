@@ -54,7 +54,7 @@ const Dashboard = () => {
               <b>Dashboard</b>
             </h3>
           </div>
-          <div className="search-container">
+          <div className="dashboard-search-container">
             <Form className="d-flex search-form">
               <InputGroup>
                 <InputGroup.Text>
@@ -97,7 +97,7 @@ const Dashboard = () => {
           <section>
             <Col>
               {/* <h5>Available Office Bookings</h5> */}
-              <section className="d-flex available-spaces">
+              <section className="d-flex dashboard-available-spaces">
                 <Col>
                   <div>
                     <Image src={lekkiOffice} />
@@ -287,8 +287,8 @@ const Dashboard = () => {
               </section>
             </Col>
           </section>
-          <section className="d-flex  recent-bookings-container">
-            <Col xs={8} className="recent-bookings">
+          <section className="d-flex  dashboard-recent-bookings-container">
+            <Col xs={8} className="dashboard-recent-bookings">
               <Col className="table-container">
                 <Col className="d-flex justify-content-between">
                   <h4>Recent Bookings</h4>
@@ -342,19 +342,19 @@ const Dashboard = () => {
               </Col>
             </Col>
 
-            <Col xs={4} className="recent-reviews">
+            <Col xs={4} className="dashboard-recent-reviews">
               <Col>
                 <div className="mx-3">
-                  <h5 className="review-title">
+                  <h5 className="dashboard-review-title">
                     <b>Recent Reviews</b>
                   </h5>
                 </div>
-                <Col className="reviews-container">
+                <Col className="dashboard-reviews-container">
                   <div>
                     <Image src={firstUser} />
                   </div>
-                  <div className="reviews">
-                    <h6 className="review-title">
+                  <div className="dashboard-reviews">
+                    <h6 className="dashboard-review-title">
                       <b>Sarah Richard</b>
                     </h6>
                     <div>
@@ -383,20 +383,20 @@ const Dashboard = () => {
                         color="#FFCD83"
                         className="spacing"
                       />
-                      <span className="review-content">(5.0)</span>
+                      <span className="dashboard-review-content">(5.0)</span>
                     </div>
-                    <p className="review-content">
+                    <p className="dashboard-review-content">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sit amet consequat lectus leo vel.
                     </p>
                   </div>
                 </Col>
-                <Col className="reviews-container">
+                <Col className="dashboard-reviews-container">
                   <div>
                     <Image src={secondUser} />
                   </div>
-                  <div className="reviews">
-                    <h6 className="review-title m-0">
+                  <div className="dashboard-reviews">
+                    <h6 className="dashboard-review-title m-0">
                       <b>Ayoola Anibaba</b>
                     </h6>
                     <div>
@@ -425,9 +425,9 @@ const Dashboard = () => {
                         color="#FFCD83"
                         className="spacing"
                       />
-                      <span className="review-content">(5.0)</span>
+                      <span className="dashboard-review-content">(5.0)</span>
                     </div>
-                    <p className="review-content m-0">
+                    <p className="dashboard-review-content m-0">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Sit amet consequat lectus leo vel.
                     </p>

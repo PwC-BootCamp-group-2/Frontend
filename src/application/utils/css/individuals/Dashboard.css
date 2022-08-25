@@ -16,7 +16,7 @@
   /* margin: 30px 40px; */
   align-items: center;
 }
-.search-container {
+.dashboard-search-container {
   display: flex;
   align-items: center;
 }
@@ -81,10 +81,10 @@
   font-size: 14px;
   font-weight: 600;
 }
-.recent-bookings-container {
+.dashboard-recent-bookings-container {
   padding-top: 60px;
 }
-.recent-bookings {
+.dashboard-recent-bookings {
   /* padding: 15px; */
   background: #fff;
   /* margin-top: 60px; */
@@ -104,27 +104,27 @@
 .table > :not(caption) > * > * {
   padding: 20px 0;
 }
-.review-content {
+.dashboard-review-content {
   font-size: 12px;
 }
-.review-title {
+.dashboard-review-title {
   font-size: 14px;
 }
-.available-spaces {
+.dashboard-available-spaces {
   padding: 15px;
   background: #fff;
   margin-top: 60px;
   /* margin-right: 20px; */
   border-radius: 10px;
 }
-.recent-reviews {
+.dashboard-recent-reviews {
   padding: 15px;
   background: #fff;
   /* margin-top: 60px;
   margin-right: 20px; */
   border-radius: 10px;
 }
-.reviews-container {
+.dashboard-reviews-container {
   display: flex;
   align-items: center;
   /* margin-left: 20px;
@@ -132,7 +132,7 @@
   margin-bottom: 20px; */
 }
 
-.reviews {
+.dashboard-reviews {
   font-size: 14px;
   padding: 0 15px;
 }

@@ -5,9 +5,7 @@
   color: #d85604;
   font-weight: 600;
 }
-.form-control:valid {
-  background-color: #fbf3f2 !important;
-}
+
 .form-container {
   padding: 60px 100px;
   background: #fbf3f2;
