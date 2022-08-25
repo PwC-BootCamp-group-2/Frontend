@@ -1,5 +1,5 @@
-
-declare module '*.jpg';
-declare module '*.png';
-declare module '*.svg';
-declare module '*.module.css';
+declare module "*.jpg";
+declare module "*.png";
+declare module "*.svg";
+declare module "*.module.css";
+declare module "react-typical";
