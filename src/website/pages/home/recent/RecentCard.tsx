@@ -11,7 +11,8 @@ const RecentCard = () => {
     <>
     <Container>
         <section className="recent-spaces-container">
-          <Col xs={4} className="m-4 recent-spaces-card">
+          
+          <Col xs={4} className="recent-spaces-card">
             <div>
               <Image src={space} width="100%" height="100%" />
             </div>
@@ -36,7 +37,7 @@ const RecentCard = () => {
             </div>
 
           </Col>
-          <Col xs={4} className="m-4 recent-spaces-card">
+          <Col xs={4} className="recent-spaces-card">
             <div>
               <Image src={space} width="100%" height="100%" />
             </div>
@@ -62,7 +63,7 @@ const RecentCard = () => {
 
           </Col>
 
-          <Col xs={4} className="m-4 recent-spaces-card">
+          <Col xs={4} className="recent-spaces-card">
             <div>
               <Image src={space} width="100%" height="100%" />
             </div>
