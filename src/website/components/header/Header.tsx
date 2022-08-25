@@ -34,7 +34,7 @@ const Header = () => {
                 onClick={() => navigate("/login")}
               >
                 <FaUserAlt />
-                <span > Login</span>
+                <span> Login</span>
               </button>
               <button
                 className="btn mybtn"
@@ -49,31 +49,13 @@ const Header = () => {
         </div>
 
         <div className="acct-div">
-<<<<<<< HEAD
-          <button
-            className="btn btn-outline text-muted"
-            onClick={() => navigate("/login")}
-          >
-            <FaUserAlt />
-            <span> Login</span>
-          </button>
-
-
-          <button
-            className="btn mybtn btn-secondary" id="signupbtn"
-=======
           <button
             className="btn mybtn"
             id="signupbtn"
->>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
             onClick={() => navigate("/signup")}
           >
             <FaSignInAlt />
             <span> Signup</span>
-          </button>
-          <button className="mybtn btn" id="loginbtn">
-            <FaUserAlt />
-            <span> Login</span>
           </button>
           <button
             className="btn mybtn"

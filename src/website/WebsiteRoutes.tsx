@@ -21,34 +21,21 @@ import CheckInSuccessful from "./pages/booking/CheckInSuccessful";
 import CheckInUnsuccessful from "./pages/booking/CheckInUnsuccessful";
 import BookingUnsuccessful from "./pages/booking/BookingUnsuccessful";
 import BookingConfirmed from "./pages/booking/BookingConfirmed";
-<<<<<<< HEAD
 import Verified from "./pages/verify/Verified";
-=======
-import Verified from "./pages/booking/Verified";
+import NotVerified from "./pages/booking/NotVerified";
 import Search from "./pages/search/Search";
->>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
+import SpaceSuccessful from "./pages/booking/SpaceSuccessful";
 const WebsiteRoutes: FC = () => {
   return (
     <>
       <Routes>
-        <Route path="/" element={[<Header />, <Home />, <Footer />]} />
-
-        <Route path="/faq" element={[<Header />, <Faq />, <Footer />]} />
-        <Route path="/signup" element={[<Header />, <Signup />, <Footer />]} />
-
-        <Route path="/about" element={[<Header />, <AboutUs />, <Footer />]} />
-        <Route
-          path="/product"
-          element={[<Header />, <Product />, <Footer />]}
-        />
-<<<<<<< HEAD
+      <Route path='/' element={[<Header />, <Home />, <Footer />]} />
         <Route path='/bookingsuccessful' element={[<Header />, <BookingSuccessful />, <Footer />]} />
         <Route path='/checkinsuccessful/:bookingId' element={[<Header />, <CheckInSuccessful />, <Footer />]} />
         <Route path='/checkinunsuccessful' element={[<Header />, <CheckInUnsuccessful />, <Footer />]} />
         <Route path='/bookingunsuccessful' element={[<Header />, <BookingUnsuccessful />, <Footer />]} />
         <Route path='/bookingconfirmed' element={[<Header />, <BookingConfirmed />, <Footer />]} />
         <Route path='/verify/:token' element={[<Header />, <Verified />, <Footer />]} />
-=======
         <Route
           path="/bookingsuccessful"
           element={[<Header />, <BookingSuccessful />, <Footer />]}
@@ -73,13 +60,24 @@ const WebsiteRoutes: FC = () => {
           path="/verified"
           element={[<Header />, <Verified />, <Footer />]}
         />
->>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
+        <Route
+          path="/notverified"
+          element={[<Header />, <NotVerified />, <Footer />]}
+        />
+        <Route
+          path="/spacesuccessful"
+          element={[<Header />, <SpaceSuccessful />, <Footer />]}
+        />
         <Route
           path="/contact"
           element={[<Header />, <Contact />, <Footer />]}
         />
         <Route path="/login" element={[<Header />, <Login />, <Footer />]} />
+        <Route path="/signup" element={[<Header />, <Signup />, <Footer />]} />
         <Route path="/search" element={[<Header />, <Search />, <Footer />]} />
+        <Route path="/faq" element={[<Header />, <Faq />, <Footer />]} />
+        <Route path="/about" element={[<Header />, <AboutUs />, <Footer />]} />
+        <Route path="/product" element={[<Header />, <Product />, <Footer />]} />
       </Routes>
     </>
   );

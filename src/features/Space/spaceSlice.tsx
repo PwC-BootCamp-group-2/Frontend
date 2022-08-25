@@ -83,7 +83,7 @@ export const getSingleSpace = createAsyncThunk(
 
 // Get Merchant Spaces
 export const getMerchantSpaces = createAsyncThunk(
-  'space/getspace',
+  'space/getspaces',
   async (_, thunkAPI: any) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
@@ -148,8 +148,8 @@ export const deleteSpace = createAsyncThunk(
 //   getMerchantSpaces,
 //   updateMerchantSpace,
 //   deleteMerchantSpace,
-export const accountInfoSlice = createSlice({
-  name: 'accountInfo',
+export const spaceSlice = createSlice({
+  name: 'space',
   initialState,
   reducers: {
     reset: (state) => {
@@ -228,5 +228,5 @@ export const accountInfoSlice = createSlice({
   },
 });
 
-export const { reset } = accountInfoSlice.actions;
-export default accountInfoSlice.reducer;
+export const { reset } = spaceSlice.actions;
+export default spaceSlice.reducer;

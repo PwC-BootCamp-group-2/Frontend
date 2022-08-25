@@ -17,7 +17,7 @@ const HeroSection = () => {
     from: { opacity: 0.9 },
     enter: { opacity: 1 },
     leave: { opacity: 0.9 },
-    config: { duration: 3000 },
+    config: { duration: 1000 },
     onRest: (_a, _b, item) => {
       if (index === item) {
         set((state) => (state + 1) % slides.length);

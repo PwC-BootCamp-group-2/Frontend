@@ -52,8 +52,8 @@ export const getBookings = createAsyncThunk('booking/get', async (_, thunkAPI: a
 });
 
 
-export const authSlice = createSlice({
-  name: 'auth',
+export const bookingSlice = createSlice({
+  name: 'booking',
   initialState,
   reducers: {
     reset: (state) => {
@@ -98,6 +98,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { reset } = authSlice.actions;
+export const { reset } = bookingSlice.actions;
 
-export default authSlice.reducer;
+export default bookingSlice.reducer;
