@@ -2,31 +2,20 @@ main {
   padding: 0px;
 }
 .hero {
-
-    background-image: url('../../../assets/img/sayan-majhi-E2QO1yRiXUQ-unsplash.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 90vh;
-    width: 100%;
-}
-
-.hero::before {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    /* background-color: rgba(0, 0, 0, 0.1); */
-    /* z-index: -1; */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  /* height: 90vh; */
+  width: 100%;
+  /* will-change: opacity; */
 }
 
 .hero .containerhero {
-    padding: 5vmin;
-    padding-top: 15%;
-    background-color: rgba(0, 0, 0, 0.7);
-    height: 90vh;
-    width: 100%;
+  /* padding: 6vmin; */
+  padding: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* height: 90vh; */
+  width: 100%;
 }
 
 .hero h1 {
@@ -38,12 +27,25 @@ main {
   color: #fff !important;
   opacity: 0.8;
 }
-
+.animated-text {
+  color: #d85604;
+  letter-spacing: 2px;
+}
+.animated-text::after {
+  margin-left: 5px;
+}
 .hero form {
   background-color: #fff;
   border-radius: 5px;
   margin-top: 50px;
   padding: 0 20px;
+}
+.btn-success,
+.btn-success:hover,
+.btn-success:active,
+.btn-success:visited {
+  background-color: #d85604 !important;
+  border: 1px solid #d85604 !important;
 }
 
 .hero form input {
@@ -79,7 +81,7 @@ main {
 
 .heading {
   text-align: center;
-  width: 60%;
+  width: 80%;
   margin: auto;
 }
 
@@ -96,32 +98,30 @@ main {
 
 /* Responsiveness */
 @media screen and (max-width: 786px) {
-    .hero {
-        height: 100vh;
-        margin-bottom: 50px;
-    }
-    .hero .container {
-        padding-top: 30%;
-    }
+  .hero {
+    height: 100vh;
+    margin-bottom: 50px;
+  }
+  .hero .container {
+    padding-top: 30%;
+  }
 
-    .hero form {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .hero form {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    .hero form .box {
-        border-left: none;
-    }
+  .hero form .box {
+    border-left: none;
+  }
 
-    .hero form input {
-        width: 100%;
-    }
+  .hero form input {
+    width: 100%;
+  }
 
-    .heading {
-        text-align: center;
-        width: 100%;
-        margin: auto;
-    }
-
+  .heading {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+  }
 }
-

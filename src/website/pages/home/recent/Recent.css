@@ -1,9 +1,29 @@
 .recent-spaces-container {
     display: flex;
+    column-gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
 .recent-spaces-content {
     padding: 20px 0;
+}
+
+.recent-spaces-card {
+    border: 1px solid #777;
+    border-radius: 8px;
+}
+
+.recent-spaces-content-wrapper {
+    padding: 20px;
+}
+
+.mybtn {
+    padding: 8px 15px;
+    border-radius: 8px;
+    color: #fff;
+    background: #d85604;
+    border: 1px solid #d85604;;
 }
 
 .recent-spaces-icon {
@@ -19,14 +39,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
 }
 
 .recent-spaces-button {
     padding: 10px 15px;
-    background: darkorange;
+    background: #d85604;
     color: #fff;
     /* border-color: maroon; */
-    border: 1px solid darkorange;
+    border: 1px solid #d85604;
     border-radius: 6px;
 }
 

@@ -1,7 +1,7 @@
-import { Container, Col, Button, Image } from "react-bootstrap";
+import { Container, Col, Image } from "react-bootstrap";
 import signup from "../../assets/img/user-signup.png";
 import { useNavigate } from "react-router-dom";
-import { useState, FC, ChangeEventHandler } from "react";
+import { useState, FC } from "react";
 import "./Signup.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../app/store";
@@ -9,6 +9,7 @@ import { StoreType } from "../../../types/redux";
 import { toast } from "react-toastify";
 import { register } from "../../../features/Auth/authSlice";
 import { UserRegisterType } from "../../../types/form";
+import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 const Signup: FC = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { user, isError, isLoading, isSuccess, message } = useSelector(
@@ -35,7 +36,7 @@ const Signup: FC = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
     if (password !== password2) {
-      toast.error('Passwords do not match');
+      toast.error("Passwords do not match");
       return;
     } else {
       // const userData: UserRegisterType = {
@@ -49,15 +50,15 @@ const Signup: FC = () => {
       // dispatch(register(userData));
     }
   };
-  
+
   return (
     <>
-      <Container fluid className="signup-wrapper">
+      <Container fluid className="signup-wrapper p-0">
         <section className="signup-container">
-          <Col xs={7}>
+          <Col xs={6}>
             <Image src={signup} className="signup-image" />
           </Col>
-          <Col xs={5}>
+          {/* <Col xs={5}>
             <div className="signup-form-container">
               <h3 className="signup-form-title">Create an account</h3>
               <p className="signup-form-title">
@@ -146,6 +147,31 @@ const Signup: FC = () => {
                   </form>
                 </section>
               </div>
+            </div>
+          </Col> */}
+          <Col xs={5}>
+            <div className="verification-modal">
+              <div className="modal-closeBtn">
+                <FaTimesCircle size={20} />
+              </div>
+              <div>
+                <FaCheckCircle size={150} color="#009052" />
+              </div>
+              <div>
+                <p className="link-text">
+                  A verification link has been sent to your email address.
+                  Kindly check to complete your registration
+                </p>
+              </div>
+
+              <form className="resend-link-form">
+                <input
+                  type="submit"
+                  className="link-btn"
+                  value="Resend Link"
+                  style={{ backgroundColor: "#009052", color: "#fff" }}
+                />
+              </form>
             </div>
           </Col>
         </section>
