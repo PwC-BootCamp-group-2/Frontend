@@ -1,11 +1,14 @@
-import { FaEnvelope, FaMailBulk, FaSearch } from 'react-icons/fa'
-import bgHome from '../../../assets/img/bg-home.png'
-import Pwc from '../../../assets/img/pwc.png'
-import Xerde from '../../../assets/img/xerdelogo.png'
-import './Hero.css'
-import Heading from './Heading'
+import { FaEnvelope, FaMailBulk, FaSearch } from "react-icons/fa";
+// import bgHome from '../../../assets/img/bg-home.png'
+// import Pwc from '../../../assets/img/pwc.png'
+// import Xerde from '../../../assets/img/xerdelogo.png'
+import "./Hero.css";
+import Heading from "./Heading";
+import HeroSection from "../../../components/heroSection/HeroSection";
+import Typical from "react-typical";
 
 const Hero = () => {
+<<<<<<< HEAD
   let arr = [
     {
       "caseNumber": 123,
@@ -90,5 +93,15 @@ const Hero = () => {
         </>
     )
 }
+=======
+  return (
+    <>
+      <section className="hero">
+        <HeroSection />
+      </section>
+    </>
+  );
+};
+>>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
 
-export default Hero 
+export default Hero;

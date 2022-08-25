@@ -68,7 +68,7 @@ const Signup: FC = () => {
   const onSubmit = (e: any) => {
     e.preventDefault();
     if (password !== password2) {
-      toast.error('Passwords do not match');
+      toast.error("Passwords do not match");
       return;
     } else {
       const userData: UserRegisterType = {
@@ -83,18 +83,21 @@ const Signup: FC = () => {
       dispatch(register(userData));
     }
   };
+<<<<<<< HEAD
   if (isLoading) {
     return <Spinner />;
   }
+=======
+>>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
 
   return (
     <>
-      <Container fluid className="signup-wrapper">
+      <Container fluid className="signup-wrapper p-0">
         <section className="signup-container">
-          <Col xs={7}>
+          <Col xs={6}>
             <Image src={signup} className="signup-image" />
           </Col>
-          <Col xs={5}>
+          <Col xs={6}>
             <div className="signup-form-container">
               <h3 className="signup-form-title">Create an account</h3>
               <p className="signup-form-title">

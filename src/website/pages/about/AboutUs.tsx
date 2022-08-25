@@ -1,19 +1,9 @@
-// import About from "../../assets/img/about-bg.png";
-// import Divider from "../../assets/img/divider.png";
-// import Value from "../../assets/img/value.svg";
-// import Inspire from "../../assets/img/inspire.svg";
-// import Mission from "../../assets/img/Group 445.svg";
-// import Rectangle from "../../assets/img/Rectangle 344.png";
-// import Rectangle2 from "../../assets/img/Rectangle 343.png";
-// import Clients1 from "../../assets/img/clients 1.png";
-// import Rectangle3 from "../../assets/img/Rectangle 319.png";
-// import Rectangle4 from "../../assets/img/Rectangle 321.png";
 import clients from "../../assets/img/clients.png";
 import aboutStory from "../../assets/img/about-story.png";
 import ourTeam from "../../assets/img/our-team.png";
 import { Container, Col, Image, Button } from "react-bootstrap";
 import "./About.css";
-
+import Typical from "react-typical";
 const AboutUs = () => {
   return (
     <>
@@ -24,7 +14,13 @@ const AboutUs = () => {
               <section>
                 <p className="about-hero-pill">Our Mission</p>
                 <h1 className="about-hero-title">
-                  Create a world where people work to make a{" "}
+                  <Typical
+                    steps={["Create", 5000, "Build", 5000]}
+                    loop={Infinity}
+                    className="animated-text"
+                    wrapper="b"
+                  />
+                  a world where people work to make a{" "}
                   <b className="bold-text">life</b>, not just a{" "}
                   <b className="bold-text">living.</b>
                 </h1>

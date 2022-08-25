@@ -1,4 +1,4 @@
-import spacehub from "../../assets/img/light-logo.png";
+import spacehub from "../../assets/img/spacehub-logo.svg";
 import { Link } from "react-router-dom";
 import { FaBars, FaUserAlt, FaTimes, FaSignInAlt } from "react-icons/fa";
 import "./Header.css";
@@ -15,7 +15,9 @@ const Header = () => {
     <header>
       <div className="container flex justify-content-between">
         <div className="logo">
-          <Link to='/'><img src={spacehub} alt="logo" /></Link>
+          <Link to="/">
+            <img src={spacehub} alt="logo" />
+          </Link>
         </div>
 
         <div className="nav">
@@ -27,24 +29,27 @@ const Header = () => {
             ))}
             <div className="mobile-div">
               <button
-                className="btn mybtn" id="loginbtn"
+                className="btn mybtn"
+                id="loginbtn"
                 onClick={() => navigate("/login")}
               >
                 <FaUserAlt />
                 <span > Login</span>
               </button>
               <button
-                className="btn mybtn" id="signupbtn"
+                className="btn mybtn"
+                id="signupbtn"
                 onClick={() => navigate("/signup")}
               >
                 <FaSignInAlt />
-                <span> Signup</span>
+                <span> Create a free account</span>
               </button>
             </div>
           </ul>
         </div>
 
         <div className="acct-div">
+<<<<<<< HEAD
           <button
             className="btn btn-outline text-muted"
             onClick={() => navigate("/login")}
@@ -56,6 +61,11 @@ const Header = () => {
 
           <button
             className="btn mybtn btn-secondary" id="signupbtn"
+=======
+          <button
+            className="btn mybtn"
+            id="signupbtn"
+>>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
             onClick={() => navigate("/signup")}
           >
             <FaSignInAlt />
@@ -66,13 +76,13 @@ const Header = () => {
             <span> Login</span>
           </button>
           <button
-            className="btn mybtn" id="loginbtn"
+            className="btn mybtn"
+            id="loginbtn"
             onClick={() => navigate("/login")}
           >
             <FaUserAlt />
             <span> Login</span>
           </button>
-
         </div>
 
         <div className="toggle">

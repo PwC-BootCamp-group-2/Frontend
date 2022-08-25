@@ -1,107 +1,20 @@
-#mylogin {
-  margin: 0 auto;
-  width: 40%;
-  height: 0px;
-  padding: 2rem;
-}
-
-#mylogin label {
-  display: block;
-}
-
-#mylogin input[type="text"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-#mylogin input[type='password'] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-#signin {
-    margin-top: 25px;
-    width: 100%;
-    height: 35px;
-    background-color: #d85604 !important;
-    text-align: center;
-    border: 1px solid #d85604 !important;
-    border-radius: 8px;
-    color: white;
-}
-
-#password {
-    height: 40px;
-    margin-bottom: 30px;
-}
-
-
-#signin {
-    margin-bottom: 40px;
-}
-
-.logins {
-    display: flex;
-}
-
-/* span{
-    color: #d85604;
-    cursor: pointer;
-=======
-#mylogin input[type="password"] {
-  width: 100%;
-  padding: 8px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-#signin {
-  margin-top: 25px;
-  width: 100%;
-  height: 35px;
-  background-color: #d85604 !important;
-  text-align: center;
-  border: 1px solid #d85604 !important;
-  border-radius: 8px;
-  color: white;
-}
-
-#password {
-  height: 40px;
-  margin-bottom: 30px;
-}
-
-#signin {
-  margin-bottom: 40px;
-}
-
-.logins {
+.login-container {
   display: flex;
 }
+.bold-title {
+  color: #d85604;
+  font-weight: 600;
+}
 
-.logins span {
-  color: #d85604;
-  cursor: pointer;
->>>>>>> 5ac4ec8a03230f28c510d89174d2d3efbb26b038
+.form-container {
+  padding: 60px 100px;
+  background: #fbf3f2;
 }
-.logins h5 {
-  text-align: center;
+.login-button {
+  background: #d85604;
+  width: 100%;
+  border: 1px solid #d85604;
+  padding: 8px 15px;
+  color: #fff;
+  border-radius: 6px;
 }
-.login-copy {
-  text-align: center;
-  cursor: pointer;
-  color: #d85604;
-}
-<<<<<<< HEAD
-h6{
-    text-align: center;
-    cursor: pointer;
-    color: #d85604;
-} */

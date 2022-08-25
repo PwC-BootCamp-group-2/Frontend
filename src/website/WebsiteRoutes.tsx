@@ -21,7 +21,12 @@ import CheckInSuccessful from "./pages/booking/CheckInSuccessful";
 import CheckInUnsuccessful from "./pages/booking/CheckInUnsuccessful";
 import BookingUnsuccessful from "./pages/booking/BookingUnsuccessful";
 import BookingConfirmed from "./pages/booking/BookingConfirmed";
+<<<<<<< HEAD
 import Verified from "./pages/verify/Verified";
+=======
+import Verified from "./pages/booking/Verified";
+import Search from "./pages/search/Search";
+>>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
 const WebsiteRoutes: FC = () => {
   return (
     <>
@@ -36,17 +41,45 @@ const WebsiteRoutes: FC = () => {
           path="/product"
           element={[<Header />, <Product />, <Footer />]}
         />
+<<<<<<< HEAD
         <Route path='/bookingsuccessful' element={[<Header />, <BookingSuccessful />, <Footer />]} />
         <Route path='/checkinsuccessful/:bookingId' element={[<Header />, <CheckInSuccessful />, <Footer />]} />
         <Route path='/checkinunsuccessful' element={[<Header />, <CheckInUnsuccessful />, <Footer />]} />
         <Route path='/bookingunsuccessful' element={[<Header />, <BookingUnsuccessful />, <Footer />]} />
         <Route path='/bookingconfirmed' element={[<Header />, <BookingConfirmed />, <Footer />]} />
         <Route path='/verify/:token' element={[<Header />, <Verified />, <Footer />]} />
+=======
+        <Route
+          path="/bookingsuccessful"
+          element={[<Header />, <BookingSuccessful />, <Footer />]}
+        />
+        <Route
+          path="/checkinsuccessful"
+          element={[<Header />, <CheckInSuccessful />, <Footer />]}
+        />
+        <Route
+          path="/checkinunsuccessful"
+          element={[<Header />, <CheckInUnsuccessful />, <Footer />]}
+        />
+        <Route
+          path="/bookingunsuccessful"
+          element={[<Header />, <BookingUnsuccessful />, <Footer />]}
+        />
+        <Route
+          path="/bookingconfirmed"
+          element={[<Header />, <BookingConfirmed />, <Footer />]}
+        />
+        <Route
+          path="/verified"
+          element={[<Header />, <Verified />, <Footer />]}
+        />
+>>>>>>> 9220a69cd454967e43754707fd0b2886e5758819
         <Route
           path="/contact"
           element={[<Header />, <Contact />, <Footer />]}
         />
         <Route path="/login" element={[<Header />, <Login />, <Footer />]} />
+        <Route path="/search" element={[<Header />, <Search />, <Footer />]} />
       </Routes>
     </>
   );

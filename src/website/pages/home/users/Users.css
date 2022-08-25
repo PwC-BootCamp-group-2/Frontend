@@ -1,0 +1,31 @@
+.individual-user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.individual-user-image {
+  max-width: 400px;
+}
+.individual-user-content-title {
+  width: 70%;
+  font-weight: 600;
+}
+.individual-user-button {
+  padding: 8px 15px;
+  border-radius: 8px;
+  background-color: #d85604;
+  border: 1px solid #d85604;
+
+  font-weight: 500;
+}
+.individual-user-button a {
+  color: #fff;
+}
+.merchant-user-image-container {
+  justify-content: flex-end;
+  display: flex;
+}
+.merchant-user-content-container {
+  margin-right: 45px;
+}
