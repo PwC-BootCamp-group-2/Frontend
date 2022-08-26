@@ -1,20 +1,22 @@
-import React, { FC, useState } from 'react';
-import styles from './spaceModal.module.css';
+
+import React, { FC, useState } from "react";
+import styles from "./spaceModal.module.css";
 
 type ModalType = {
   sState: any;
 };
 
 const SpaceModal: FC<ModalType> = ({ sState }) => {
-  const url = 'https://api.cloudinary.com/v1_1/demo/image/upload';
+
+  const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
   const initialState = {
-    name: '',
-    type: 'LargeSpace',
+    name: "",
+    type: "LargeSpace",
     capacity: 0,
     assets: [{}],
     imgs: [{}],
-    location: '',
-    price: '',
+    location: "",
+    price: "",
   };
   const fData = new FormData();
 
@@ -28,18 +30,18 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
   };
 
   // Set your cloud name and unsigned upload preset here:
-  let YOUR_CLOUD_NAME = 'weird-d';
-  let YOUR_UNSIGNED_UPLOAD_PRESET = 'qdajly77';
+  let YOUR_CLOUD_NAME = "weird-d";
+  let YOUR_UNSIGNED_UPLOAD_PRESET = "qdajly77";
   let POST_URL =
-    'https://api.cloudinary.com/v1_1/' + YOUR_CLOUD_NAME + '/auto/upload';
+    "https://api.cloudinary.com/v1_1/" + YOUR_CLOUD_NAME + "/auto/upload";
 
   let XUniqueUploadId = +new Date();
   //to upload our images
   const uploadFiles = (file: any, allData: any) => {
     fetch(POST_URL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'X-Unique-Upload-Id': `${XUniqueUploadId}`,
+        "X-Unique-Upload-Id": `${XUniqueUploadId}`,
       },
       body: file,
     })
@@ -48,7 +50,7 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
       })
       .then((data) => {
         const imgurl = {
-          name: 'img',
+          name: "img",
           imgurl: JSON.parse(data).url,
         };
         allData.imgs.push(imgurl);
@@ -76,9 +78,9 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
     }
     formData.forEach((e) => {
       const checkedItem = {
-        name: e.getAttribute('id'),
-        description: `We have ${e.getAttribute('id')} available`,
-        ImgUrl: e.getAttribute('value'),
+        name: e.getAttribute("id"),
+        description: `We have ${e.getAttribute("id")} available`,
+        ImgUrl: e.getAttribute("value"),
       };
       pushData.assets.push(checkedItem);
     });
@@ -171,7 +173,7 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
           <input
             className="form-control"
             name="images"
-            type={'file'}
+            type={"file"}
             id="images"
             accept="image/png, image/jpeg"
             aria-label="spaceImages"
