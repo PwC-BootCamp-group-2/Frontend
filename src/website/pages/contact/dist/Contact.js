@@ -5,7 +5,7 @@ var react_bootstrap_1 = require("react-bootstrap");
 var bs_1 = require("react-icons/bs");
 var bi_1 = require("react-icons/bi");
 var md_1 = require("react-icons/md");
-require("./contact.css");
+require("./Contact.css");
 var contact_form_webp_1 = require("../../assets/img/contact-form.webp");
 var useWindowSize_1 = require("react-use/lib/useWindowSize");
 var react_confetti_1 = require("react-confetti");
