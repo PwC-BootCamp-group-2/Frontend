@@ -1,24 +1,24 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { LoginType, UserRegisterType } from '../../types/form';
-import { UserType } from '../../types/redux';
-import { SPACE_HUB_USER } from '../../utilities/constants';
-import { getCachedData } from '../../utilities/storage';
-import authService from './authService';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { LoginType, UserRegisterType } from "../../types/form";
+import { UserType } from "../../types/redux";
+import { SPACE_HUB_USER } from "../../utilities/constants";
+import { getCachedData } from "../../utilities/storage";
+import authService from "./authService";
 
 // Get user from localstorage and set it to state
 const user: any = getCachedData(SPACE_HUB_USER);
 
-const initialState : UserType = {
+const initialState: UserType = {
   user: user ? user : null,
   isError: false,
   isSuccess: false,
   isLoading: false,
-  message: '',
+  message: "",
 };
 
 //Register New User
 export const register = createAsyncThunk(
-  'auth/register',
+  "auth/register",
   async (user: UserRegisterType, thunkAPI) => {
     try {
       return await authService.register(user);
@@ -35,32 +35,37 @@ export const register = createAsyncThunk(
 );
 
 //Login a User
-export const login = createAsyncThunk('auth/login', async (user: LoginType, thunkAPI) => {
-  try {
-    return await authService.login(user);
-  } catch (error: any) {
-    const message: string =
-      (error.response && error.response.data && error.response.data.message) ||
-      error.message ||
-      error.toString();
-    return thunkAPI.rejectWithValue(message);
+export const login = createAsyncThunk(
+  "auth/login",
+  async (user: LoginType, thunkAPI) => {
+    try {
+      return await authService.login(user);
+    } catch (error: any) {
+      const message: string =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+      return thunkAPI.rejectWithValue(message);
+    }
   }
-});
+);
 
 //Logout a User
-export const logout = createAsyncThunk('auth/logout', () => {
+export const logout = createAsyncThunk("auth/logout", () => {
   authService.logout();
 });
 
-export const authSlice = createSlice({
-  name: 'auth',
+export const authSlice: any = createSlice({
+  name: "auth",
   initialState,
   reducers: {
     reset: (state) => {
       state.isLoading = false;
       state.isSuccess = false;
       state.isError = false;
-      state.message = '';
+      state.message = "";
     },
   },
   extraReducers: (builder) => {

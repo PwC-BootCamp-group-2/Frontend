@@ -17,7 +17,7 @@ const ApplicationRoutes: FC = () => {
       ) : (
         <MerchantsDashboard />
       )} */}
-      <IndvidualDashboard />
+      <MerchantsDashboard />
     </>
   );
 };

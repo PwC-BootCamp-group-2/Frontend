@@ -1,4 +1,4 @@
-import { useTransition, animated } from "@react-spring/web";
+import { animated, useSpring, useTransition } from "@react-spring/web";
 import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "../../../website/pages/home/hero/Hero.css";
