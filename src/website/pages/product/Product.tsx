@@ -10,13 +10,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppDispatch } from '../../../app/store';
 // import Spinner from '../../../application/components/Spinner';
-import { register, reset } from '../../../features/Auth/authSlice';
 import { getSingleSpace } from '../../../features/Space/spaceSlice';
 import { StoreType } from '../../../types/redux';
 // import Spinner from '../../components/Spinner';
 import { toast } from 'react-toastify';
-import { MakeBookingType, UserRegisterType } from '../../../types/form';
-import { createBooking } from '../../../features/Booking/bookingSlice';
+import { MakeBookingType } from '../../../types/form';
+import { createBooking, reset } from '../../../features/Booking/bookingSlice';
 import Spinner from '../../components/Spinner';
 
 const { RangePicker } = DatePicker;
@@ -114,6 +113,13 @@ const Product = () => {
         spaceName: space.name,
       };
       dispatch(createBooking(data));
+      dispatch(reset());
+      if (bookingState.isSuccess) {
+        navigate("/bookingsuccessful")
+      }
+      if (bookingState.isError) {
+        toast.error("You Do not have sufficient fund kindly fund your wallet")
+      }
 
     }
   };
@@ -133,10 +139,14 @@ const Product = () => {
                 spaceType="Bella Bellagio Hotel & Casino"
                 location="Las vegas, United Status"
               /> */}
-              <h4>{space && space.location}</h4>
+              <h4>{space && space.name}</h4>
               <span className="product-location">
                 {space && space.location}
               </span>
+              <br/>
+              <b>
+                Capacity : {space && space.capacity}
+              </b>
               <div>
                 <BsStarFill size={20} color=" #FFC329" />
                 <BsStarFill size={20} color=" #FFC329" />

@@ -49,7 +49,7 @@ const MerchantDashboard = () => {
             <b>Dashboard</b>
           </h3>
         </div>
-        <div className="search-container d-flex justify-content-end">
+        <div className="d-flex justify-content-end">
           {/* <Form className="d-flex search-form">
               <InputGroup>
                 <InputGroup.Text>
@@ -76,7 +76,7 @@ const MerchantDashboard = () => {
           <FaRegBell size={32} />
           <span>
             <b>
-              Welcome <br /> Rachel Maduka! (Admin)
+              Welcome <br /> {user && user.data.fullName} (Admin)
             </b>
           </span>
           <div className="mx-2">

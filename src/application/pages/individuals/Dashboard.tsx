@@ -30,6 +30,7 @@ import { reset } from '../../../features/Auth/authSlice';
 import { StoreType } from '../../../types/redux';
 import Spinner from '../../components/Spinner';
 import { getAllSpaces } from '../../../features/Space/spaceSlice';
+import { getBookings } from '../../../features/Booking/bookingSlice';
 const Dashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
@@ -51,6 +52,13 @@ const Dashboard = () => {
       dispatch(reset());
     };
   }, [user, navigate, isError, message, dispatch]);
+  const { bookings } = useSelector((state: StoreType) => state.booking);
+  // Customize as appropriate.
+  // Currently performs a case-insensitive match
+
+  useEffect(() => {
+    dispatch(getBookings());
+  }, [dispatch]);
   if (isLoading) {
     return <Spinner />;
   }
@@ -102,7 +110,7 @@ const Dashboard = () => {
             <FaRegBell size={32} />
             <span>
               <b>
-                Welcome <br /> John Doe
+                Welcome <br /> {user && user.data.fullName}
               </b>
             </span>
             <div className="mx-2">
@@ -118,48 +126,52 @@ const Dashboard = () => {
             <Col>
               {/* <h5>Available Office Bookings</h5> */}
               <section className="d-flex dashboard-available-spaces">
-                {spaces.length !== 0 && spaces.map((item: any, index: number) => {
-                  return (
-                    <Col key={index} onClick={() => navigate(`/product/${item.id}`)}>
-                      <div>
-                        <Image src={lekkiOffice} />
-                      </div>
-                      <div className="card-content-container">
-                        <h4 className="size">
-                          <b>{item.name}</b>
-                          <b>{item.location}</b>
-                        </h4>
+                {spaces.length !== 0 &&
+                  spaces.map((item: any, index: number) => {
+                    return (
+                      <Col
+                        key={index}
+                        onClick={() => navigate(`/product/${item.id}`)}
+                      >
                         <div>
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <span className="price-size">(4.0)</span>
+                          <Image src={lekkiOffice} />
                         </div>
-                        <div>
-                          <span className="price-size">Start from</span>
-                          <p className="price-size">₦ {item.price}</p>
+                        <div className="card-content-container">
+                          <h4 className="size">
+                            <b>{item.name}</b>
+                          </h4>
+                          <span>{item.location}</span>
+                          <div>
+                            <BsStarFill
+                              size={15}
+                              color="#FFCD83"
+                              className="spacing"
+                            />
+                            <BsStarFill
+                              size={15}
+                              color="#FFCD83"
+                              className="spacing"
+                            />
+                            <BsStarFill
+                              size={15}
+                              color="#FFCD83"
+                              className="spacing"
+                            />
+                            <BsStarFill
+                              size={15}
+                              color="#FFCD83"
+                              className="spacing"
+                            />
+                            <span className="price-size">(4.0)</span>
+                          </div>
+                          <div>
+                            {/* <span className="price-size">Start from</span> */}
+                            <p className="price-size">₦ {item.price}</p>
+                          </div>
                         </div>
-                      </div>
-                    </Col>
-                  );
-                })}
+                      </Col>
+                    );
+                  })}
               </section>
             </Col>
           </section>
@@ -168,19 +180,19 @@ const Dashboard = () => {
               <Col className="table-container">
                 <Col className="d-flex justify-content-between">
                   <h4>Recent Bookings</h4>
-                  <div>
+                  {/* <div>
                     <FiFilter size={30} />
                     <span className="size">
                       <b>Sort By</b>
                     </span>
-                  </div>
+                  </div> */}
                 </Col>
                 <Col>
                   <Table borderless hover className="text-center">
                     <thead className="text-blue">
                       <tr>
                         <th>Order</th>
-                        <th>Office Type</th>
+                        <th>Office Name</th>
                         <th>Date Created</th>
                         <th>Amount Paid</th>
                         <th>No of Resources</th>
@@ -188,15 +200,20 @@ const Dashboard = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>Lekki Office</td>
-                        <td>12-12-2022</td>
-                        <td>#50,000</td>
-                        <td>50</td>
-                        <td style={{ color: 'orange' }}>In Review</td>
-                      </tr>
-                      <tr>
+                      {bookings.map((data: any, index: number) => {
+                        return (
+                          <tr>
+                            <td>{index}</td>
+                            <td>{data.spaceName}</td>
+                            <td>{new Date(data.createdAt).toLocaleDateString()}</td>
+                            <td>{data.amount}</td>
+                            <td>{data.noR}</td>
+                            <td style={{ color: 'orange' }}>{data.status}</td>
+                          </tr>
+                        );
+                      })}
+
+                      {/* <tr>
                         <td>2</td>
                         <td>Ikoyi Office</td>
                         <td>15-12-2022</td>
@@ -211,7 +228,7 @@ const Dashboard = () => {
                         <td>#80,000</td>
                         <td>10</td>
                         <td style={{ color: 'red' }}>Cancel</td>
-                      </tr>
+                      </tr> */}
                     </tbody>
                   </Table>
                 </Col>

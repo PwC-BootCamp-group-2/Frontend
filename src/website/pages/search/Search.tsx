@@ -56,6 +56,7 @@ const Search = () => {
 
   useEffect(() => {
     dispatch(getAllSpaces());
+    // console
     const searchObj = { location, type, price };
     setSearchData(findResults(spaces, searchObj));
   }, [dispatch, location, price, type]);
@@ -156,6 +157,7 @@ const Search = () => {
                             <h4 className="size">
                               <b>{data ? data.name : 'Space Hub'}</b>
                             </h4>
+                            <span>{ data ? data.location : "11, Avenue Street"}</span>
                             <div>
                               <BsStarFill
                                 size={15}
@@ -180,9 +182,9 @@ const Search = () => {
                               <span className="price-size">(4.0)</span>
                             </div>
                             <div>
-                              <span className="price-size">Start from</span>
+                              {/* <span className="price-size">Start from</span> */}
                               <p className="price-size">
-                                {data ? data.price : '1000'}
+                              ₦ {data ? data.price : '1000'}
                               </p>
                             </div>
                           </div>

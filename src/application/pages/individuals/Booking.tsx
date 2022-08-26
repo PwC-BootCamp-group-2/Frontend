@@ -46,7 +46,6 @@ const Booking = () => {
   useEffect(() => {
     dispatch(getBookings());
   }, [dispatch]);
-  console.log(bookings);
   // console.log(searchData)
   // useEffect(() => {
   //   (async () => {
