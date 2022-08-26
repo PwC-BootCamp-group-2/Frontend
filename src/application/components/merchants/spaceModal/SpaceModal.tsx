@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 import styles from "./spaceModal.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../../../../app/store";
+import { StoreType } from "../../../../types/redux";
 
 type ModalType = {
   sState: any;
@@ -21,6 +22,8 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
 
   //Our InputGroup
   const [spaceDetail, setSpaceDetail] = useState({ ...initialState });
+  const dispatch = useDispatch<AppDispatch>();
+  const { spaces, isLoading } = useSelector((state: StoreType) => state.space);
 
   //handle Our Changes
   const handleChanges = (e: any) => {
