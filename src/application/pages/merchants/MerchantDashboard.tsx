@@ -42,7 +42,7 @@ const MerchantDashboard = () => {
     setShowModal(true);
   };
   return (
-    <div className="container">
+    <div className="merchant-container">
       <section className="header-section">
         <div>
           <h3>

@@ -38,26 +38,27 @@ const AboutUs = () => {
               <div>
                 <h2 className="fw-bolder">Our Story</h2>
                 <span className="about-story-content">
-                  SpaceHub is the first online “Office Hoteling” app in Nigeria.
-                  We first birthed as “Space Hub” on the 7th of January 2016 as
-                  a savings-only platform. spent.
+                  SpaceHub is the an “Office Hoteling” application in Nigeria.
+                  Our platform is aimed at solving the problem of spaces and
+                  office resources.We are also giving individuals the
+                  opportunity to lease their spaces.
                 </span>{" "}
                 <br></br>
                 <br></br>
                 <span className="about-story-content">
-                  For 3 years, we offered only savings to our users. Then in
-                  April of 2019, we rebranded to “SpaceHub” and began offering
-                  direct investment opportunities to users in addition to
-                  savings.
+                  When we birthed SpaceHub, we wanted to build more than
+                  beautiful, shared office spaces. We wanted to build a
+                  community. A place you join as an individual, 'me', but where
+                  you become part of a greater 'we'. A place where we’re
+                  redefining success measured by personal fulfillment.
                 </span>
                 <br></br>
                 <br></br>
                 <span className="about-story-content">
-                  5 years on, we have continued to deliver excellent service to
-                  our 1,000,000 users and counting, helping them manage their
-                  finances with simplicity and transparency. Combined, our users
-                  save & invest billions of Naira every month that they would
-                  have instead spent.
+                  In years to come, we have hope to have continued to deliver
+                  excellent service to our users , helping them to live a
+                  work-balanced life We hope to increase the user experience
+                  using the metaverse to tour the office space before booking.
                 </span>
               </div>
             </Col>
