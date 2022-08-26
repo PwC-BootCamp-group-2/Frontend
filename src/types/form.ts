@@ -19,12 +19,13 @@ export interface MakeBookingType {
   merchantId: number;
   resourceId: number;
   noR: number;
-  bookedDates: Date[];
+  bookedDates: any[];
   amount: number;
   status: string;
   createdAt: Date;
   updatedAt: Date;
-  used: boolean;
+  Used: boolean;
+  spaceName: string;
 }
 
 export interface CreateSpaceType {
@@ -36,4 +37,5 @@ export interface CreateSpaceType {
   imgs: any;
   location: string;
   price: string;
+  description: string;
 }

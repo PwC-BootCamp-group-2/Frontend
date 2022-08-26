@@ -92,7 +92,9 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
     <div
       className={styles.Wrapper}
       onClick={(e: any) => {
-        e.target.className === "spaceModal_Wrapper__eR750" && sState(false);
+        (e.target.className === "spaceModal_Wrapper__cvqAb" ||
+          e.target.className === "spaceModal_Wrapper__eR750") &&
+          sState(false);
       }}
     >
       <form onSubmit={handleSubmit} id="form">

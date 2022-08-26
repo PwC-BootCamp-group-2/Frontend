@@ -17,6 +17,9 @@ export interface BookingType {
 export interface SpaceType {
   spaces: any,
   space: any,
+  location: string,
+  type: string,
+  price: string,
   merchantSpaces: any,
   isError: boolean,
   isSuccess: boolean,
@@ -26,5 +29,6 @@ export interface SpaceType {
 
 export interface StoreType {
   auth: UserType,
-  booking: BookingType
+  booking: BookingType,
+  space: SpaceType,
 }

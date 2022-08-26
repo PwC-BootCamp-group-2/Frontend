@@ -6,34 +6,54 @@ import {
   Container,
   Table,
   Image,
-} from "react-bootstrap";
-import admin from "../../utils/images/admin.png";
-import { FaRegBell, FaRegUser } from "react-icons/fa";
-import { BiSearch, BiWallet, BiPlusMedical } from "react-icons/bi";
-import { FiFilter } from "react-icons/fi";
-import "../../utils/css/individuals/Dashboard.css";
-import lekkiOffice from "../../utils/images/lekki-office.png";
-import viOffice from "../../utils/images/vi-office.png";
-import ikejaOffice from "../../utils/images/ikeja-office.png";
-import marylandOffice from "../../utils/images/maryland-office.png";
-import firstUser from "../../utils/images/first-user.png";
-import secondUser from "../../utils/images/second-user.png";
-import thirdUser from "../../utils/images/third-user.png";
+} from 'react-bootstrap';
+import admin from '../../utils/images/admin.png';
+import { FaRegBell, FaRegUser } from 'react-icons/fa';
+import { BiSearch, BiWallet, BiPlusMedical } from 'react-icons/bi';
+import { FiFilter } from 'react-icons/fi';
+import '../../utils/css/individuals/Dashboard.css';
+import lekkiOffice from '../../utils/images/lekki-office.png';
+import viOffice from '../../utils/images/vi-office.png';
+import ikejaOffice from '../../utils/images/ikeja-office.png';
+import marylandOffice from '../../utils/images/maryland-office.png';
+import firstUser from '../../utils/images/first-user.png';
+import secondUser from '../../utils/images/second-user.png';
+import thirdUser from '../../utils/images/third-user.png';
 
-import { BsStarFill } from "react-icons/bs";
-import { GiTakeMyMoney } from "react-icons/gi";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { AppDispatch } from "../../../app/store";
-import { reset } from "../../../features/Auth/authSlice";
-import { StoreType } from "../../../types/redux";
+import { BsStarFill } from 'react-icons/bs';
+import { GiTakeMyMoney } from 'react-icons/gi';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { AppDispatch } from '../../../app/store';
+import { reset } from '../../../features/Auth/authSlice';
+import { StoreType } from '../../../types/redux';
+import Spinner from '../../components/Spinner';
+import { getAllSpaces } from '../../../features/Space/spaceSlice';
 const Dashboard = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
-  const { user, isError, isLoading, isSuccess, message } = useSelector(
-    (state: StoreType) => state.auth
+  const { user } = useSelector((state: StoreType) => state.auth);
+  const { spaces, isLoading, isError, message } = useSelector(
+    (state: StoreType) => state.space
   );
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message);
+    }
+    if (!user) {
+      navigate('/login');
+    }
+    dispatch(getAllSpaces());
+    // console.log(spaces);
+    return () => {
+      dispatch(reset());
+    };
+  }, [user, navigate, isError, message, dispatch]);
+  if (isLoading) {
+    return <Spinner />;
+  }
   // useEffect(() => {
   //   if (isError) {
   //     console.log(message);
@@ -98,192 +118,48 @@ const Dashboard = () => {
             <Col>
               {/* <h5>Available Office Bookings</h5> */}
               <section className="d-flex dashboard-available-spaces">
-                <Col>
-                  <div>
-                    <Image src={lekkiOffice} />
-                  </div>
-                  <div className="card-content-container">
-                    <h4 className="size">
-                      <b>Lekki Office</b>
-                    </h4>
-                    <div>
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <span className="price-size">(4.0)</span>
-                    </div>
-                    <div>
-                      <span className="price-size">Start from</span>
-                      <p className="price-size">#50,000</p>
-                    </div>
-                  </div>
-                </Col>
-                <Col>
-                  <div>
-                    <Image src={lekkiOffice} />
-                  </div>
-                  <div className="card-content-container">
-                    <h4 className="size">
-                      <b>Lekki Office</b>
-                    </h4>
-                    <div>
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <span className="price-size">(4.0)</span>
-                    </div>
-                    <div>
-                      <span className="price-size">Start from</span>
-                      <p className="price-size">#50,000</p>
-                    </div>
-                  </div>
-                </Col>
-                <Col>
-                  <div>
-                    <Image src={lekkiOffice} />
-                  </div>
-                  <div className="card-content-container">
-                    <h4 className="size">
-                      <b>Lekki Office</b>
-                    </h4>
-                    <div>
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <span className="price-size">(4.0)</span>
-                    </div>
-                    <div>
-                      <span className="price-size">Start from</span>
-                      <p className="price-size">#50,000</p>
-                    </div>
-                  </div>
-                </Col>
-                <Col>
-                  <div>
-                    <Image src={lekkiOffice} />
-                  </div>
-                  <div className="card-content-container">
-                    <h4 className="size">
-                      <b>Lekki Office</b>
-                    </h4>
-                    <div>
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <span className="price-size">(4.0)</span>
-                    </div>
-                    <div>
-                      <span className="price-size">Start from</span>
-                      <p className="price-size">#50,000</p>
-                    </div>
-                  </div>
-                </Col>
-
-                <Col>
-                  <div>
-                    <Image src={lekkiOffice} />
-                  </div>
-                  <div className="card-content-container">
-                    <h4 className="size">
-                      <b>Lekki Office</b>
-                    </h4>
-                    <div>
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <BsStarFill
-                        size={15}
-                        color="#FFCD83"
-                        className="spacing"
-                      />
-                      <span className="price-size">(4.0)</span>
-                    </div>
-                    <div>
-                      <span className="price-size">Start from</span>
-                      <p className="price-size">#50,000</p>
-                    </div>
-                  </div>
-                </Col>
+                {spaces.length !== 0 && spaces.map((item: any, index: number) => {
+                  return (
+                    <Col key={index} onClick={() => navigate(`/product/${item.id}`)}>
+                      <div>
+                        <Image src={lekkiOffice} />
+                      </div>
+                      <div className="card-content-container">
+                        <h4 className="size">
+                          <b>{item.name}</b>
+                          <b>{item.location}</b>
+                        </h4>
+                        <div>
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <BsStarFill
+                            size={15}
+                            color="#FFCD83"
+                            className="spacing"
+                          />
+                          <span className="price-size">(4.0)</span>
+                        </div>
+                        <div>
+                          <span className="price-size">Start from</span>
+                          <p className="price-size">₦ {item.price}</p>
+                        </div>
+                      </div>
+                    </Col>
+                  );
+                })}
               </section>
             </Col>
           </section>
@@ -318,7 +194,7 @@ const Dashboard = () => {
                         <td>12-12-2022</td>
                         <td>#50,000</td>
                         <td>50</td>
-                        <td style={{ color: "orange" }}>In Review</td>
+                        <td style={{ color: 'orange' }}>In Review</td>
                       </tr>
                       <tr>
                         <td>2</td>
@@ -326,7 +202,7 @@ const Dashboard = () => {
                         <td>15-12-2022</td>
                         <td>#100,000</td>
                         <td>50</td>
-                        <td style={{ color: "green" }}>Completed</td>
+                        <td style={{ color: 'green' }}>Completed</td>
                       </tr>
                       <tr>
                         <td>3</td>
@@ -334,7 +210,7 @@ const Dashboard = () => {
                         <td>1-10-2022</td>
                         <td>#80,000</td>
                         <td>10</td>
-                        <td style={{ color: "red" }}>Cancel</td>
+                        <td style={{ color: 'red' }}>Cancel</td>
                       </tr>
                     </tbody>
                   </Table>

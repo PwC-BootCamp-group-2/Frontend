@@ -77,7 +77,7 @@ const WebsiteRoutes: FC = () => {
         <Route path="/search" element={[<Header />, <Search />, <Footer />]} />
         <Route path="/faq" element={[<Header />, <Faq />, <Footer />]} />
         <Route path="/about" element={[<Header />, <AboutUs />, <Footer />]} />
-        <Route path="/product" element={[<Header />, <Product />, <Footer />]} />
+        <Route path="/product/:id" element={[<Header />, <Product />, <Footer />]} />
       </Routes>
     </>
   );
