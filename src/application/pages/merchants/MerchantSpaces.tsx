@@ -2,6 +2,8 @@ import { FC, useState } from "react";
 import { BiAddToQueue } from "react-icons/bi";
 import SpaceModal from "../../components/merchants/spaceModal/SpaceModal";
 import styles from "../../utils/css/merchants/MerchantSpaces.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../app/store";
 
 const MerchantSpaces: FC = () => {
   const [showModal, setShowModal] = useState(false);

@@ -5,6 +5,8 @@ import { RiFundsFill } from "react-icons/ri";
 import { GiReceiveMoney } from "react-icons/gi";
 import WithdrawModal from "../../components/merchants/withdrawModal/WithdrawModal";
 import FundModal from "../../components/merchants/fundModal/FundModal";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../app/store";
 
 const MerchantAnalytics = () => {
   const [showModal, setShowModal] = useState(false);

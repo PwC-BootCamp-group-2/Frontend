@@ -1,12 +1,13 @@
 import React, { FC, useState } from "react";
 import styles from "./spaceModal.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../../app/store";
 
 type ModalType = {
   sState: any;
 };
 
 const SpaceModal: FC<ModalType> = ({ sState }) => {
-  const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
   const initialState = {
     name: "",
     type: "LargeSpace",

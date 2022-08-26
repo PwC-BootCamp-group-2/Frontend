@@ -2,6 +2,8 @@ import React, { FC, useEffect, useState } from "react";
 import { GiReceiveMoney } from "react-icons/gi";
 import axios from "axios";
 import styles from "./wModal.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch } from "../../../../app/store";
 
 type ModalType = {
   sState: any;
