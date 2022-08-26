@@ -1,8 +1,34 @@
-import { Container, Col, Button, Image, Badge } from "react-bootstrap";
-import { BsStarFill } from "react-icons/bs";
-import "./Product.css";
-import singleProduct from "../../assets/img/single-product.png";
-import smallSingleproduct from "../../assets/img/small-single-product.png";
+import { Container, Col, Button, Image, Badge, Modal } from 'react-bootstrap';
+import { BsStarFill } from 'react-icons/bs';
+import { DatePicker } from 'antd';
+import './Product.css';
+import singleProduct from '../../assets/img/single-product.png';
+import smallSingleproduct from '../../assets/img/small-single-product.png';
+import moment from 'moment';
+
+const { RangePicker } = DatePicker;
+
+function range(start: any, end: any) {
+  const result = [];
+  for (let i = start; i < end; i++) {
+    result.push(i);
+  }
+  console.log(result);
+  return result;
+}
+
+function disabledDate(current: any) {
+  // Can not select days before today and today
+  return current && current < moment().endOf('day');
+}
+
+function disabledDateTime() {
+  return {
+    disabledHours: () => [1,3],
+    disabledMinutes: () => range(30, 60),
+    disabledSeconds: () => [55, 56],
+  };
+}
 // import ProductDetails from "../../components/productDetails/ProductDetails";
 const Product = () => {
   return (
@@ -52,6 +78,12 @@ const Product = () => {
                     Parking Lot
                   </Badge>
                 </div>
+                <RangePicker
+                  disabledDate={disabledDate}
+                  disabledTime={disabledDateTime}
+                  showTime
+                />
+
                 <div>
                   <Button type="submit" className="btn btn-primary">
                     Book Now

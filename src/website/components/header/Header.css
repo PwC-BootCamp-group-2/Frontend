@@ -10,7 +10,6 @@ header {
   z-index: 999;
 }
 
-
 header img {
   width: 170px;
 }
@@ -106,8 +105,6 @@ header .btn:hover {
 
   header {
     padding: 0;
-    position: sticky;
-    top: -100vh;
   }
 
   header img {
