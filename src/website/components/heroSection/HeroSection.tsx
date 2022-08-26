@@ -97,7 +97,7 @@ const HeroSection = () => {
               <div className="box" onClick={() => navigate("/search")}>
                 <button className="btn btn-lg btn-block">Search</button>
               </div>
-              <button className="btn btn-success">
+              <button className="btn btn-success" onClick={() => navigate("/search")}>
                 <FaSearch />
               </button>
             </form>

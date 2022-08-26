@@ -5,8 +5,10 @@ import { BsFillPrinterFill } from "react-icons/bs";
 import { FaCoffee, FaWifi } from "react-icons/fa";
 import { RecentSpaceListing } from "../../../../types/props";
 import space from '../../../assets/img/space1.jpg'
+import { useNavigate } from "react-router-dom";
 
 const RecentCard = () => {
+  const navigate = useNavigate()
   return (
     <>
     <Container>
@@ -28,7 +30,7 @@ const RecentCard = () => {
               </div>
               <div></div>
               <div className="recent-spaces-button-container">
-                <button type="submit" className="mybtn">View Now</button>
+              <button type="submit" className="mybtn" onClick={() => navigate("/search")}>View Now</button>
                 <div>
                   <BiUser size={20} />
                   <span>20</span>
@@ -53,7 +55,7 @@ const RecentCard = () => {
               </div>
               <div></div>
               <div className="recent-spaces-button-container">
-                <button type="submit" className="mybtn">View Now</button>
+                <button type="submit" className="mybtn" onClick={() => navigate("/search")}>View Now</button>
                 <div>
                   <BiUser size={20} />
                   <span>20</span>
@@ -79,7 +81,7 @@ const RecentCard = () => {
               </div>
               <div></div>
               <div className="recent-spaces-button-container">
-                <button type="submit" className="mybtn">View Now</button>
+              <button type="submit" className="mybtn" onClick={() => navigate("/search")}>View Now</button>
                 <div>
                   <BiUser size={20} />
                   <span>20</span>

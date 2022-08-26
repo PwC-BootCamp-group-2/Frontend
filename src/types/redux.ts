@@ -14,6 +14,14 @@ export interface BookingType {
   message: string,
 }
 
+export interface WalletType {
+  wallet: any,
+  transactions: any,
+  isError: boolean,
+  isSuccess: boolean,
+  isLoading: boolean,
+  message: string,
+}
 export interface SpaceType {
   spaces: any,
   space: any,
@@ -31,4 +39,5 @@ export interface StoreType {
   auth: UserType,
   booking: BookingType,
   space: SpaceType,
+  wallet: WalletType,
 }

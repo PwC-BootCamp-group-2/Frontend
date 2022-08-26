@@ -54,7 +54,7 @@ export const SidebarData: SidebarItem[] = [
     icon: <BiWallet size={25} />,
   },
   {
-    path: "/dashboard/spaces",
+    path: "/search",
     name: "Spaces",
     icon: <TbArmchair2 size={25} />,
   },
