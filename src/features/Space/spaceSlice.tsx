@@ -11,6 +11,9 @@ const initialState: SpaceType = {
   space: [],
   // All Merchant Spaces
   merchantSpaces: [],
+  location: "",
+  type: "large space",
+  price: "0",
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -64,7 +67,7 @@ export const getAllSpaces = createAsyncThunk(
 // Get All Spaces
 export const getSingleSpace = createAsyncThunk(
   'space/getAll',
-  async (spaceId: string, thunkAPI: any) => {
+  async (spaceId: any, thunkAPI: any) => {
     try {
       const token = thunkAPI.getState().auth.user.token;
       const response = await spaceService.getSingleSpace(spaceId, token);
@@ -158,6 +161,16 @@ export const spaceSlice = createSlice({
       state.isError = false;
       state.message = '';
     },
+    setType: (state, action) => {
+      state.type = action.payload;
+      return state;
+    },
+    setLocation: (state, action) => {
+      state.location = action.payload;
+    },
+    setPrice: (state, action) => {
+      state.price = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -179,7 +192,7 @@ export const spaceSlice = createSlice({
       .addCase(getAllSpaces.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.spaces = action.payload;
+        state.spaces = action.payload.data;
       })
       .addCase(getAllSpaces.rejected, (state, action) => {
         state.isLoading = false;
@@ -191,7 +204,7 @@ export const spaceSlice = createSlice({
       .addCase(getSingleSpace.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.space = action.payload;
+        state.space = action.payload.data;
       })
       .addCase(getSingleSpace.rejected, (state, action) => {
         state.isLoading = false;
@@ -228,5 +241,5 @@ export const spaceSlice = createSlice({
   },
 });
 
-export const { reset } = spaceSlice.actions;
+export const { reset, setType, setLocation, setPrice } = spaceSlice.actions;
 export default spaceSlice.reducer;

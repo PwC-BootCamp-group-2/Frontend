@@ -28,21 +28,6 @@ const Hero = () => {
     }
   ];
   
-  // Customize as appropriate.
-  // Currently performs a case-insensitive match
-  function searchMatch(target: any, search: any) {
-      search = String(search).trim().toLowerCase();
-      return String(target).toLowerCase().includes(search);
-  }
-  
-  function findResults(arr: any, searchObj: any) {
-      return arr.filter((el: any) => { 
-          return Object.entries(searchObj).some(([key, value]) => searchMatch(el[key], value));
-      })
-  }
-  
-
-  // console.log("Result 3:", findResults(arr, { patientName: 'jim doe', caseNumber: 123}));
   return (
     <>
       <section className="hero">

@@ -1,3 +1,4 @@
+
 import React, { FC, useState } from "react";
 import styles from "./spaceModal.module.css";
 
@@ -6,6 +7,7 @@ type ModalType = {
 };
 
 const SpaceModal: FC<ModalType> = ({ sState }) => {
+
   const url = "https://api.cloudinary.com/v1_1/demo/image/upload";
   const initialState = {
     name: "",
@@ -69,9 +71,9 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
     const imageData: any = document.querySelector("input[type='file']");
     console.log(imageData.files[0]);
     for (let i = 0; i < Object.entries(imageData).length; i++) {
-      fData.append("file", imageData.files[i]);
-      fData.append("upload_preset", YOUR_UNSIGNED_UPLOAD_PRESET);
-      fData.append("public_id", `my${imageData.files[i]?.name}`);
+      fData.append('file', imageData.files[i]);
+      fData.append('upload_preset', YOUR_UNSIGNED_UPLOAD_PRESET);
+      fData.append('public_id', `my${imageData.files[i]?.name}`);
       uploadFiles(fData, pushData);
     }
     formData.forEach((e) => {
@@ -88,7 +90,9 @@ const SpaceModal: FC<ModalType> = ({ sState }) => {
     <div
       className={styles.Wrapper}
       onClick={(e: any) => {
-        e.target.className === "spaceModal_Wrapper__eR750" && sState(false);
+        (e.target.className === 'spaceModal_Wrapper__cvqAb' ||
+          e.target.className === 'spaceModal_Wrapper__eR750') &&
+          sState(false);
       }}
     >
       <form onSubmit={handleSubmit} id="form">

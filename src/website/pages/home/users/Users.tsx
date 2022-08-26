@@ -27,7 +27,7 @@ const Users = () => {
               </div>
               <div className="mt-3">
                 <button className="individual-user-button">
-                  <Link to="/login">Get Started</Link>
+                  <Link to="/signup">Get Started</Link>
                   <BiChevronRight size={20} color="#fff" />
                 </button>
               </div>
@@ -48,7 +48,7 @@ const Users = () => {
               </div>
               <div className="mt-3">
                 <button className="individual-user-button">
-                  <Link to="/login">Become a Merchant</Link>
+                  <Link to="/signup">Become a Merchant</Link>
                   <BiChevronRight size={20} color="#fff" />
                 </button>
               </div>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { CreateSpaceType } from '../../types/form';
 
-const API_URL_SPACE = 'https://localhost:7229/api/Spaces';
+const API_URL_SPACE = 'https://localhost:7229/api/Spaces/';
 const API_URL_GET_MERCHANT_SPACES = 'https://localhost:7229/api/Spaces/User';
 
 // Create new Space
@@ -25,8 +25,9 @@ const getAllSpaces = async (token: string) => {
     },
   };
   const response = await axios.get(API_URL_SPACE, config);
+  // console.log(response);
   // Change this is to response.data, to collect the array of objects being sent from the backend
-  return response.data;
+  return response;
 };
 
 // Get Single Space
@@ -38,7 +39,7 @@ const getSingleSpace = async (id: string, token: string) => {
   };
   const response = await axios.get(API_URL_SPACE + id, config);
   // Change this is to response.data, to collect the array of objects being sent from the backend
-  return response.data;
+  return response;
 };
 
 // Get Merchant Spaces
