@@ -6,8 +6,12 @@ import { TbArmchair2 } from "react-icons/tb";
 import { BsGrid, BsEnvelope, BsCart, BsStar } from "react-icons/bs";
 import logo from "../../utils/images/logo.svg";
 import { NavLink } from "react-router-dom";
+import { logout } from "../../../features/Auth/authSlice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../app/store";
 
 const Sidebar = ({ children }: any) => {
+  const dispatch = useDispatch<AppDispatch>();
   const menuItem = [
     {
       path: "/",
@@ -74,6 +78,7 @@ const Sidebar = ({ children }: any) => {
             </div>
           </div>
           {menuItem.map((item, index) => (
+            <>
             <NavLink
               to={item.path}
               key={index}
@@ -90,6 +95,22 @@ const Sidebar = ({ children }: any) => {
                 {item.name}
               </div>
             </NavLink>
+            <NavLink
+            className="dropdown-link"
+            style={({ isActive }) =>
+              isActive ? { color: " #1d4dca" } : { color: "#000" }
+            }
+            to="/"
+          >
+            <div className="dropdown-icon"><IoLogOutOutline onClick={() => dispatch(logout())} size={25} /></div>
+            <div
+              className="dropdown-link_text"
+              style={{ display: isOpen ? "block" : "none" }}
+            >
+              Logout
+            </div>
+              </NavLink>
+            </>
           ))}
         </div>
         <main>{children}</main>

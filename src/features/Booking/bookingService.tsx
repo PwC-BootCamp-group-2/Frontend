@@ -2,7 +2,7 @@ import axios from 'axios';
 import { MakeBookingType } from '../../types/form';
 
 const API_URL_MAKE_BOOKING = "https://localhost:7229/api/Bookings/MakeBooking";
-const API_URL_GET_USER_BOOKINGS = "https://localhost:7229/api/Bookings/GetUserBookings";
+const API_URL_GET_USER_BOOKINGS = "https://localhost:7229/api/Bookings/GetUserBookings/";
 
 // Create new Booking
 const makeBooking = async (bookingData: MakeBookingType, token: string) => {
@@ -26,7 +26,7 @@ const getUserBookings = async (id: string, token: any) => {
   };
   const response = await axios.get(API_URL_GET_USER_BOOKINGS + id, config);
   // Change this is to response.data, to collect the array of objects being sent from the backend
-  return response.data;
+  return response;
 };
 
 

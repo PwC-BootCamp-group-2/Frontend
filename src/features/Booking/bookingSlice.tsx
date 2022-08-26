@@ -1,15 +1,12 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { MakeBookingType } from '../../types/form';
 import { BookingType } from '../../types/redux';
-import { SPACE_HUB_USER } from '../../utilities/constants';
-import { getCachedData } from '../../utilities/storage';
 import bookingService from './bookingService';
 
 // Get user from localstorage and set it to state
-const user: any = getCachedData(SPACE_HUB_USER);
 
 const initialState : BookingType = {
-  bookings: user ? user : null,
+  bookings: [],
   isError: false,
   isSuccess: false,
   isLoading: false,
@@ -71,7 +68,7 @@ export const bookingSlice = createSlice({
       .addCase(createBooking.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.bookings.push(action.payload);
+        state.bookings.push(action.payload.data);
         // state.message = action.payload.message;
       })
       .addCase(createBooking.rejected, (state, action: any) => {
@@ -86,7 +83,7 @@ export const bookingSlice = createSlice({
       .addCase(getBookings.fulfilled, (state, action) => {
         state.isLoading = false;
         state.isSuccess = true;
-        state.bookings = action.payload;
+        state.bookings = action.payload.data;
         // state.message = action.payload.message;
       })
       .addCase(getBookings.rejected, (state, action: any) => {

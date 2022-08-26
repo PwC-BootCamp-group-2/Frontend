@@ -11,7 +11,7 @@ const FundModal: FC<ModalType> = ({ sState }) => {
   const [amount, setAmount] = useState("");
 
   const config = {
-    reference: new Date().getTime().toString(),
+    reference: new Date().getTime().toString() + "SK",
     email: "faniogor@gmail.com",
     amount: parseInt(amount) * 100,
     publicKey: "pk_test_456c29a0ac507bc9772fad85305795def3efb6f8",

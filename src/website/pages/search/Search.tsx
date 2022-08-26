@@ -1,5 +1,5 @@
-import searchBg from "../../assets/img/search-bg.png";
-import "./Search.css";
+import searchBg from '../../assets/img/search-bg.png';
+import './Search.css';
 import {
   Form,
   Button,
@@ -8,19 +8,77 @@ import {
   Container,
   Table,
   Image,
-} from "react-bootstrap";
-import admin from "../../utils/images/admin.png";
-import { FaSearch } from "react-icons/fa";
-import { BiSearch, BiWallet, BiPlusMedical } from "react-icons/bi";
-import { FiFilter } from "react-icons/fi";
+} from 'react-bootstrap';
+import admin from '../../utils/images/admin.png';
+import { FaSearch } from 'react-icons/fa';
+import { BiSearch, BiWallet, BiPlusMedical } from 'react-icons/bi';
+import { FiFilter } from 'react-icons/fi';
 
-import lekkiOffice from "../../../application/utils/images/lekki-office.png";
-import viOffice from "../../../application/utils/images/vi-office.png";
-import ikejaOffice from "../../../application/utils/images/ikeja-office.png";
-import marylandOffice from "../../../application/utils/images/maryland-office.png";
-import { BsStarFill } from "react-icons/bs";
+import lekkiOffice from '../../../application/utils/images/lekki-office.png';
+import viOffice from '../../../application/utils/images/vi-office.png';
+import ikejaOffice from '../../../application/utils/images/ikeja-office.png';
+import marylandOffice from '../../../application/utils/images/maryland-office.png';
+import { BsStarFill } from 'react-icons/bs';
+import { useDispatch, useSelector } from 'react-redux';
+import { StoreType } from '../../../types/redux';
+import { useEffect, useState } from 'react';
+import {
+  getAllSpaces,
+  reset,
+  setLocation,
+  setPrice,
+  setType,
+} from '../../../features/Space/spaceSlice';
+import { AppDispatch } from '../../../app/store';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
+  const { spaces, isError, location, price, type } = useSelector(
+    (state: StoreType) => state.space
+  );
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
+  const [searchData, setSearchData] = useState<any>([]);
+  // Customize as appropriate.
+  // Currently performs a case-insensitive match
+  function searchMatch(target: any, search: any) {
+    search = String(search).trim().toLowerCase();
+    return String(target).toLowerCase().includes(search);
+  }
+
+  function findResults(arr: any, searchObj: any) {
+    return arr.filter((el: any) => {
+      return Object.entries(searchObj).some(([key, value]) =>
+        searchMatch(el[key], value)
+      );
+    });
+  }
+
+  useEffect(() => {
+    dispatch(getAllSpaces());
+    const searchObj = { location, type, price };
+    setSearchData(findResults(spaces, searchObj));
+  }, [dispatch, location, price, type]);
+  // console.log(searchData)
+  // useEffect(() => {
+  //   (async () => {
+  //     await dispatch(getAllSpaces());
+  //   // const searchObj = { location, type, price }
+  //   console.log(spaces)
+  //   // findResults(spaces, searchObj)
+  //   })();
+  // }, [dispatch]);
+  // useEffect(() => {
+  //   if (isError) {
+  //     // console.log(message);
+  //   }
+  //   dispatch(getAllSpaces());
+  //   return () => {
+  //     dispatch(reset());
+  //   };
+  // }, [ isError, dispatch]);
+
+  // console.log("Result 3:", findResults(arr, { patientName: 'jim doe', caseNumber: 123}));
   return (
     <>
       <Container fluid className="p-0 search-container">
@@ -35,6 +93,7 @@ const Search = () => {
                       type="text"
                       name="location"
                       // value='location'
+                      onChange={(e) => dispatch(setLocation(e.target.value))}
                       id="location"
                       className="search-input"
                       placeholder="Location"
@@ -47,6 +106,7 @@ const Search = () => {
                       name="spacetype"
                       // value='spacetype'
                       // id='spacetype'
+                      onChange={(e) => dispatch(setType(e.target.value))}
                       className="search-input"
                       placeholder="Space Type"
                     />
@@ -56,6 +116,7 @@ const Search = () => {
                     <input
                       type="text"
                       name="price"
+                      onChange={(e) => dispatch(setPrice(e.target.value))}
                       // value='price'
                       // id='price'
                       className="search-input"
@@ -82,154 +143,52 @@ const Search = () => {
                 <Col>
                   {/* <h5>Available Office Bookings</h5> */}
                   <section className="d-flex available-spaces">
-                    <Col>
-                      <div>
-                        <Image src={lekkiOffice} className="card-image" />
-                      </div>
-                      <div className="card-content-container">
-                        <h4 className="size">
-                          <b>Lekki Office</b>
-                        </h4>
-                        <div>
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <span className="price-size">(4.0)</span>
-                        </div>
-                        <div>
-                          <span className="price-size">Start from</span>
-                          <p className="price-size">#50,000</p>
-                        </div>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div>
-                        <Image src={ikejaOffice} className="card-image" />
-                      </div>
-                      <div className="card-content-container">
-                        <h4 className="size">
-                          <b>Lekki Office</b>
-                        </h4>
-                        <div>
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <span className="price-size">(4.0)</span>
-                        </div>
-                        <div>
-                          <span className="price-size">Start from</span>
-                          <p className="price-size">#50,000</p>
-                        </div>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div>
-                        <Image src={marylandOffice} className="card-image" />
-                      </div>
-                      <div className="card-content-container">
-                        <h4 className="size">
-                          <b>Lekki Office</b>
-                        </h4>
-                        <div>
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <span className="price-size">(4.0)</span>
-                        </div>
-                        <div>
-                          <span className="price-size">Start from</span>
-                          <p className="price-size">#50,000</p>
-                        </div>
-                      </div>
-                    </Col>
-                    <Col>
-                      <div>
-                        <Image src={viOffice} className="card-image" />
-                      </div>
-                      <div className="card-content-container">
-                        <h4 className="size">
-                          <b>Lekki Office</b>
-                        </h4>
-                        <div>
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <BsStarFill
-                            size={15}
-                            color="#FFCD83"
-                            className="spacing"
-                          />
-                          <span className="price-size">(4.0)</span>
-                        </div>
-                        <div>
-                          <span className="price-size">Start from</span>
-                          <p className="price-size">#50,000</p>
-                        </div>
-                      </div>
-                    </Col>
+                    {spaces.map((data: any, index: number) => {
+                      return (
+                        <Col
+                          key={index}
+                          onClick={() => navigate(`/product/${data.id}`)}
+                        >
+                          <div>
+                            <Image src={lekkiOffice} className="card-image" />
+                          </div>
+                          <div className="card-content-container">
+                            <h4 className="size">
+                              <b>{data ? data.name : 'Space Hub'}</b>
+                            </h4>
+                            <div>
+                              <BsStarFill
+                                size={15}
+                                color="#FFCD83"
+                                className="spacing"
+                              />
+                              <BsStarFill
+                                size={15}
+                                color="#FFCD83"
+                                className="spacing"
+                              />
+                              <BsStarFill
+                                size={15}
+                                color="#FFCD83"
+                                className="spacing"
+                              />
+                              <BsStarFill
+                                size={15}
+                                color="#FFCD83"
+                                className="spacing"
+                              />
+                              <span className="price-size">(4.0)</span>
+                            </div>
+                            <div>
+                              <span className="price-size">Start from</span>
+                              <p className="price-size">
+                                {data ? data.price : '1000'}
+                              </p>
+                            </div>
+                          </div>
+                        </Col>
+                      );
+                    })}
                   </section>
                 </Col>
               </section>

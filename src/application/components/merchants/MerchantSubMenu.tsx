@@ -1,5 +1,9 @@
 import { useState, FC } from "react";
+import { IoLogOutOutline } from "react-icons/io5";
+import { useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { AppDispatch } from "../../../app/store";
+import { logout } from "../../../features/Auth/authSlice";
 import { SidebarItem } from "../../models/SidebarItem";
 import "./MerchantSidebar.css";
 
@@ -9,14 +13,24 @@ type SidebarLinkProps = {
 };
 const MerchantSubMenu: FC<SidebarLinkProps> = ({ item }) => {
   const [subnav, setSubnav] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+
 
   const showSubnav = () => setSubnav(!subnav);
 
+  const onClick = (e: any) => {
+    if (e === "/") {
+      dispatch(logout());
+    } else {
+      return
+    }
+    item.subNav && showSubnav()
+  }
   return (
     <>
       <NavLink
         to={item.path}
-        onClick={item.subNav && showSubnav}
+        onClick={() => onClick(item.path)}
         className="link"
         style={({ isActive }) =>
           isActive ? { color: " #1d4dca" } : { color: "#000" }
@@ -35,11 +49,12 @@ const MerchantSubMenu: FC<SidebarLinkProps> = ({ item }) => {
             : item.subNav
             ? item.iconClosed
             : null}
-        </div>
+          </div>
       </NavLink>
       {subnav &&
         item?.subNav?.map((item, index) => {
           return (
+
             <NavLink
               className="dropdown-link"
               style={({ isActive }) =>
@@ -47,6 +62,7 @@ const MerchantSubMenu: FC<SidebarLinkProps> = ({ item }) => {
               }
               to={item.path}
               key={index}
+              
             >
               <div className="dropdown-icon">{item.icon}</div>
               <div
@@ -55,7 +71,7 @@ const MerchantSubMenu: FC<SidebarLinkProps> = ({ item }) => {
               >
                 {item.name}
               </div>
-            </NavLink>
+              </NavLink>
           );
         })}
     </>

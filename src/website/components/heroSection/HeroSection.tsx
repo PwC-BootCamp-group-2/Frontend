@@ -7,10 +7,16 @@ import heroTwo from "../../assets/img/extra.jpg";
 import heroThree from "../../assets/img/hero-bg.jpeg";
 import heroFour from "../../assets/img/home-img.jpg";
 import Typical from "react-typical";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../../app/store";
+import { setLocation, setType, setPrice } from "../../../features/Space/spaceSlice";
+import { useNavigate } from "react-router-dom";
 
 const slides = [hero, heroTwo, heroThree, heroFour];
 
 const HeroSection = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const [index, set] = useState(0);
   const transitions = useTransition(index, {
     key: index,
@@ -39,7 +45,7 @@ const HeroSection = () => {
             <div className="heading">
               <h1>
                 <Typical
-                  steps={["Find", 5000, "Lease", 5000, "Book", 5000]}
+                  steps={["Lease", 5000, "Book", 5000]}
                   loop={Infinity}
                   className="animated-text"
                   wrapper="b"
@@ -60,6 +66,7 @@ const HeroSection = () => {
                 <input
                   type="text"
                   name="location"
+                  onChange={(e) => dispatch(setLocation(e.target.value))}
                   // value='location'
                   id="location"
                   placeholder="Location"
@@ -70,6 +77,7 @@ const HeroSection = () => {
                 <input
                   type="text"
                   name="spacetype"
+                  onChange={(e) => dispatch(setType(e.target.value))}
                   // value='spacetype'
                   // id='spacetype'
                   placeholder="Space Type"
@@ -80,12 +88,13 @@ const HeroSection = () => {
                 <input
                   type="text"
                   name="price"
+                  onChange={(e) => dispatch(setPrice(e.target.value))}
                   // value='price'
                   // id='price'
                   placeholder="Price Range"
                 />
               </div>
-              <div className="box">
+              <div className="box" onClick={() => navigate("/search")}>
                 <button className="btn btn-lg btn-block">Search</button>
               </div>
               <button className="btn btn-success">

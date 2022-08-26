@@ -69,7 +69,7 @@ export const SidebarData: SidebarItem[] = [
     icon: <BiCog size={25} />,
   },
   {
-    path: "/logout",
+    path: "/",
     name: "Logout",
     icon: <IoLogOutOutline size={25} />,
   },

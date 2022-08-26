@@ -58,6 +58,7 @@
 }
 .card-content-container {
   padding-top: 10px;
+  margin-top: 20px;
 }
 .card-section {
   width: 18rem;
@@ -135,6 +136,7 @@
   background: #fff;
   /* margin-top: 60px; */
   /* margin-right: 20px; */
+  flex-wrap: wrap;
   border-radius: 10px;
   margin: 30px 60px;
 }
@@ -172,4 +174,5 @@
 }
 .card-image {
   width: 16rem;
+  margin-top: 20px;
 }
